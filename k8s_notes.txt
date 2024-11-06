@@ -1,0 +1,318 @@
+Kubernetes concepts:
+--------------------
+
+Features that orchestration tools offer:
+----------------------------------------
+
+HA or no downtime
+Scalability or high performance
+DR - backup and recovery
+
+Pod:
+--------
+
+Smallest unit of K8s
+Abstraction over container
+Usually 1 appliction per pod ( db, app, webserver)
+Each pod gets its own IP address
+New IP address on re-creation
+
+Service:
+--------
+As IP gets changed every time when pods destroyed and re-created, Services are used for 
+	connection between pods
+Service have permanent IP address.
+Even if pod dies, service won't.
+
+Ingress:
+-------
+Used for communication from external browser/client
+
+ConfigMap:
+----------
+
+External configuration of your appliction
+
+Ex: If DB_URL for mongodb-service needs to be changed, it will be kept in ConfigMap
+
+Secrets:
+--------
+Used for storing secret creds like username, password, etc..
+Stored in base64 encoded format
+
+Volumes:
+--------
+Persistent storage for k8s cluster
+
+Deployment:
+----------
+Blueprint for my-app pods
+Create deployments instead of pods as deployments can have replica and other features
+Deployments are used for Statless apps
+
+StatefulSet:
+------------
+StatefulSet used for stateful apps like databases
+It maintains data consistency between replicated applictions
+Deploying stateful apps is difficult. So, databases or stateful applictions are usually 4
+  deployed outside of the cluster
+
+=========================================================================================
+
+K8s Architecture:
+-----------------
+
+Worker nodes:
+-------------
+Each node has multiple pods in it
+3 process must be installed in evey worker node ------Important-----
+	Container Runtime -> Docker
+	kubelet -> Interacts be container and node. It starts a pod with a container in it
+	kube-proxy -> Forwarding communication between service and pod
+Worker nodes does the actual work of container orchestration
+
+Master nodes:
+------------
+4 processes runs on master node:
+	Api server -> Cluster gateway. Gatekeeper for authentication
+	Scheduler -> To schedule new pod. "Where to put the pod" 
+				(Connects with worker nodes' kubelet and decide where to put the pod)
+	Controller Manager -> Detects cluster state changes like crashing of pods and try to 
+						  recover by connecting with schedule
+	etcd -> It is the brain of cluster. key-value pair. Cluster changes get stored in the 
+			key-value store. What resources are available? Is the cluster healthy? 
+			Did the cluster state changed? All these informations are stored in etcd
+			It stores only cluster data. It doesn't store data like DB data etc..
+
+Atleast have 2 master nodes in production setups
+			
+
+Master nodes				| Worker  
+------------------------------------------------------------------------------------
+Master needs less resources | High resources like CPU, RAM, Storage needed for worker
+
+======================================================================================
+
+
+Minikube:
+--------
+
+Local setup with master and worker node in it
+Creates virtual box on your laptop
+Node runs in that virtual box
+1 node k8s cluster
+For testing purpose
+
+kubectl:
+--------
+Command line utility 
+
+kubectl communicates with Apiserver to perform operations
+
+---------Important----- We can't create pods directly, we can do it only through deployments
+
+Important commands:
+-------------------
+
+controlplane ~ ➜ kubectl create deployment nginx-depl --image=nginx 
+deployment.apps/nginx-depl created
+
+controlplane ~ ➜  kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+nginx-depl-5796b5c499-wp9cg   1/1     Running   0          14s
+
+controlplane ~ ➜  kubectl get replicaset // Created by default
+NAME                    DESIRED   CURRENT   READY   AGE
+nginx-depl-5796b5c499   1         1         1       27s
+
+controlplane ~ ➜  kubectl get deployment
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-depl   1/1     1            1           2m47s
+
+controlplane ~ ➜  kubectl edit deployment nginx-depl // Edit depoyment and save
+deployment.apps/nginx-depl edited
+
+Kubernetes Debugging:
+---------------------
+
+kubectl logs <pod-name>
+kubectl describe pod <pod-name>
+kubectl exec -it <pod-name> -- /bin/bash
+
+Delete deployment/pod:
+---------------------
+
+kubectl delete deployment <deployment-name>
+
+Create deployment using yaml file:
+----------------------------------
+kubectl apply -f <config-deployment.yaml>
+
+Create deployment through yaml file:
+-----------------------------------
+controlplane ~ ➜  cat mydepl.yaml 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mydepl
+  name: mydepl
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mydepl
+  template:
+    metadata:
+      labels:
+        app: mydepl
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 8080
+		
+Create Service to connect to the pod:
+-------------------------------------
+controlplane ~ ➜  cat myserv.yaml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: myservice
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: mydepl // Selector should match the label of deployment
+
+To debug deployment:
+--------------------
+kubectl get deployment mydepl  -o yaml > depl_output.yaml
+
+Dry run command for creating service:
+-------------------------------------
+
+kubectl create service nodeport mongoservice --tcp=27017:27017 --output=yaml --dry-run=client
+
+Namespace:
+---------
+1. Namespaces are useful for grouping of resources like db, elastic-stack, monitoring, nginx-ingress
+2. Used when many teams are using same application
+3. Resource sharing: Staging, Dev, pre-prod
+4. Access and resources limits: Limit cpu, ram, storage per namespace
+
+---Important----- Each NS must define configmap and secrets separately for each namespace
+Volumes, nodes are accessible globally from k8s cluster. Can't be created dedicatedly for namespace
+
+controlplane ~ ➜  cat configmap.yaml 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongodb-configmap
+  namespace: mynamespace
+data:
+  database_url: mongodb-service
+  
+controlplane ~ ➜  kubectl create namespace mynamespace
+namespace/mynamespace created
+
+controlplane ~ ➜  kubectl apply -f configmap.yaml 
+configmap/mongodb-configmap created
+
+Ingress:
+-------
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dashboard-ingress
+  namespace: kubernetes-dashboard
+spec:
+  ingressClassName: "nginx"
+  rules:
+  - host: dashboard.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix  
+        backend:
+          service:
+            name: kubernetes-dashboard
+            port: 
+              number: 80
+
+Ingress with different paths and tls certificate
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - example.com
+    secretName: example-tls
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - path: /app1
+        pathType: Prefix
+        backend:
+          service:
+            name: app1-service
+            port:
+              number: 80
+      - path: /app2
+        pathType: Prefix
+        backend:
+          service:
+            name: app2-service
+            port:
+              number: 80
+
+Persistent Volumes and PVC:
+---------------------------
+
+Persistent Volumes:
+------------------
+- Cluster resource
+- Created via YAML file
+	- kind: PersistentVolume
+	- spec: e.g. how much storage?
+
+Needs actual physical storage like local disk, nfs server, cloud storage etc...
+Volumes are not namespaced
+
+
+------Important-----
+
+Admin provisions persistent volume
+User used persistent volume claim
+
+Storage Class:
+-------------
+Storage Class provisions Persistent Volumes dynamically when PVC claims it
+
+
+==============================
+
+
+Dry run commands:
+-----------------
+kubectl create deployment mydepl --image=nginx --output=yaml --dry-run=client
+
+kubectl create service nodeport  myservice  --tcp=27017:27017 --output=yaml --dry-run=client
+
+kubectl create secret generic  mysecret  --output=yaml --dry-run=client
+
+kubectl create configmap myconfigmap --output=yaml --dry-run=client
+
+
