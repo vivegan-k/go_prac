@@ -1,0 +1,906 @@
+Golang:
+
+It is compiled language. Code is converted to the code the computer can understand
+Golang is statically typed
+
+Data types:
+int -> Numbers (Both positive and negative)
+uint -> Unsigned integer (Only positive integer)
+float32, float64 -> float
+string -> String
+bool -> Boolean
+
+Variable:
+
+syntax for declaring variable
+var s string = "Hello"
+var i int = "100"
+var b bool = false
+var f float64 = 22.3
+
+Print statements:
+fmt.Print() -> Simply prints
+fmt.Println() -> Prints with new line at the end
+fmt.Printf -> used while using format specifier, Same as .format in python
+	var name string = "vivek"
+	fmt.Printf("Hi %s", name)
+	
+=======Important=======
+If a variable is initiated with a specific datatype, same 
+datatype should be used throught the program for the variable
+ 
+Other variable initialization types:
+
+var name string
+name = "vivek"
+
+var s,t string = "foo", "bar"
+-----------
+var(
+s string = "vivek"
+n number = "10"
+)
+
+fmt.Println(s)
+fmt.Println(n)
+
+-------------
+s := "vivek"
+fmt.Println(s) -> vivek
+
+s = "anand" # But only string can be assigned, can't assign s as 5
+fmt.Println(s) -> anand 
+
+--------------
+
+Variable Scope:
+
+blocks are represented with {}
+
+Outer block variable can be accessed from inner block
+Inner block variable can't be accessed from outer block
+
+func main() {
+	country := "India"
+	{
+	    state := "tn"
+	    fmt.Println(country)
+	    fmt.Println(state)
+	}
+	fmt.Println(country)
+	fmt.Println(state) // It will throw error in this line as it is defined inner block
+	
+}
+
+---------------
+Global and local variable:
+
+package main
+import "fmt"
+
+country := "India" # global variable as it is defined outside the function
+func main() {
+	state := "tn" # local variable as is defined inside the function
+	fmt.Println(state)
+}
+---------
+
+Zero values:
+
+var s string // default value is ""
+var i int // default value is 0
+var b bool // default value is false
+var f float64 // default value is 0.0
+
+--------
+
+User Input:
+
+var name string 
+var age int
+fmt.Print("Enter your name: ")
+fmt.Scanf("%s", &name) // Use Scanf to get input from user
+
+
+count, err := fmt.Scanf("%s:%d", &name, &age) // Scanf returns two values 
+	i.e: no of input received properly, error if any
+	
+----------
+
+Find type of variable:
+
+import (
+	"fmt"
+	"reflect"
+)
+
+func main() {
+	var name string
+	name = "vivek"
+	age := 10
+	fmt.Printf("Type of name is: %T \n", name)
+	fmt.Printf("Type of age is: %v", reflect.TypeOf(age))
+}
+
+---------
+
+Type Casting: // Same as python for similar types like int -> float, float -> int
+
+var i int = 90
+var f float64 = float64(i)
+fmt.Printf("%.2f", f)
+
+
+f := 45.89
+i := int(f) 
+fmt.Println(i) -> prints 45, truncates decimal points
+
+
+//Use strconv package for converting between int and string
+
+package main
+
+import "strconv"
+
+func main() {
+	a := 10
+	s := strconv.Itoa(a) // Returns only output as any datatype can be converted to string
+	i, err := strconv.Atoi("10abc") // Returns ouput and error
+	
+	
+}
+
+------------
+
+Constants:
+
+Constants are once initilized, can't be modified
+
+Syntanx: const a = 12, const a, b = 'a', 'b' // Note initialization(:) is not used 
+// And also initialization can't be done with default value like 'const name string'
+
+Typed const syntax: const name string = "vivek"
+
+------------
+
+Operators:
+
+Comparison: < , > , <=, >=, !=, ==
+
+func main(){
+	left := "vivek"
+	right := "anand"
+	fmt.Println(left = right) // false
+	fmt.Println(12 == "twelve") // returns Error
+}
+
+Arithmatic: + , - , *, / , %, ++, --
+
+fmt.Println(24/2) // 12
+fmt.Println(3 % 2) // 1
+
+i := 1
+i++
+fmt.Println(i) // 2
+fmt.Println("a" + "b") // ab , String concatenation can be done + operator
+fmt.Println(1 + 2.5) // Error
+
+a := 2.5
+a ++
+fmt.Println(a) // 3.5
+
+Logical: && , ||, !
+
+true && true // true
+
+true || false // true
+
+!(true) // false
+!(false) // true
+
+Assign operators: = , += , -=, *=, %=, /=
+
+Bitwise operators: &, | , ^, <<, >>
+
+-------------
+Control flow: if-else else if
+
+if cond1 {
+ do something
+} else if {
+ do something
+} else if{
+ do something
+} else {
+ do something
+}
+
+---------------
+
+Switch case:
+
+package main
+
+import "fmt"
+
+func main() {
+        var a = 36
+        switch {
+        case a % 2 == 0:
+                fmt.Println("divisible by 2")
+        case a % 3 == 0:
+                fmt.Println("divisible by 3")
+        case a % 4 == 0:
+                fmt.Println("divisible by 4")
+        default:
+                fmt.Println("default")
+        }
+
+}  // Prints 2 and come out of the switch
+
+-----Important-------- When fallthrough keyword is mentioned, it will go to the next 
+	switch even if the next condition is not satisfied
+
+func main() {
+        var a = 36
+        switch {
+        case a % 2 == 0:
+                fmt.Println("divisible by 2")
+				fallthrough
+        case a % 8 == 0:
+                fmt.Println("divisible by 8")
+				fallthrough
+        case a % 5 == 0:
+                fmt.Println("divisible by 5")
+				fallthrough
+        default:
+                fmt.Println("default")
+        }
+
+} // prints all print statements as fallthrough is given
+
+---------
+
+for loop:
+
+for initialization; condition; post {
+}
+
+for i:=1; i <3; i++ {
+}
+
+
+i := 1
+for i < 5 {
+	fmt.Println(i)
+}
+
+for i:=1; i <5; i++ {
+	if i == 3:
+		break
+	fmt.Println(i) 
+} // prints 1, 2
+
+for i:=1; i <5; i++ {
+	if i == 3:
+		continue
+	fmt.Println(i) 
+} // prints 1, 2, 4, 5
+
+---------
+
+Arrays: // homogenic , only same data types, fixed size
+
+var arr [5]int = [5]int{1,2,3,4,5} # one way to create array # length and capacity is 5
+
+arr := [5]int{1,2,3,4,5} # another way
+
+arr := [...]int{1,2,3,4,5} # another way
+
+fmt.Println(len(arr))
+
+array indexing starts with 0
+
+fmt.Println(arr[0] == 1) // true
+
+arr[0] = 10 // assignment
+
+
+range keyword is same as enumerate in python
+
+for i, val := range(arr){
+	fmt.Println(i , "=>", val)
+}
+
+Multidimensional array:
+
+arr := [3][2]int{{1,2},{3,4},{5,6}}
+arr[1][1] //prints 4
+
+------------
+
+Slice:
+
+Continuous segment of underlying array
+variable size, appended or removed
+more flexible than array
+
+slice1 := []int{1,2,3,4,5} // Syntanx to create slice
+
+func main() {
+	// creating slice from arr
+	arr := [10]int{1,2,3,4,5,6,7,8,9,10}
+	fmt.Println(len(arr), cap(arr)) # 10 10
+	slice1 := arr[0:8]
+	fmt.Println(len(slice1), cap(slice1)) # 8 10 Capacity is size of the underlying array
+	slice1[0] = 100 // When the slice value changed, base arr value also updated
+	fmt.Println(slice1) // [100 2 3 4 5 6 7 8]
+	fmt.Println(arr) // [100 2 3 4 5 6 7 8 9 10]
+	
+	slice2 := append(slice1, 11,12,13,14)
+	fmt.Println(slice2) [100 2 3 4 5 6 7 8 11 12 13 14] 
+		//When appended only slice will be updated, capacity will be doubled if no enough capacity
+	fmt.Println(arr) [100 2 3 4 5 6 7 8 9 10]
+	
+
+}
+
+slice = make([]int, 5, 10) // Creating slice using make method
+slice = make([]int, length, capacity)
+
+
+package main
+
+import (
+	"fmt"
+	"reflect"
+	"strconv"
+)
+
+func main() {
+	a, b := 10, "abc"
+	fmt.Println(reflect.TypeOf(a))
+	fmt.Println(reflect.TypeOf(b))
+	var c int
+	var d bool
+	fmt.Println(c)
+	fmt.Println(d)
+	e := strconv.Itoa(a)
+	f, _ := strconv.Atoi("10")
+	fmt.Println(e)
+	fmt.Println(f)
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	arr := [3]int{1,2,3}
+	for index, val := range arr {
+		fmt.Println("val", index, val)
+	} // Completed till for loop
+}
+
+
+
+package main
+
+import "fmt"
+
+func main() {
+	arr := [5]int{10, 20, 90, 70, 60}
+	slice := append(arr[:2], arr[3:]...) 
+		// Use append before and after the element for removing element from a slice, \
+		// Use ... to concatenate two slice
+	fmt.Println(slice)
+}
+
+-----------------
+
+Maps: //Similar to dictionary in Python
+
+func main() {
+	var map1 map[string]int{} //
+	map2 := map[string]int{"a":1,"b":2}
+	map2["c"] = 3
+	map3 := make(map[string]int)
+	fmt.Println(map1, map2, map3)
+	map3["a"] = 1
+	fmt.Println(map3)
+	fmt.Println(len(map3))
+	for key, value := range(map3) {
+		fmt.Println(key, "=>", value)
+	}
+	is_found, value := map2["c"]
+	fmt.Println(is_found, value)
+	delete(map3, "c")
+	fmt.Println(map3)
+}
+
+-----------
+
+Functions: 
+
+---------Important-------- if a function doesn't want to return anything, 
+don't mention return type while creating function. Otherwise, it will throw error
+
+package main
+import "fmt"
+
+func returnCube(n int) int {
+	return n*n*n
+}
+
+func main(){
+	num := 3
+	cube := returnCube(num)
+	fmt.Printf("%v", cube)
+}
+
+-------
+
+Variadic function: 
+
+package main
+
+import "fmt"
+
+func multireturn(a int, b int)(int, int){
+	sum := a + b
+	diff := a - b
+	return sum, diff
+}
+
+func multinamedreturn(a int, b int)( sum int, diff int){ //initialized at func creation
+	sum = a + b
+	diff = a - b
+	return // no need to mention return values as mentioned in init
+}
+
+func variadicfunction(numbers ...int) int {
+	sum := 0
+	for _, num := range numbers {
+		sum += num
+	}
+	return sum
+}
+
+func variadicfunctionwithpositional(name string, numbers ...int) (string, int) {
+	sum := 0
+	for _, num := range numbers {
+		sum += num
+	}
+	out1 := "hi " + name
+	return out1, sum
+}
+func main(){
+	num1 := 10
+	num2 := 5
+	sum1, diff1 := multireturn(num1, num2)
+	fmt.Println(sum1, diff1)
+	sum1, diff1 = multinamedreturn(num1, num2)
+	fmt.Println(sum1, diff1)
+	fmt.Println(variadicfunction(1,2,3))
+	fmt.Println(variadicfunctionwithpositional("vivek",1,2,3))
+
+}
+
+---------
+
+Recursive function:
+
+package main
+
+import "fmt"
+
+func factorial(n int) int {
+	if n == 1{
+		return 1
+	}
+	return n * factorial(n-1)
+}
+
+func main() {
+	fmt.Println(factorial(5))
+}
+
+----------
+
+Anonymous function:
+
+package main
+
+import "fmt"
+
+func main(){
+	x := func(i int) int{
+		return i * i
+	}(10)
+	fmt.Println(x)
+
+	y := func(i int) int{
+		return i * i
+	}
+	fmt.Println(y(20))
+}
+
+-----------
+
+High order function:
+
+It is a function which either takes another function as input or returns the function
+
+package main
+
+import "fmt"
+
+func double(fn func(int) int, x int) int{
+	return fn(x) * 2
+}
+
+func get_number(num int) int {
+	return num
+}
+
+func main(){
+	out := double(get_number, 5)
+	fmt.Println(out)
+
+}
+
+--
+package main
+
+import "fmt"
+
+// Higher-order function that returns another function
+func makeMultiplier(factor int) func(int) int {
+    return func(x int) int {
+        return x * factor
+    }
+}
+
+func main() {
+    multiplyBy2 := makeMultiplier(2)
+    multiplyBy3 := makeMultiplier(3)
+
+    fmt.Println("5 multiplied by 2 is:", multiplyBy2(5))
+    fmt.Println("5 multiplied by 3 is:", multiplyBy3(5))
+}
+
+--------
+
+Defer statements: // Defer delays the execution of the function
+-----Important-------- When multiple defer statements are given, last defer will execute first
+package main
+
+import "fmt"
+
+func print(i int){
+	fmt.Println(i)
+}
+
+func main() {
+	fmt.Println(10)
+	defer fmt.Println(20)
+	defer fmt.Println(30)
+	fmt.Println(40)
+} // Outpus 10 40 30 20
+
+----------
+
+Pointers:
+
+Pointers used for storing address of the variable
+
+func main() {
+	var a int = 10
+	var p1 *int = &a
+	p2 := &a
+	var p3 = &a
+	fmt.Println(p1, *p1)
+	fmt.Println(p2, *p2)
+	fmt.Println(p3, *p3)
+	*p3 = 20
+	fmt.Println(p1, *p1)
+	fmt.Println(p2, *p2)
+	fmt.Println(p3, *p3)
+}
+
+// prints
+0xc00013a000 10
+0xc00013a000 10
+0xc00013a000 10
+0xc00013a000 20
+0xc00013a000 20
+0xc00013a000 20
+
+---------
+
+Pass by value:
+
+package main
+
+import "fmt"
+
+func modify(i int){
+	i = 20
+}
+
+func main(){
+
+	a := 10
+	fmt.Println(a) // 10
+	modify(a)
+	fmt.Println(a) // 10
+
+}
+
+
+Pass by reference:
+
+package main
+import "fmt"
+
+func modify(i *int){
+	*i = 20
+}
+func main(){
+	a := 10
+	fmt.Println(a) // 10
+	modify(&a)
+	fmt.Println(a) // 20
+
+}
+
+----Important-------- slices, map are by default pass by reference, 
+Arrays, int, strings, structs are pass by value only
+
+func modify(slice []string){
+	slice[1] = "10"
+}
+
+func main(){
+	slice1 := []string{"1","2","3"}
+	fmt.Println(slice1) // [1 2 3]
+	modify(slice1)
+	fmt.Println(slice1) // [1 10 3]
+	
+}
+
+Updating array by reference:
+
+package main
+
+import "fmt"
+
+func modify(numbers *[3]int) {
+	for i := range numbers {
+			numbers[i] -= 5
+	}
+}
+func main() {
+	arr := [3]int{10, 20, 30}
+	fmt.Println(arr)
+	modify(&arr)
+	fmt.Println(arr)
+}
+
+-------
+
+Structs:
+------Important--------
+
+Difference between map and struct
+Key Differences
+Flexibility: Maps are more flexible in terms of size and structure, while structs have a fixed structure defined at compile time.
+Performance: Maps offer efficient key-based lookups, whereas structs provide better performance for accessing fields directly by name.
+Use Cases: Use maps when you need dynamic key-value pairs and fast lookups. Use structs when you need a fixed schema with named fields and potentially different data types.
+Both maps and structs are powerful tools in Go, and choosing between them depends on your specific use case and requirements.
+
+
+Structs are pass by value
+
+package main
+
+import "fmt"
+
+func construnct_string(s student) {
+	fmt.Printf("%s : %d", s.name, s.id)
+}
+
+type student struct{
+	name string
+	id int
+}
+
+func main() {
+	s1 := student{name:"vivek",id:10}
+	fmt.Printf("%+v", s1)
+	s2 := student{}
+	s2.name = "radha"
+	s2.id = 11
+	fmt.Println(s2)
+	construnct_string(s1)
+
+}
+
+To create list of structs:
+------Important--------
+
+type Employee struct {
+        eid int
+        id  int
+}
+
+func main() {
+        employees := make([]Employee, 5)
+        for i := range employees {
+                employees[i] = Employee{i, i + 10}
+                fmt.Println(employees[i])
+        }
+}
+
+------------
+Methods: 
+// function with receiver
+// Defines the methods for a datatype, it can be any datatype
+both value and pointer can be passed as the receiver
+
+
+package main
+
+import "fmt"
+
+type myInt int
+
+func (i myInt) square() myInt{
+    return i * i
+}
+
+func main() {
+    a := myInt(10)
+    fmt.Println(a.square())
+}
+
+Core packages:
+-------------
+
+Strings:
+
+Contains(string, sub_str) -> returns bool
+Replace(sting1, sting_to_change)
+Count(string1, str)
+
+File handling:
+
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "os"
+)
+
+func main() {
+    // Create a file
+    file, err := os.Create("example.txt")
+    if err != nil {
+        fmt.Println("Error creating file:", err)
+        return
+    }
+    defer file.Close()
+
+    // Write to the file
+    _, err = file.WriteString("Hello, World!\nThis is a sample file.")
+    if err != nil {
+        fmt.Println("Error writing to file:", err)
+        return
+    }
+
+    // Read from the file
+    data, err := ioutil.ReadFile("example.txt")
+    if err != nil {
+        fmt.Println("Error reading file:", err)
+        return
+    }
+    fmt.Println("File contents:\n", string(data))
+
+    // Delete the file
+    err = os.Remove("example.txt")
+    if err != nil {
+        fmt.Println("Error deleting file:", err)
+        return
+    }
+    fmt.Println("File deleted successfully")
+}
+
+
+Error handling:
+--------------
+
+package main
+
+import (
+    "errors"
+    "fmt"
+    "os"
+)
+
+// Custom error
+var ErrCustom = errors.New("this is a custom error")
+
+func main() {
+    // Example 1: Handling an error from a standard library function
+    _, err := os.Open("nonexistentfile.txt")
+    if err != nil {
+        fmt.Println("Error opening file:", err)
+    }
+
+    // Example 2: Handling a custom error
+    err = doSomething()
+    if err != nil {
+        if errors.Is(err, ErrCustom) {
+            fmt.Println("Caught custom error:", err)
+        } else {
+            fmt.Println("An error occurred:", err)
+        }
+    }
+}
+
+// Function that returns a custom error
+func doSomething() error {
+    return ErrCustom
+}
+
+
+Logging:
+-------
+
+package main
+
+import (
+    "log"
+    "os"
+)
+
+func main() {
+    // Create a log file
+    file, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+    if err != nil {
+        log.Fatalf("Failed to open log file: %v", err)
+    }
+    defer file.Close()
+
+    // Set output of logs to file
+    log.SetOutput(file)
+
+    // Log messages
+    log.Println("This is an info message")
+    log.Println("This is another info message")
+
+    // Log a formatted message
+    log.Printf("This is a formatted message: %d", 42)
+
+    // Log a fatal message (this will exit the program)
+    // log.Fatal("This is a fatal message")
+
+    // Log a panic message (this will panic the program)
+    // log.Panic("This is a panic message")
+}
+
+Testing:
+--------
+
+package main
+
+import (
+    "testing"
+)
+
+func TestCheckEven(t *testing.T) {
+    i := 10
+    res := check_even(i)
+    if res != true {
+		t.Errorf("Odd")
+	}
+        
+}
