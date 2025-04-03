@@ -109,7 +109,27 @@ Command line utility
 
 kubectl communicates with Apiserver to perform operations
 
----------Important----- We can't create pods directly, we can do it only through deployments
+To create pod:
+-------------
+controlplane ~ ➜  cat pod-def.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+
+controlplane ~ ➜  kubectl create -f pod-def.yaml
+pod/myapp-pod created
+
+controlplane ~ ➜  kubectl get pods
+NAME        READY   STATUS    RESTARTS   AGE
+myapp-pod   1/1     Running   0          2m35s
 
 Important commands:
 -------------------
