@@ -1,0 +1,12 @@
+2025-11-06T09:21:59.148Z|00001|vlog|INFO|opened log file /var/log/openvswitch/ovsdb-server.log
+2025-11-06T09:21:59.155Z|00002|ovsdb_server|INFO|ovsdb-server (Open vSwitch) 2.17.9
+2025-11-06T09:22:09.161Z|00003|memory|INFO|6336 kB peak resident set size after 10.0 seconds
+2025-11-06T09:22:09.161Z|00004|memory|INFO|atoms:175 cells:130 monitors:3 sessions:2
+2025-11-06T09:28:48.247Z|00001|vlog|INFO|opened log file /var/log/openvswitch/ovsdb-server.log
+2025-11-06T09:28:48.258Z|00002|ovsdb_server|INFO|ovsdb-server (Open vSwitch) 2.17.9
+2025-11-06T09:28:48.263Z|00003|jsonrpc|WARN|unix#0: receive error: Connection reset by peer
+2025-11-06T09:28:48.263Z|00004|reconnect|WARN|unix#0: connection dropped (Connection reset by peer)
+2025-11-06T09:28:49.046Z|00005|jsonrpc|WARN|unix#10: receive error: Connection reset by peer
+2025-11-06T09:28:49.047Z|00006|reconnect|WARN|unix#10: connection dropped (Connection reset by peer)
+2025-11-06T09:28:58.262Z|00007|memory|INFO|7220 kB peak resident set size after 10.0 seconds
+2025-11-06T09:28:58.262Z|00008|memory|INFO|atoms:276 cells:232 monitors:5 sessions:3
