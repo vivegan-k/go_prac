@@ -1,0 +1,458 @@
+{
+  "services": [
+    {
+      "service": "devstack@c-sch.service",
+      "MemoryCurrent": 107732992
+    },
+    {
+      "service": "devstack@openstack-cli-server.service",
+      "MemoryCurrent": 104062976
+    },
+    {
+      "service": "devstack@n-cpu.service",
+      "MemoryCurrent": 142761984
+    },
+    {
+      "service": "devstack@n-cond-cell1.service",
+      "MemoryCurrent": 169193472
+    },
+    {
+      "service": "devstack@s-container-sync.service",
+      "MemoryCurrent": 38133760
+    },
+    {
+      "service": "devstack@n-api.service",
+      "MemoryCurrent": 269426688
+    },
+    {
+      "service": "devstack@s-account.service",
+      "MemoryCurrent": 50417664
+    },
+    {
+      "service": "devstack@neutron-periodic-workers.service",
+      "MemoryCurrent": 232177664
+    },
+    {
+      "service": "devstack@g-api.service",
+      "MemoryCurrent": 231170048
+    },
+    {
+      "service": "devstack@q-ovn-metadata-agent.service",
+      "MemoryCurrent": 318353408
+    },
+    {
+      "service": "devstack@n-sch.service",
+      "MemoryCurrent": 156786688
+    },
+    {
+      "service": "devstack@neutron-ovn-maintenance-worker.service",
+      "MemoryCurrent": 257773568
+    },
+    {
+      "service": "devstack@etcd.service",
+      "MemoryCurrent": 85295104
+    },
+    {
+      "service": "devstack@c-bak.service",
+      "MemoryCurrent": 91893760
+    },
+    {
+      "service": "devstack@file_tracker.service",
+      "MemoryCurrent": 598016
+    },
+    {
+      "service": "devstack@s-proxy.service",
+      "MemoryCurrent": 77574144
+    },
+    {
+      "service": "devstack@c-api.service",
+      "MemoryCurrent": 243126272
+    },
+    {
+      "service": "devstack@s-container.service",
+      "MemoryCurrent": 52305920
+    },
+    {
+      "service": "devstack@memory_tracker.service",
+      "MemoryCurrent": 1146880
+    },
+    {
+      "service": "devstack@n-novnc-cell1.service",
+      "MemoryCurrent": 104288256
+    },
+    {
+      "service": "devstack@s-object.service",
+      "MemoryCurrent": 53944320
+    },
+    {
+      "service": "devstack@neutron-api.service",
+      "MemoryCurrent": 383946752
+    },
+    {
+      "service": "devstack@keystone.service",
+      "MemoryCurrent": 241418240
+    },
+    {
+      "service": "devstack@c-vol.service",
+      "MemoryCurrent": 188215296
+    },
+    {
+      "service": "devstack@n-api-meta.service",
+      "MemoryCurrent": 214745088
+    },
+    {
+      "service": "devstack@neutron-rpc-server.service",
+      "MemoryCurrent": 187813888
+    },
+    {
+      "service": "devstack@placement-api.service",
+      "MemoryCurrent": 169807872
+    },
+    {
+      "service": "devstack@n-super-cond.service",
+      "MemoryCurrent": 157184000
+    },
+    {
+      "service": "apache2.service",
+      "MemoryCurrent": 17453056
+    }
+  ],
+  "db": [
+    {
+      "db": "keystone",
+      "op": "SELECT",
+      "count": 31319
+    },
+    {
+      "db": "keystone",
+      "op": "UPDATE",
+      "count": 9
+    },
+    {
+      "db": "keystone",
+      "op": "INSERT",
+      "count": 127
+    },
+    {
+      "db": "neutron",
+      "op": "DESCRIBE",
+      "count": 2
+    },
+    {
+      "db": "neutron",
+      "op": "CREATE",
+      "count": 1
+    },
+    {
+      "db": "neutron",
+      "op": "SHOW",
+      "count": 4
+    },
+    {
+      "db": "neutron",
+      "op": "SELECT",
+      "count": 6113
+    },
+    {
+      "db": "neutron",
+      "op": "INSERT",
+      "count": 830
+    },
+    {
+      "db": "placement",
+      "op": "SELECT",
+      "count": 18
+    },
+    {
+      "db": "placement",
+      "op": "INSERT",
+      "count": 72
+    },
+    {
+      "db": "placement",
+      "op": "SET",
+      "count": 2
+    },
+    {
+      "db": "neutron",
+      "op": "UPDATE",
+      "count": 240
+    },
+    {
+      "db": "neutron",
+      "op": "DELETE",
+      "count": 32
+    },
+    {
+      "db": "nova_cell0",
+      "op": "SELECT",
+      "count": 27
+    },
+    {
+      "db": "nova_cell1",
+      "op": "SELECT",
+      "count": 56
+    },
+    {
+      "db": "nova_api",
+      "op": "SELECT",
+      "count": 48
+    },
+    {
+      "db": "nova_cell0",
+      "op": "INSERT",
+      "count": 6
+    },
+    {
+      "db": "nova_cell0",
+      "op": "UPDATE",
+      "count": 3
+    },
+    {
+      "db": "cinder",
+      "op": "SELECT",
+      "count": 104
+    },
+    {
+      "db": "cinder",
+      "op": "INSERT",
+      "count": 13
+    },
+    {
+      "db": "cinder",
+      "op": "UPDATE",
+      "count": 9
+    },
+    {
+      "db": "placement",
+      "op": "UPDATE",
+      "count": 3
+    },
+    {
+      "db": "nova_api",
+      "op": "SAVEPOINT",
+      "count": 10
+    },
+    {
+      "db": "nova_api",
+      "op": "INSERT",
+      "count": 20
+    },
+    {
+      "db": "cinder",
+      "op": "DELETE",
+      "count": 1
+    },
+    {
+      "db": "nova_cell1",
+      "op": "INSERT",
+      "count": 4
+    },
+    {
+      "db": "nova_cell1",
+      "op": "UPDATE",
+      "count": 20
+    },
+    {
+      "db": "glance",
+      "op": "INSERT",
+      "count": 14
+    },
+    {
+      "db": "glance",
+      "op": "SELECT",
+      "count": 27
+    },
+    {
+      "db": "glance",
+      "op": "UPDATE",
+      "count": 2
+    },
+    {
+      "db": "nova_api",
+      "op": "RELEASE",
+      "count": 10
+    }
+  ],
+  "processes": [
+    {
+      "cmd": "/usr/lib/erlang/erts-12.2.1/bin/beam.smp",
+      "pid": 20936,
+      "args": "-W w -MBas ageffcbf -MHas ageffcbf -MBlmbcs 512 -MHlmbcs 512 -MMmcs 30 -P 1048576 -t 5000000 -stbt db -zdbbl 128000 -sbwt none -sbwtdcpu none -sbwtdio none -- -root /usr/lib/erlang -progname erl -- -home /var/lib/rabbitmq -- -pa  -noshell -noinput -s rabbit boot -boot start_sasl -syslog logger [] -syslog syslog_error_logger false -kernel prevent_overlapping_partitions false",
+      "rss": 130052096
+    },
+    {
+      "cmd": "/usr/sbin/mysqld",
+      "pid": 50584,
+      "args": "",
+      "rss": 713318400
+    },
+    {
+      "cmd": "/opt/stack/bin/etcd",
+      "pid": 52158,
+      "args": "--name np0000021459 --data-dir /opt/stack/data/etcd --initial-cluster-state new --initial-cluster-token etcd-cluster-01 --initial-cluster np0000021459=http://10.19.119.191:2380 --initial-advertise-peer-urls http://10.19.119.191:2380 --advertise-client-urls http://10.19.119.191:2379 --listen-peer-urls http://0.0.0.0:2380 --listen-client-urls http://10.19.119.191:2379 --log-level=debug",
+      "rss": 29601792
+    },
+    {
+      "cmd": "/usr/local/bin/privsep-helper",
+      "pid": 79157,
+      "args": "--config-file /etc/neutron/neutron_ovn_metadata_agent.ini --privsep_context neutron.privileged.namespace_cmd --privsep_sock_path /tmp/tmpxb4j6d2q/privsep.sock",
+      "rss": 108429312
+    },
+    {
+      "cmd": "/usr/local/bin/privsep-helper",
+      "pid": 82082,
+      "args": "--config-file /etc/neutron/neutron_ovn_metadata_agent.ini --privsep_context neutron.privileged.default --privsep_sock_path /tmp/tmpe7ibwt5e/privsep.sock",
+      "rss": 110403584
+    }
+  ],
+  "api": [
+    {
+      "service": "identity",
+      "log": "tls-proxy_access.log",
+      "largest": 6638,
+      "openstacksdk-GET": 794,
+      "openstacksdk-POST": 233,
+      "keystoneclient-GET": 31,
+      "openstacksdk-PUT": 35,
+      "keystoneclient-POST": 12,
+      "neutron-GET": 1,
+      "neutron-POST": 1,
+      "nova-scheduler-GET": 1,
+      "nova-scheduler-POST": 1,
+      "nova-conductor-GET": 2,
+      "nova-conductor-POST": 2,
+      "nova-compute-GET": 1,
+      "nova-compute-POST": 1,
+      "nova-GET": 1,
+      "nova-POST": 1,
+      "cinder-GET": 1,
+      "cinder-POST": 1,
+      "placement-GET": 1,
+      "placement-POST": 1,
+      "glance-GET": 1,
+      "glance-POST": 1,
+      "keystonemiddleware.auth_token-GET": 1,
+      "keystonemiddleware.auth_token-POST": 1
+    },
+    {
+      "service": "networking",
+      "log": "tls-proxy_access.log",
+      "largest": 18280,
+      "Wget-GET": 1,
+      "openstacksdk-GET": 25,
+      "openstacksdk-POST": 11,
+      "openstacksdk-PUT": 3
+    },
+    {
+      "service": "placement",
+      "log": "tls-proxy_access.log",
+      "largest": 5160,
+      "nova-scheduler-GET": 1,
+      "nova-conductor-GET": 2,
+      "nova-compute-GET": 6,
+      "nova-compute-POST": 1,
+      "nova-compute-PUT": 2
+    },
+    {
+      "service": "compute",
+      "log": "tls-proxy_access.log",
+      "largest": 7731,
+      "openstacksdk-GET": 5,
+      "openstacksdk-POST": 24
+    },
+    {
+      "service": "info",
+      "log": "tls-proxy_access.log",
+      "largest": 5147,
+      "swiftclient-4.8.0-GET": 1
+    },
+    {
+      "service": "volume",
+      "log": "tls-proxy_access.log",
+      "largest": 3587,
+      "cinderclient-POST": 6
+    },
+    {
+      "service": "image",
+      "log": "tls-proxy_access.log",
+      "largest": 4668,
+      "openstacksdk-GET": 5,
+      "openstacksdk-POST": 1,
+      "openstacksdk-PUT": 1
+    },
+    {
+      "service": "identity",
+      "log": "access.log",
+      "largest": 3591,
+      "openstacksdk-GET": 794,
+      "openstacksdk-POST": 233,
+      "keystoneclient-GET": 31,
+      "openstacksdk-PUT": 35,
+      "keystoneclient-POST": 12,
+      "neutron-GET": 1,
+      "neutron-POST": 1,
+      "nova-scheduler-GET": 1,
+      "nova-scheduler-POST": 1,
+      "nova-conductor-GET": 2,
+      "nova-conductor-POST": 2,
+      "nova-compute-GET": 1,
+      "nova-compute-POST": 1,
+      "nova-GET": 1,
+      "nova-POST": 1,
+      "cinder-GET": 1,
+      "cinder-POST": 1,
+      "placement-GET": 1,
+      "placement-POST": 1,
+      "glance-GET": 1,
+      "glance-POST": 1,
+      "keystonemiddleware.auth_token-GET": 1,
+      "keystonemiddleware.auth_token-POST": 1
+    },
+    {
+      "service": "networking",
+      "log": "access.log",
+      "largest": 15189,
+      "Wget-GET": 1,
+      "openstacksdk-GET": 25,
+      "openstacksdk-POST": 11,
+      "openstacksdk-PUT": 3
+    },
+    {
+      "service": "placement",
+      "log": "access.log",
+      "largest": 2113,
+      "nova-scheduler-GET": 1,
+      "nova-conductor-GET": 2,
+      "nova-compute-GET": 6,
+      "nova-compute-POST": 1,
+      "nova-compute-PUT": 2
+    },
+    {
+      "service": "compute",
+      "log": "access.log",
+      "largest": 4684,
+      "openstacksdk-GET": 5,
+      "openstacksdk-POST": 24
+    },
+    {
+      "service": "volume",
+      "log": "access.log",
+      "largest": 540,
+      "cinderclient-POST": 6
+    },
+    {
+      "service": "image",
+      "log": "access.log",
+      "largest": 1621,
+      "openstacksdk-GET": 5,
+      "openstacksdk-POST": 1,
+      "openstacksdk-PUT": 1
+    }
+  ],
+  "report": {
+    "timestamp": "2025-11-06T13:13:31.499881",
+    "hostname": "np0000021459",
+    "version": 2
+  }
+}

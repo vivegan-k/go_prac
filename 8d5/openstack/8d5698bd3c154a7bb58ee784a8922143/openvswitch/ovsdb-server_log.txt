@@ -1,0 +1,22 @@
+2025-11-06T13:05:51.203Z|00001|vlog|INFO|opened log file /var/log/openvswitch/ovsdb-server.log
+2025-11-06T13:05:51.215Z|00002|ovsdb_server|INFO|ovsdb-server (Open vSwitch) 2.17.9
+2025-11-06T13:06:01.225Z|00003|memory|INFO|6304 kB peak resident set size after 10.0 seconds
+2025-11-06T13:06:01.225Z|00004|memory|INFO|atoms:175 cells:130 monitors:3 sessions:2
+2025-11-06T13:11:00.753Z|00001|vlog|INFO|opened log file /var/log/openvswitch/ovsdb-server.log
+2025-11-06T13:11:00.759Z|00002|ovsdb_server|INFO|ovsdb-server (Open vSwitch) 2.17.9
+2025-11-06T13:11:00.764Z|00003|jsonrpc|WARN|unix#0: receive error: Connection reset by peer
+2025-11-06T13:11:00.764Z|00004|reconnect|WARN|unix#0: connection dropped (Connection reset by peer)
+2025-11-06T13:11:00.779Z|00005|jsonrpc|WARN|unix#1: receive error: Connection reset by peer
+2025-11-06T13:11:00.779Z|00006|reconnect|WARN|unix#1: connection dropped (Connection reset by peer)
+2025-11-06T13:11:01.643Z|00001|vlog|INFO|opened log file /var/log/openvswitch/ovsdb-server.log
+2025-11-06T13:11:01.652Z|00002|ovsdb_server|INFO|ovsdb-server (Open vSwitch) 2.17.9
+2025-11-06T13:11:01.658Z|00003|jsonrpc|WARN|unix#0: receive error: Connection reset by peer
+2025-11-06T13:11:01.658Z|00004|reconnect|WARN|unix#0: connection dropped (Connection reset by peer)
+2025-11-06T13:11:01.669Z|00005|jsonrpc|WARN|unix#1: receive error: Connection reset by peer
+2025-11-06T13:11:01.669Z|00006|reconnect|WARN|unix#1: connection dropped (Connection reset by peer)
+2025-11-06T13:11:01.900Z|00007|jsonrpc|WARN|unix#8: receive error: Connection reset by peer
+2025-11-06T13:11:01.900Z|00008|reconnect|WARN|unix#8: connection dropped (Connection reset by peer)
+2025-11-06T13:11:11.660Z|00009|memory|INFO|6916 kB peak resident set size after 10.0 seconds
+2025-11-06T13:11:11.660Z|00010|memory|INFO|atoms:276 cells:232 monitors:5 sessions:3
+2025-11-06T13:11:44.989Z|00011|jsonrpc|WARN|unix#23: receive error: Connection reset by peer
+2025-11-06T13:11:44.990Z|00012|reconnect|WARN|unix#23: connection dropped (Connection reset by peer)

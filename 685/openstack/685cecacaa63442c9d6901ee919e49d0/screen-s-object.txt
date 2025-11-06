@@ -1,0 +1,7 @@
+Nov 06 13:55:01.643020 np0000021461 systemd[1]: Started Devstack devstack@s-object.service.
+Nov 06 13:55:02.136340 np0000021461 object-server[81001]: Started child 81215 from parent 81001
+Nov 06 13:55:02.136935 np0000021461 swift-object-server[81001]: object-server: Started child 81215 from parent 81001
+Nov 06 13:55:02.139205 np0000021461 object-server[81001]: Started child 81216 from parent 81001
+Nov 06 13:55:02.139388 np0000021461 swift-object-server[81001]: object-server: Started child 81216 from parent 81001
+Nov 06 13:56:42.516692 np0000021461 object-server[81215]: 127.0.0.1 - - [06/Nov/2025:13:56:42 +0000] "PUT /sdb1/135/AUTH_1427e4c95be2481a88e557b92867c873/glance/879212a7-ece0-44ae-925f-680c463b1b4c" 201 - "PUT http://10.19.119.12:8081/v1/AUTH_1427e4c95be2481a88e557b92867c873/glance/879212a7-ece0-44ae-925f-680c463b1b4c" "tx6b5a247b6fa54497b06de-00690ca91a" "proxy-server 83054" 0.4456 "-" 81215 0
+Nov 06 13:56:42.517166 np0000021461 swift-object-server[81215]: object-server: 127.0.0.1 - - [06/Nov/2025:13:56:42 +0000] "PUT /sdb1/135/AUTH_1427e4c95be2481a88e557b92867c873/glance/879212a7-ece0-44ae-925f-680c463b1b4c" 201 - "PUT http://10.19.119.12:8081/v1/AUTH_1427e4c95be2481a88e557b92867c873/glance/879212a7-ece0-44ae-925f-680c463b1b4c" "tx6b5a247b6fa54497b06de-00690ca91a" "proxy-server 83054" 0.4456 "-" 81215 0

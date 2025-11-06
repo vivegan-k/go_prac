@@ -1,0 +1,16 @@
+{
+  "services": [
+    {
+      "service": "apache2.service",
+      "MemoryCurrent": 5533696
+    }
+  ],
+  "db": [],
+  "processes": [],
+  "api": [],
+  "report": {
+    "timestamp": "2025-11-06T12:38:53.061729",
+    "hostname": "np0000021457",
+    "version": 2
+  }
+}

@@ -1,0 +1,5 @@
+[Thu Nov 06 12:44:25.809937 2025] [mpm_event:notice] [pid 11701:tid 140031732311936] AH00489: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Thu Nov 06 12:44:25.810035 2025] [core:notice] [pid 11701:tid 140031732311936] AH00094: Command line: '/usr/sbin/apache2'
+[Thu Nov 06 12:46:21.175843 2025] [mpm_event:notice] [pid 11701:tid 140031732311936] AH00492: caught SIGWINCH, shutting down gracefully
+[Thu Nov 06 12:46:21.244660 2025] [mpm_event:notice] [pid 24923:tid 140075991451520] AH00489: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Thu Nov 06 12:46:21.244792 2025] [core:notice] [pid 24923:tid 140075991451520] AH00094: Command line: '/usr/sbin/apache2'

@@ -1,0 +1,1206 @@
+
+File System Summary
+===================
+
+WARN: Device /dev/sr0 (/mnt/config) is 100% full, might be an issue
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.6G  912K  1.6G   1% /run
+/dev/vda1       150G   24G  120G  17% /
+tmpfs           7.9G  224K  7.9G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sr0        494K  494K     0 100% /mnt/config
+tmpfs           1.6G     0  1.6G   0% /run/user/1000
+tmpfs           512M  123M  390M  24% /opt/stack/data/etcd
+/dev/loop0      6.0G   93M  5.9G   2% /opt/stack/data/swift/drives/sdb1
+
+
+Process Listing
+===============
+
+ps axo user,ppid,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,args
+---------------------------------------------------------------
+
+USER        PPID     PID %CPU %MEM    VSZ   RSS TT       STAT  STARTED     TIME COMMAND
+root           0       1  0.2  0.0 167680 13292 ?        Ss   09:27:03 00:00:31 /sbin/init nofb
+root           0       2  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [kthreadd]
+root           2       3  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [rcu_gp]
+root           2       4  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [rcu_par_gp]
+root           2       5  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [slub_flushwq]
+root           2       6  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [netns]
+root           2       8  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/0:0H-events_highpri]
+root           2      10  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [mm_percpu_wq]
+root           2      11  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [rcu_tasks_rude_]
+root           2      12  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [rcu_tasks_trace]
+root           2      13  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ksoftirqd/0]
+root           2      14  0.0  0.0      0     0 ?        I    09:27:03 00:00:02 [rcu_sched]
+root           2      15  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [migration/0]
+root           2      16  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [idle_inject/0]
+root           2      18  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [cpuhp/0]
+root           2      19  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [cpuhp/1]
+root           2      20  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [idle_inject/1]
+root           2      21  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [migration/1]
+root           2      22  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ksoftirqd/1]
+root           2      24  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/1:0H-events_highpri]
+root           2      25  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [cpuhp/2]
+root           2      26  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [idle_inject/2]
+root           2      27  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [migration/2]
+root           2      28  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ksoftirqd/2]
+root           2      30  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/2:0H-events_highpri]
+root           2      31  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [cpuhp/3]
+root           2      32  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [idle_inject/3]
+root           2      33  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [migration/3]
+root           2      34  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ksoftirqd/3]
+root           2      36  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/3:0H-kblockd]
+root           2      37  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [cpuhp/4]
+root           2      38  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [idle_inject/4]
+root           2      39  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [migration/4]
+root           2      40  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ksoftirqd/4]
+root           2      42  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/4:0H-kblockd]
+root           2      43  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [cpuhp/5]
+root           2      44  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [idle_inject/5]
+root           2      45  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [migration/5]
+root           2      46  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ksoftirqd/5]
+root           2      48  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/5:0H-events_highpri]
+root           2      49  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [cpuhp/6]
+root           2      50  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [idle_inject/6]
+root           2      51  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [migration/6]
+root           2      52  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ksoftirqd/6]
+root           2      53  0.0  0.0      0     0 ?        I    09:27:03 00:00:00 [kworker/6:0-events]
+root           2      54  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/6:0H-events_highpri]
+root           2      55  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [cpuhp/7]
+root           2      56  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [idle_inject/7]
+root           2      57  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [migration/7]
+root           2      58  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ksoftirqd/7]
+root           2      60  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/7:0H-events_highpri]
+root           2      61  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [kdevtmpfs]
+root           2      62  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [inet_frag_wq]
+root           2      63  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [kauditd]
+root           2      64  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [khungtaskd]
+root           2      65  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [oom_reaper]
+root           2      66  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [writeback]
+root           2      67  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [kcompactd0]
+root           2      68  0.0  0.0      0     0 ?        SN   09:27:03 00:00:00 [ksmd]
+root           2      69  0.0  0.0      0     0 ?        SN   09:27:03 00:00:00 [khugepaged]
+root           2      81  0.0  0.0      0     0 ?        I    09:27:03 00:00:00 [kworker/3:1-events]
+root           2      83  0.0  0.0      0     0 ?        I    09:27:03 00:00:00 [kworker/4:1-events]
+root           2     117  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kintegrityd]
+root           2     118  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kblockd]
+root           2     119  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [blkcg_punt_bio]
+root           2     120  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [tpm_dev_wq]
+root           2     121  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [ata_sff]
+root           2     122  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [md]
+root           2     123  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [edac-poller]
+root           2     124  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [devfreq_wq]
+root           2     125  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [watchdogd]
+root           2     126  0.0  0.0      0     0 ?        I    09:27:03 00:00:00 [kworker/5:1-events]
+root           2     128  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kworker/0:1H-kblockd]
+root           2     130  0.0  0.0      0     0 ?        S    09:27:03 00:00:01 [kswapd0]
+root           2     131  0.0  0.0      0     0 ?        S    09:27:03 00:00:00 [ecryptfs-kthrea]
+root           2     134  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [kthrotld]
+root           2     136  0.0  0.0      0     0 ?        I<   09:27:03 00:00:00 [acpi_thermal_pm]
+root           2     138  0.0  0.0      0     0 ?        S    09:27:04 00:00:00 [scsi_eh_0]
+root           2     139  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [scsi_tmf_0]
+root           2     140  0.0  0.0      0     0 ?        S    09:27:04 00:00:00 [scsi_eh_1]
+root           2     141  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [scsi_tmf_1]
+root           2     143  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [vfio-irqfd-clea]
+root           2     144  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [mld]
+root           2     145  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [kworker/2:1H-kblockd]
+root           2     146  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [ipv6_addrconf]
+root           2     150  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [kworker/3:1H-kblockd]
+root           2     159  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [kstrp]
+root           2     160  0.0  0.0      0     0 ?        I    09:27:04 00:00:00 [kworker/1:1-events]
+root           2     163  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [zswap-shrink]
+root           2     164  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [kworker/u17:0]
+root           2     169  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [charger_manager]
+root           2     191  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [kworker/7:1H-kblockd]
+root           2     212  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [kworker/1:1H-kblockd]
+root           2     228  0.0  0.0      0     0 ?        S    09:27:04 00:00:00 [hwrng]
+root           2     229  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [kworker/5:1H-kblockd]
+root           2     233  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [kworker/6:1H-kblockd]
+root           2     252  0.0  0.0      0     0 ?        S    09:27:04 00:00:08 [jbd2/vda1-8]
+root           2     253  0.0  0.0      0     0 ?        I<   09:27:04 00:00:00 [ext4-rsv-conver]
+root           2     299  0.0  0.0      0     0 ?        I<   09:27:05 00:00:00 [kworker/4:1H-kblockd]
+root           2     311  0.0  0.0      0     0 ?        I<   09:27:05 00:00:00 [kaluad]
+root           2     313  0.0  0.0      0     0 ?        I<   09:27:06 00:00:00 [kmpath_rdacd]
+root           2     316  0.0  0.0      0     0 ?        I<   09:27:06 00:00:00 [kmpathd]
+root           2     317  0.0  0.0      0     0 ?        I<   09:27:06 00:00:00 [kmpath_handlerd]
+root           1     318  0.0  0.1 289316 27100 ?        SLsl 09:27:06 00:00:02 /sbin/multipathd -d -s
+root           1     322  0.0  0.0  25316  6016 ?        Ss   09:27:06 00:00:00 /lib/systemd/systemd-udevd
+root           1     374  0.0  0.0   8584  5128 ?        Ss   09:27:06 00:00:00 /usr/sbin/haveged --Foreground --verbose=1
+systemd+       1     375  0.0  0.0  26332 13068 ?        Ss   09:27:06 00:00:00 /lib/systemd/systemd-resolved
+systemd+       1     376  0.0  0.0  89364  6572 ?        Ssl  09:27:06 00:00:02 /lib/systemd/systemd-timesyncd
+message+       1     419  0.0  0.0   9144  4988 ?        Ss   09:27:06 00:00:06 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root           1     427  0.0  0.1  33108 18976 ?        Ss   09:27:06 00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root           1     432  0.0  0.0  15788  7968 ?        Ss   09:27:06 00:00:02 /lib/systemd/systemd-logind
+root           1     541  0.0  0.0 101244  6208 ?        Ssl  09:27:08 00:00:00 /sbin/dhclient -1 -4 -v -i -pf /run/dhclient.ens3.pid -lf /var/lib/dhcp/dhclient.ens3.leases -I -df /var/lib/dhcp/dhclient6.ens3.leases ens3
+root           1     557  0.0  0.0 101244  6040 ?        Ssl  09:27:08 00:00:00 /sbin/dhclient -1 -4 -v -i -pf /run/dhclient.ens4.pid -lf /var/lib/dhcp/dhclient.ens4.leases -I -df /var/lib/dhcp/dhclient6.ens4.leases ens4
+root           1     685  0.0  0.0   7288  2584 ?        Ss   09:27:08 00:00:00 /usr/sbin/cron -f -P
+daemon         1     689  0.0  0.0   3864  1256 ?        Ss   09:27:08 00:00:00 /usr/sbin/atd -f
+root           1     694  0.0  0.0   6176  1108 tty1     Ss+  09:27:08 00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root           1     695  0.0  0.0   6220  1060 ttyS0    Ss+  09:27:08 00:00:00 /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 ttyS0 vt220
+unbound        1     700  0.0  0.1  30152 16540 ?        Ss   09:27:08 00:00:04 /usr/sbin/unbound -d -p
+root           1     702  0.0  0.0  15444  9200 ?        Ss   09:27:08 00:00:00 sshd: /usr/sbin/sshd -D [listener] 0 of 30-100 startups
+root           2     730  0.0  0.0      0     0 ?        I    09:42:05 00:00:00 [kworker/7:2]
+root           2     763  0.2  0.0      0     0 ?        I    12:57:15 00:00:02 [kworker/u16:0-ext4-rsv-conversion]
+root         702     764  0.0  0.0  16760 10216 ?        Ss   13:00:08 00:00:00 sshd: zuul [priv]
+zuul           1     767  0.0  0.0  16944  8812 ?        Ss   13:00:09 00:00:00 /lib/systemd/systemd --user
+zuul         767     768  0.0  0.0 168600  3072 ?        S    13:00:09 00:00:00 (sd-pam)
+zuul         764     782  0.0  0.0  17208  7856 ?        S    13:00:09 00:00:00 sshd: zuul@notty
+zuul           1     850  0.0  0.0 253912 12352 ?        Sl   13:00:15 00:00:00 /usr/bin/python3
+root           2    1187  0.0  0.0      0     0 ?        I    13:00:20 00:00:00 [kworker/0:0-cgwb_release]
+root           2    1202  0.2  0.0      0     0 ?        I    13:00:20 00:00:02 [kworker/u16:1-events_power_efficient]
+root           2    1224  0.0  0.0      0     0 ?        I    13:00:20 00:00:00 [kworker/2:0-events]
+root           2    1302  0.0  0.0      0     0 ?        I    13:00:21 00:00:00 [kworker/7:0-events]
+root           2    1517  0.4  0.0      0     0 ?        I    13:00:26 00:00:03 [kworker/u16:6-events_unbound]
+zuul         782    1952  0.0  0.0   2892   844 ?        Ss   13:01:01 00:00:00 /bin/sh -c sudo -H -S -n  -u stack /bin/sh -c 'echo BECOME-SUCCESS-hijmavaklcfpxtcqanjstgzfiahnrnec ; /usr/bin/python3' && sleep 0
+root        1952    1953  0.0  0.0  11444  4768 ?        S    13:01:01 00:00:00 sudo -H -S -n -u stack /bin/sh -c echo BECOME-SUCCESS-hijmavaklcfpxtcqanjstgzfiahnrnec ; /usr/bin/python3
+stack       1953    1954  0.0  0.0   2892   824 ?        S    13:01:01 00:00:00 /bin/sh -c echo BECOME-SUCCESS-hijmavaklcfpxtcqanjstgzfiahnrnec ; /usr/bin/python3
+stack       1954    1955  0.2  0.1 107744 24148 ?        Sl   13:01:01 00:00:02 /usr/bin/python3
+stack       1955    1956  0.0  0.0   2892   880 ?        S    13:01:01 00:00:00 /bin/sh -c ./stack.sh 2>&1 rc=$? echo "*** FINISHED ***" exit $rc 
+stack       1956    1958  2.8  0.0  15392 11456 ?        S    13:01:01 00:00:23 bash ./stack.sh
+stack       1958    4074  0.0  0.0   9804  3396 ?        S    13:01:06 00:00:00 bash ./stack.sh
+stack       4074    4079  0.5  0.0  18188 10380 ?        S    13:01:06 00:00:04 /usr/bin/python3.10 /opt/stack/devstack/tools/outfilter.py -v --no-timestamp -o /opt/stack/logs/devstacklog.txt.2025-11-06-130106
+stack       1958    4080  0.0  0.0   9804  3396 ?        S    13:01:06 00:00:00 bash ./stack.sh
+stack       4080    4086  0.0  0.0  18120 10192 ?        S    13:01:06 00:00:00 /usr/bin/python3.10 /opt/stack/devstack/tools/outfilter.py -o /opt/stack/logs/devstacklog.txt.2025-11-06-130106.summary.2025-11-06-130106
+root           1    4613  0.0  0.1 296012 20208 ?        Ssl  13:01:10 00:00:00 /usr/libexec/packagekitd
+root           1    4617  0.0  0.0 234508  6744 ?        Ssl  13:01:10 00:00:00 /usr/libexec/polkitd --no-debug
+root           1    4768  0.0  0.0   8412  2848 ?        S    13:01:13 00:00:00 /bin/bash /usr/sbin/ksmtuned
+root           1   10324  0.0  0.2 178424 47664 ?        Ss   13:01:56 00:00:00 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -S /run/haproxy-master.sock
+haproxy    10324   10326  0.0  0.2 635136 38820 ?        Sl   13:01:56 00:00:00 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -S /run/haproxy-master.sock
+www-data       1   11079  0.0  0.0   3740   164 ?        Ss   13:02:07 00:00:00 /usr/bin/htcacheclean -d 120 -p /var/cache/apache2/mod_cache_disk -l 300M -n
+syslog         1   17913  0.5  0.0 222404  4884 ?        Ssl  13:02:28 00:00:03 /usr/sbin/rsyslogd -n -iNONE
+root           1   19329  1.2  0.6 156432 104804 ?       S<s  13:02:43 00:00:08 /lib/systemd/systemd-journald
+rabbitmq       1   20220  1.0  0.7 3243252 130728 ?      Ssl  13:03:12 00:00:07 /usr/lib/erlang/erts-12.2.1/bin/beam.smp -W w -MBas ageffcbf -MHas ageffcbf -MBlmbcs 512 -MHlmbcs 512 -MMmcs 30 -P 1048576 -t 5000000 -stbt db -zdbbl 128000 -sbwt none -sbwtdcpu none -sbwtdio none -- -root /usr/lib/erlang -progname erl -- -home /var/lib/rabbitmq -- -pa  -noshell -noinput -s rabbit boot -boot start_sasl -syslog logger [] -syslog syslog_error_logger false -kernel prevent_overlapping_partitions false
+rabbitmq   20220   20232  0.0  0.0   2780  1380 ?        Ss   13:03:12 00:00:00 erl_child_setup 65536
+epmd           1   20306  0.0  0.0   7140  1760 ?        Ss   13:03:12 00:00:00 /usr/bin/epmd -systemd
+rabbitmq   20232   20307  0.0  0.0   3740  1252 ?        Ss   13:03:12 00:00:00 inet_gethost 4
+rabbitmq   20307   20308  0.0  0.0   3740   108 ?        S    13:03:12 00:00:00 inet_gethost 4
+rabbitmq   20232   20317  0.0  0.0   2892  1728 ?        Ss   13:03:16 00:00:00 /bin/sh -s rabbit_disk_monitor
+root           2   24482  0.0  0.0      0     0 ?        I    13:04:06 00:00:00 [kworker/5:0-cgroup_destroy]
+root           2   32671  0.0  0.0      0     0 ?        I    13:05:10 00:00:00 [kworker/4:3-events]
+root           2   33472  0.0  0.0      0     0 ?        I<   13:05:30 00:00:00 [target_completi]
+root           2   33473  0.0  0.0      0     0 ?        I<   13:05:30 00:00:00 [target_submissi]
+root           2   33474  0.0  0.0      0     0 ?        I<   13:05:30 00:00:00 [xcopy_wq]
+root           2   35679  0.0  0.0      0     0 ?        I    13:05:38 00:00:00 [kworker/0:2-cgroup_destroy]
+root           2   37603  0.0  0.0      0     0 ?        I    13:06:07 00:00:00 [kworker/2:2-events]
+root           2   37629  0.0  0.0      0     0 ?        I    13:06:07 00:00:00 [kworker/3:2-events]
+root           2   37930  0.0  0.0      0     0 ?        I    13:06:10 00:00:00 [kworker/6:1-events]
+root           2   39061  0.0  0.0      0     0 ?        I    13:06:27 00:00:00 [kworker/u16:2-ext4-rsv-conversion]
+root           1   39635  0.2  0.0  15136  7008 ?        Ss   13:06:35 00:00:01 /lib/systemd/systemd-machined
+libvirt+       1   39765  0.0  0.0  10084   116 ?        S    13:06:35 00:00:00 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+root       39765   39766  0.0  0.0  10084    92 ?        S    13:06:35 00:00:00 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+root           1   41849  0.0  0.0  12924   764 ?        Ss   13:07:18 00:00:00 /sbin/iscsid
+root           1   41850  0.0  0.0  13428 12992 ?        S<Ls 13:07:18 00:00:00 /sbin/iscsid
+root           2   41855  0.0  0.0      0     0 ?        I<   13:07:18 00:00:00 [iscsi_eh]
+root           2   41856  0.0  0.0      0     0 ?        I<   13:07:18 00:00:00 [iscsi_conn_clea]
+root           2   43964  0.0  0.0      0     0 ?        I    13:07:24 00:00:00 [kworker/1:2-events]
+root           1   46103  0.4  0.1 1551116 27988 ?       Ssl  13:07:31 00:00:01 /usr/sbin/libvirtd
+root           1   46134  0.0  0.0  68812 13772 ?        Ss   13:07:31 00:00:00 /usr/sbin/virtlogd
+stack          1   49290  5.4  0.6 121840 103240 ?       Ss   13:07:52 00:00:22 /opt/stack/data/venv/bin/python3 /opt/stack/devstack/files/openstack-cli-server/openstack-cli-server
+mysql          1   49980 23.7  4.8 4911284 786028 ?      Ssl  13:08:02 00:01:34 /usr/sbin/mysqld
+root           1   50574  0.0  0.0   7896  3372 ?        Ss   13:08:05 00:00:00 /bin/bash /opt/stack/devstack/tools/memory_tracker.sh
+stack          1   51007  0.0  0.0   7764  3064 ?        Ss   13:08:07 00:00:00 /bin/bash /opt/stack/devstack/tools/file_tracker.sh
+root           1   51590  0.9  0.1 11737488 29312 ?      Ssl  13:08:09 00:00:03 /opt/stack/bin/etcd --name np0000021456 --data-dir /opt/stack/data/etcd --initial-cluster-state new --initial-cluster-token etcd-cluster-01 --initial-cluster np0000021456=http://10.19.119.52:2380 --initial-advertise-peer-urls http://10.19.119.52:2380 --advertise-client-urls http://10.19.119.52:2379 --listen-peer-urls http://0.0.0.0:2380 --listen-client-urls http://10.19.119.52:2379 --log-level=debug
+stack          1   52743  0.0  0.1  61108 16488 ?        Ss   13:08:24 00:00:00 keystoneuWSGI master
+stack      52743   52744  9.8  0.8 259312 132148 ?       Sl   13:08:24 00:00:36 keystoneuWSGI worker 1
+stack      52743   52745 10.6  0.8 259432 132324 ?       Sl   13:08:24 00:00:40 keystoneuWSGI worker 2
+root           2   67904  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfsalloc]
+root           2   67905  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfs_mru_cache]
+root           2   67906  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfs-buf/loop0]
+root           2   67907  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfs-conv/loop0]
+root           2   67908  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfs-reclaim/loo]
+root           2   67909  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfs-blockgc/loo]
+root           2   67910  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfs-inodegc/loo]
+root           2   67911  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfs-log/loop0]
+root           2   67912  0.0  0.0      0     0 ?        I<   13:10:37 00:00:00 [xfs-cil/loop0]
+root           2   67913  0.0  0.0      0     0 ?        S    13:10:37 00:00:00 [xfsaild/loop0]
+memcache       1   72704  0.0  0.0 416516  9480 ?        Ssl  13:11:55 00:00:00 /usr/bin/memcached -m 64 -p 11211 -u memcache -l 127.0.0.1 -P /var/run/memcached/memcached.pid
+root           2   72725  0.0  0.0      0     0 ?        I    13:11:55 00:00:00 [kworker/0:1-events]
+root           1   72731  0.0  0.0  12320  2508 ?        Ss   13:11:55 00:00:00 /usr/bin/rsync --daemon --no-detach
+stack          1   73113  2.0  0.3  76328 50752 ?        Ss   13:11:57 00:00:03 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-object-server /etc/swift/object-server/1.conf -v
+stack      73113   73289  0.0  0.2  76328 39332 ?        S    13:11:58 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-object-server /etc/swift/object-server/1.conf -v
+stack      73113   73290  0.1  0.2 1550968 42192 ?       Sl   13:11:58 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-object-server /etc/swift/object-server/1.conf -v
+stack          1   73525  2.0  0.3  77200 51304 ?        Ss   13:11:59 00:00:03 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-container-server /etc/swift/container-server/1.conf -v
+stack      73525   73685  0.0  0.2  77200 40676 ?        S    13:11:59 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-container-server /etc/swift/container-server/1.conf -v
+stack      73525   73687  0.0  0.2  77200 41912 ?        S    13:11:59 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-container-server /etc/swift/container-server/1.conf -v
+root           2   73910  0.0  0.0      0     0 ?        I    13:12:00 00:00:00 [kworker/u16:3-ext4-rsv-conversion]
+stack          1   73936  1.9  0.2  74376 48200 ?        Ss   13:12:01 00:00:03 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-account-server /etc/swift/account-server/1.conf -v
+stack      73936   74086  0.0  0.2  74376 38736 ?        S    13:12:01 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-account-server /etc/swift/account-server/1.conf -v
+stack      73936   74088  0.0  0.2  74376 38732 ?        S    13:12:01 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-account-server /etc/swift/account-server/1.conf -v
+stack          1   74382  0.3  0.3  78740 53256 ?        Ss   13:12:03 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-container-sync /etc/swift/container-server/1.conf
+root           2   74637  0.0  0.0      0     0 ?        I    13:12:04 00:00:00 [kworker/6:2-cgroup_destroy]
+root           1   74638  0.0  0.0  13984  8876 ?        Ss   13:12:04 00:00:00 /usr/sbin/apache2 -k start
+www-data   74638   74645  0.7  0.0 2522552 9784 ?        Sl   13:12:04 00:00:01 /usr/sbin/apache2 -k start
+www-data   74638   74646  0.7  0.0 2522664 9720 ?        Sl   13:12:04 00:00:01 /usr/sbin/apache2 -k start
+stack          1   75083  2.2  0.4  98932 70396 ?        Ss   13:12:06 00:00:03 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-proxy-server /etc/swift/proxy-server.conf -v
+stack      75083   75155  0.2  0.3  99956 63664 ?        S    13:12:07 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/swift-proxy-server /etc/swift/proxy-server.conf -v
+root           2   75573  0.0  0.0      0     0 ?        I    13:12:08 00:00:00 [kworker/2:1-events]
+stack          1   75951  0.0  0.1  61092 16572 ?        Ss   13:12:10 00:00:00 nova-apiuWSGI master
+stack      75951   75952  2.5  0.9 200976 148276 ?       S    13:12:10 00:00:03 nova-apiuWSGI worker 1
+stack      75951   75953  2.5  0.9 201312 149992 ?       S    13:12:10 00:00:03 nova-apiuWSGI worker 2
+root           2   76299  0.0  0.0      0     0 ?        I    13:12:15 00:00:00 [kworker/5:2-events]
+root           1   76576  0.0  0.0  10680  2624 ?        S<s  13:12:20 00:00:00 ovn-controller-vtep -vconsole:emer -vsyslog:err -vfile:info --vtep-db=/var/run/openvswitch/db.sock --ovnsb-db=/var/run/ovn/ovnsb_db.sock --no-chdir --log-file=/var/log/ovn/ovn-controller-vtep.log --pidfile=/var/run/ovn/ovn-controller-vtep.pid --detach
+root           1   76649  0.0  0.0  12204  7116 ?        S<s  13:12:20 00:00:00 ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach
+root           1   76697  0.4  0.6 901040 114516 ?       S<Lsl 13:12:20 00:00:00 ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/openvswitch/ovs-vswitchd.pid --detach
+root           2   76976  0.0  0.0      0     0 ?        I    13:12:22 00:00:00 [kworker/3:0-events]
+root           1   76994  0.2  0.0  12692  9956 ?        Ss   13:12:22 00:00:00 ovsdb-server -vconsole:off -vfile:info --log-file=/var/log/ovn/ovsdb-server-nb.log --remote=punix:/var/run/ovn/ovnnb_db.sock --pidfile=/var/run/ovn/ovnnb_db.pid --unixctl=/var/run/ovn/ovnnb_db.ctl --remote=db:OVN_Northbound,NB_Global,connections --private-key=db:OVN_Northbound,SSL,private_key --certificate=db:OVN_Northbound,SSL,certificate --ca-cert=db:OVN_Northbound,SSL,ca_cert --ssl-protocols=db:OVN_Northbound,SSL,ssl_protocols --ssl-ciphers=db:OVN_Northbound,SSL,ssl_ciphers /var/lib/ovn/ovnnb_db.db
+root           1   76996  0.2  0.0  13464 10796 ?        Ss   13:12:22 00:00:00 ovsdb-server -vconsole:off -vfile:info --log-file=/var/log/ovn/ovsdb-server-sb.log --remote=punix:/var/run/ovn/ovnsb_db.sock --pidfile=/var/run/ovn/ovnsb_db.pid --unixctl=/var/run/ovn/ovnsb_db.ctl --remote=db:OVN_Southbound,SB_Global,connections --private-key=db:OVN_Southbound,SSL,private_key --certificate=db:OVN_Southbound,SSL,certificate --ca-cert=db:OVN_Southbound,SSL,ca_cert --ssl-protocols=db:OVN_Southbound,SSL,ssl_protocols --ssl-ciphers=db:OVN_Southbound,SSL,ssl_ciphers /var/lib/ovn/ovnsb_db.db
+root           1   77044  0.1  0.0 163520  5188 ?        S<sl 13:12:22 00:00:00 ovn-northd -vconsole:emer -vsyslog:err -vfile:info --ovnnb-db=unix:/var/run/ovn/ovnnb_db.sock --ovnsb-db=unix:/var/run/ovn/ovnsb_db.sock --no-chdir --log-file=/var/log/ovn/ovn-northd.log --pidfile=/var/run/ovn/ovn-northd.pid --detach
+root           1   77238  0.1  0.0 237412 11500 ?        S<sl 13:12:24 00:00:00 ovn-controller unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --no-chdir --log-file=/var/log/ovn/ovn-controller.log --pidfile=/var/run/ovn/ovn-controller.pid --detach
+stack          1   77656  1.6  0.8 963684 132684 ?       Ssl  13:12:26 00:00:02 neutron-ovn-metadata-agent (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-ovn-metadata-agent --config-file /etc/neutron/neutron_ovn_metadata_agent.ini)
+root           2   77722  0.0  0.0      0     0 ?        I    13:12:26 00:00:00 [kworker/u16:4-flush-252:0]
+root           2   77725  0.0  0.0      0     0 ?        I    13:12:26 00:00:00 [kworker/u16:5-flush-252:0]
+uuidd          1   78256  0.0  0.0   9620  1484 ?        Ss   13:12:28 00:00:00 /usr/sbin/uuidd --socket-activation
+root           1   78489  0.8  0.6 192240 107852 ?       Sl   13:12:28 00:00:01 /opt/stack/data/venv/bin/python3.10 /usr/local/bin/privsep-helper --config-file /etc/neutron/neutron_ovn_metadata_agent.ini --privsep_context neutron.privileged.namespace_cmd --privsep_sock_path /tmp/tmp7darr0dg/privsep.sock
+stack          1   78602  0.0  0.1  61108 16908 ?        Ss   13:12:29 00:00:00 neutron-apiuWSGI master
+stack      78602   78603 10.7  1.2 1501076 197896 ?      Sl   13:12:29 00:00:14 neutron-apiuWSGI worker 1
+stack      78602   78604 12.1  1.2 1512924 207224 ?      Sl   13:12:29 00:00:15 neutron-apiuWSGI worker 2
+stack          1   79129  2.6  1.0 331740 165976 ?       Ssl  13:12:32 00:00:03 neutron-rpc-server: master process [/opt/stack/data/venv/bin/neutron-rpc-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini]
+stack          1   79537  2.6  0.9 325064 158424 ?       Ssl  13:12:34 00:00:03 neutron-periodic-workers: master process [/opt/stack/data/venv/bin/neutron-periodic-workers --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini]
+stack          1   79948  2.7  0.9 325024 158656 ?       Ssl  13:12:36 00:00:03 neutron-ovn-maintenance-worker: master process [/opt/stack/data/venv/bin/neutron-ovn-maintenance-worker --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini]
+root           2   80071  0.0  0.0      0     0 ?        I    13:12:36 00:00:00 [kworker/u16:7-ext4-rsv-conversion]
+root           2   80072  0.0  0.0      0     0 ?        I    13:12:36 00:00:00 [kworker/u16:8-flush-252:0]
+root           2   80074  0.0  0.0      0     0 ?        I    13:12:36 00:00:00 [kworker/u16:9-flush-252:0]
+stack      79129   80129  0.5  0.9 1077256 156500 ?      Sl   13:12:36 00:00:00 neutron-server: rpc worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-rpc-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)
+stack      79537   80430  0.0  0.8 480664 146136 ?       Sl   13:12:37 00:00:00 neutron-server: periodic worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-periodic-workers --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)
+stack      79537   80434  0.0  0.8 480684 146148 ?       Sl   13:12:37 00:00:00 neutron-server: periodic worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-periodic-workers --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)
+stack      79537   80439  0.0  0.8 480704 146036 ?       Sl   13:12:37 00:00:00 neutron-server: periodic worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-periodic-workers --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)
+stack      79537   80450  0.0  0.8 406992 143888 ?       Sl   13:12:37 00:00:00 neutron-server: periodic worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-periodic-workers --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)
+stack          1   80611  0.0  0.1  61108 16680 ?        Ss   13:12:38 00:00:00 placementuWSGI master
+stack      80611   80613  1.2  0.6 226620 99056 ?        Sl   13:12:38 00:00:01 placementuWSGI worker 1
+stack      80611   80614  1.2  0.6 226892 100288 ?       Sl   13:12:38 00:00:01 placementuWSGI worker 2
+stack      79948   80677  3.7  1.0 3590448 167208 ?      Sl   13:12:39 00:00:04 neutron-server: maintenance worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-ovn-maintenance-worker --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)
+root           1   81471  0.9  0.6 191216 108100 ?       Sl   13:12:49 00:00:01 /opt/stack/data/venv/bin/python3.10 /usr/local/bin/privsep-helper --config-file /etc/neutron/neutron_ovn_metadata_agent.ini --privsep_context neutron.privileged.default --privsep_sock_path /tmp/tmpppa6q96p/privsep.sock
+stack          1   82713  4.3  0.7 140100 124164 ?       Ss   13:13:09 00:00:03 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-scheduler --config-file /etc/nova/nova.conf
+stack          1   83230  0.0  0.1  61092 16860 ?        Ss   13:13:12 00:00:00 nova-api-metauWSGI master
+stack      83230   83231  2.6  0.7 174300 121184 ?       S    13:13:12 00:00:02 nova-api-metauWSGI worker 1
+stack      83230   83232  2.5  0.7 174704 121716 ?       S    13:13:12 00:00:02 nova-api-metauWSGI worker 2
+stack      83230   83233  0.0  0.0  61092  5560 ?        S    13:13:12 00:00:00 nova-api-metauWSGI http 1
+stack      82713   83291  0.1  0.6 141552 111148 ?       S    13:13:12 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-scheduler --config-file /etc/nova/nova.conf
+stack      82713   83293  0.1  0.6 141560 111224 ?       S    13:13:12 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-scheduler --config-file /etc/nova/nova.conf
+stack          1   83783  2.9  0.7 499172 126032 ?       Ssl  13:13:14 00:00:02 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-novncproxy --config-file /etc/nova/nova_cell1.conf --web /usr/share/novnc
+stack          1   84471  4.3  0.7 140280 124284 ?       Rs   13:13:16 00:00:03 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-conductor --config-file /etc/nova/nova.conf
+stack          1   84948  4.3  0.7 138728 123232 ?       Ss   13:13:18 00:00:03 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-conductor --config-file /etc/nova/nova_cell1.conf
+stack      84471   85037  0.1  0.6 141660 111548 ?       S    13:13:19 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-conductor --config-file /etc/nova/nova.conf
+stack      84471   85040  0.1  0.6 141664 111576 ?       S    13:13:19 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-conductor --config-file /etc/nova/nova.conf
+stack      84948   85725  0.6  0.6 143216 113492 ?       S    13:13:21 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-conductor --config-file /etc/nova/nova_cell1.conf
+stack      84948   85727  0.6  0.6 144248 113824 ?       S    13:13:21 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-conductor --config-file /etc/nova/nova_cell1.conf
+stack          1   85937  5.6  1.0 1779272 167276 ?      Ssl  13:13:22 00:00:04 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/nova-compute --config-file /etc/nova/nova-cpu.conf
+stack          1   86677  0.0  0.1  61108 16780 ?        Ss   13:13:27 00:00:00 cinder-apiuWSGI master
+stack      86677   86679  4.0  0.8 340012 140308 ?       Sl   13:13:28 00:00:02 cinder-apiuWSGI worker 1
+stack      86677   86680  4.2  0.8 339992 138560 ?       Sl   13:13:28 00:00:03 cinder-apiuWSGI worker 2
+stack          1   87362  3.0  0.7 146716 126900 ?       Ss   13:13:32 00:00:02 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/cinder-scheduler --config-file /etc/cinder/cinder.conf
+stack          1   87847  2.8  0.6 130372 112464 ?       Ss   13:13:34 00:00:01 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/cinder-backup --config-file /etc/cinder/cinder.conf
+stack          1   88290  5.1  0.7 149580 129348 ?       Ss   13:13:36 00:00:03 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/cinder-volume --config-file /etc/cinder/cinder.conf
+root           2   88378  0.0  0.0      0     0 ?        I    13:13:36 00:00:00 [kworker/u16:10-events_unbound]
+stack      88290   88417  0.2  0.7 151144 115500 ?       S    13:13:38 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/cinder-volume --config-file /etc/cinder/cinder.conf
+stack      88290   88418  0.2  0.7 151272 115528 ?       S    13:13:38 00:00:00 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/cinder-volume --config-file /etc/cinder/cinder.conf
+stack          1   88961  0.0  0.1  61092 16776 ?        Ss   13:13:41 00:00:00 glance-apiuWSGI master
+stack      88961   88962  6.3  0.8 409132 134632 ?       Sl   13:13:41 00:00:03 glance-apiuWSGI worker 1
+stack      88961   88963  5.1  0.8 408680 133812 ?       Sl   13:13:41 00:00:03 glance-apiuWSGI worker 2
+root        4768   90964  0.0  0.0   6192  1092 ?        S    13:14:14 00:00:00 sleep 60
+root       50574   92451  0.0  0.0   6192  1008 ?        S    13:14:26 00:00:00 sleep 20
+stack      51007   92825  0.0  0.0   6192  1056 ?        S    13:14:27 00:00:00 sleep 20
+stack       1958   94171  0.0  0.0  19860 12144 ?        S    13:14:40 00:00:00 /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/worlddump.py -d /opt/stack/logs
+stack      94171   94174  0.0  0.0   2892  1000 ?        S    13:14:40 00:00:00 /bin/sh -c ps axo user,ppid,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,args
+stack      94174   94175  0.0  0.0  10072  3488 ?        R    13:14:40 00:00:00 ps axo user,ppid,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,args
+
+
+Network Dump
+============
+
+bridge link
+-----------
+
+
+ip link show type bridge
+------------------------
+
+6: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:31:49:a0 brd ff:ff:ff:ff:ff:ff
+
+ip neigh
+--------
+
+10.19.119.1 dev ens4 lladdr fa:16:3e:eb:13:47 REACHABLE
+
+ip addr
+-------
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether fa:16:3e:5f:ee:96 brd ff:ff:ff:ff:ff:ff
+    altname enp0s3
+    inet 172.16.103.5/22 brd 172.16.103.255 scope global dynamic ens3
+       valid_lft 29548sec preferred_lft 29548sec
+    inet6 fe80::f816:3eff:fe5f:ee96/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1442 qdisc fq_codel state UP group default qlen 1000
+    link/ether fa:16:3e:75:02:a5 brd ff:ff:ff:ff:ff:ff
+    altname enp0s4
+    inet 10.19.119.52/24 brd 10.19.119.255 scope global dynamic ens4
+       valid_lft 29548sec preferred_lft 29548sec
+    inet6 fe80::f816:3eff:fe75:2a5/64 scope link 
+       valid_lft forever preferred_lft forever
+4: ovs-system: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether ce:1f:0a:f6:39:ad brd ff:ff:ff:ff:ff:ff
+5: br-int: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 4e:d9:dd:0c:76:54 brd ff:ff:ff:ff:ff:ff
+6: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:31:49:a0 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+7: br-ex: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether 12:3d:63:e4:31:48 brd ff:ff:ff:ff:ff:ff
+    inet 172.24.5.1/24 scope global br-ex
+       valid_lft forever preferred_lft forever
+    inet6 2001:db8::2/64 scope global 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::103d:63ff:fee4:3148/64 scope link 
+       valid_lft forever preferred_lft forever
+
+ip route
+--------
+
+default via 10.19.119.1 dev ens4 
+10.19.119.0/24 dev ens4 proto kernel scope link src 10.19.119.52 
+169.254.169.254 via 10.19.119.2 dev ens4 
+172.16.100.0/22 dev ens3 proto kernel scope link src 172.16.103.5 
+172.24.5.0/24 dev br-ex proto kernel scope link src 172.24.5.1 
+192.168.122.0/24 dev virbr0 proto kernel scope link src 192.168.122.1 linkdown 
+
+ip -6 route
+-----------
+
+::1 dev lo proto kernel metric 256 pref medium
+2001:db8::/64 dev br-ex proto kernel metric 256 pref medium
+fd4c:df8e:ab6::/56 via 2001:db8::1 dev br-ex metric 1024 pref medium
+fe80::/64 dev ens3 proto kernel metric 256 pref medium
+fe80::/64 dev ens4 proto kernel metric 256 pref medium
+fe80::/64 dev br-ex proto kernel metric 256 pref medium
+
+ip netns
+--------
+
+
+
+Open vSwitch Dump
+=================
+
+sudo ovs-vsctl show
+-------------------
+
+81b323ef-01d0-4969-b78c-3b2f9e99ac73
+    Manager "ptcp:6640:127.0.0.1"
+        is_connected: true
+    Bridge br-int
+        fail_mode: secure
+        datapath_type: system
+        Port patch-br-int-to-provnet-6b48dbf1-f74e-4a7b-82d6-d165407a8394
+            Interface patch-br-int-to-provnet-6b48dbf1-f74e-4a7b-82d6-d165407a8394
+                type: patch
+                options: {peer=patch-provnet-6b48dbf1-f74e-4a7b-82d6-d165407a8394-to-br-int}
+        Port br-int
+            Interface br-int
+                type: internal
+    Bridge br-ex
+        Port patch-provnet-6b48dbf1-f74e-4a7b-82d6-d165407a8394-to-br-int
+            Interface patch-provnet-6b48dbf1-f74e-4a7b-82d6-d165407a8394-to-br-int
+                type: patch
+                options: {peer=patch-br-int-to-provnet-6b48dbf1-f74e-4a7b-82d6-d165407a8394}
+        Port br-ex
+            Interface br-ex
+                type: internal
+    ovs_version: "2.17.9"
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 show br-ex
+-------------------------------------------------------------------------------------------------------
+
+OFPT_FEATURES_REPLY (OF1.5) (xid=0x2): dpid:0000123d63e43148
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS BUNDLES
+OFPST_PORT_DESC reply (OF1.5) (xid=0x3):
+ 1(patch-provnet-6): addr:8a:0a:76:f0:18:31
+     config:     0
+     state:      LIVE
+     speed: 0 Mbps now, 0 Mbps max
+ LOCAL(br-ex): addr:12:3d:63:e4:31:48
+     config:     0
+     state:      LIVE
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (OF1.5) (xid=0x5): frags=normal miss_send_len=0
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 show br-int
+--------------------------------------------------------------------------------------------------------
+
+OFPT_FEATURES_REPLY (OF1.5) (xid=0x2): dpid:00004ed9dd0c7654
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS BUNDLES
+OFPST_PORT_DESC reply (OF1.5) (xid=0x3):
+ 1(patch-br-int-to): addr:ae:c8:74:dc:ff:49
+     config:     0
+     state:      LIVE
+     speed: 0 Mbps now, 0 Mbps max
+ LOCAL(br-int): addr:4e:d9:dd:0c:76:54
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (OF1.5) (xid=0x5): frags=normal miss_send_len=0
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports-desc br-ex
+------------------------------------------------------------------------------------------------------------------
+
+OFPST_PORT_DESC reply (OF1.5) (xid=0x2):
+ 1(patch-provnet-6): addr:8a:0a:76:f0:18:31
+     config:     0
+     state:      LIVE
+     speed: 0 Mbps now, 0 Mbps max
+ LOCAL(br-ex): addr:12:3d:63:e4:31:48
+     config:     0
+     state:      LIVE
+     speed: 0 Mbps now, 0 Mbps max
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports-desc br-int
+-------------------------------------------------------------------------------------------------------------------
+
+OFPST_PORT_DESC reply (OF1.5) (xid=0x2):
+ 1(patch-br-int-to): addr:ae:c8:74:dc:ff:49
+     config:     0
+     state:      LIVE
+     speed: 0 Mbps now, 0 Mbps max
+ LOCAL(br-int): addr:4e:d9:dd:0c:76:54
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports br-ex
+-------------------------------------------------------------------------------------------------------------
+
+OFPST_PORT reply (OF1.5) (xid=0x2): 2 ports
+  port LOCAL: rx pkts=5, bytes=140, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=11, bytes=1142, drop=0, errs=0, coll=0
+           duration=139.486s
+  port  1: rx pkts=5, bytes=210, drop=?, errs=?, frame=?, over=?, crc=?
+           tx pkts=11, bytes=1142, drop=?, errs=?, coll=?
+           duration=100.524s
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports br-int
+--------------------------------------------------------------------------------------------------------------
+
+OFPST_PORT reply (OF1.5) (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+           duration=139.913s
+  port  1: rx pkts=11, bytes=1142, drop=?, errs=?, frame=?, over=?, crc=?
+           tx pkts=5, bytes=210, drop=?, errs=?, coll=?
+           duration=100.544s
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-flows br-ex
+-------------------------------------------------------------------------------------------------------------
+
+OFPST_FLOW reply (OF1.5) (xid=0x2):
+ cookie=0x0, duration=139.526s, table=0, n_packets=16, n_bytes=1352, idle_age=84, priority=0 actions=NORMAL
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-flows br-int
+--------------------------------------------------------------------------------------------------------------
+
+OFPST_FLOW reply (OF1.5) (xid=0x2): flags=[more]
+ cookie=0xcf95aa9a, duration=100.580s, table=0, n_packets=0, n_bytes=0, idle_age=100, priority=180,vlan_tci=0x0000/0x1000 actions=conjunction(100,2/2)
+ cookie=0xcf95aa9a, duration=100.580s, table=0, n_packets=0, n_bytes=0, idle_age=100, priority=180,conj_id=100,in_port=1,vlan_tci=0x0000/0x1000 actions=set_field:0x8->reg13,set_field:0x3->reg11,set_field:0x2->reg12,set_field:0x3->metadata,set_field:0x1->reg14,set_field:fa:16:3e:80:13:dc->eth_src,resubmit(,8)
+ cookie=0x178376ff, duration=100.580s, table=0, n_packets=0, n_bytes=0, idle_age=100, priority=100,in_port=1,dl_vlan=0 actions=pop_vlan,set_field:0x8->reg13,set_field:0x3->reg11,set_field:0x2->reg12,set_field:0x3->metadata,set_field:0x1->reg14,resubmit(,8)
+ cookie=0x178376ff, duration=100.580s, table=0, n_packets=11, n_bytes=1142, idle_age=92, priority=100,in_port=1,vlan_tci=0x0000/0x1000 actions=set_field:0x8->reg13,set_field:0x3->reg11,set_field:0x2->reg12,set_field:0x3->metadata,set_field:0x1->reg14,resubmit(,8)
+ cookie=0x49c481c0, duration=100.590s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=100,metadata=0x3,vlan_tci=0x1000/0x1000 actions=drop
+ cookie=0x49c481c0, duration=100.589s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=100,metadata=0x1,vlan_tci=0x1000/0x1000 actions=drop
+ cookie=0x4eb3c351, duration=100.581s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=100,metadata=0x2,vlan_tci=0x1000/0x1000 actions=drop
+ cookie=0xe697bd42, duration=100.589s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=100,metadata=0x3,dl_src=01:00:00:00:00:00/01:00:00:00:00:00 actions=drop
+ cookie=0xe697bd42, duration=100.586s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=100,metadata=0x1,dl_src=01:00:00:00:00:00/01:00:00:00:00:00 actions=drop
+ cookie=0x4eb3c351, duration=100.581s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=100,metadata=0x2,dl_src=01:00:00:00:00:00/01:00:00:00:00:00 actions=drop
+ cookie=0x512af411, duration=100.582s, table=8, n_packets=11, n_bytes=1142, idle_age=92, priority=50,reg14=0x2,metadata=0x2,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=check_pkt_larger(1456)->OXM_OF_PKT_REG4[1],set_field:0xfa163e8013dc0000000000000000/0xffffffffffff0000000000000000->xxreg0,resubmit(,9)
+ cookie=0xbde55ec1, duration=100.581s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg14=0x1,metadata=0x2,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=set_field:0xfa163e6166aa0000000000000000/0xffffffffffff0000000000000000->xxreg0,resubmit(,9)
+ cookie=0x5ab04f11, duration=96.881s, table=8, n_packets=0, n_bytes=0, idle_age=96, priority=50,reg14=0x4,metadata=0x2,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=set_field:0xfa163eada2950000000000000000/0xffffffffffff0000000000000000->xxreg0,resubmit(,9)
+ cookie=0x53352418, duration=100.581s, table=8, n_packets=11, n_bytes=1142, idle_age=92, priority=50,reg14=0x1,metadata=0x3 actions=resubmit(,9)
+ cookie=0x46b1be2e, duration=100.581s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg14=0x2,metadata=0x1 actions=resubmit(,9)
+ cookie=0x1c48e38, duration=100.581s, table=8, n_packets=5, n_bytes=210, idle_age=84, priority=50,reg14=0x3,metadata=0x3 actions=resubmit(,9)
+ cookie=0x51dff8b5, duration=97.396s, table=8, n_packets=0, n_bytes=0, idle_age=97, priority=50,reg14=0x3,metadata=0x1 actions=resubmit(,9)
+ cookie=0x8d72266f, duration=100.581s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg14=0x2,metadata=0x2,dl_dst=fa:16:3e:80:13:dc actions=check_pkt_larger(1456)->OXM_OF_PKT_REG4[1],set_field:0xfa163e8013dc0000000000000000/0xffffffffffff0000000000000000->xxreg0,resubmit(,9)
+ cookie=0xcaa08ff0, duration=100.581s, table=8, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg14=0x1,metadata=0x2,dl_dst=fa:16:3e:61:66:aa actions=set_field:0xfa163e6166aa0000000000000000/0xffffffffffff0000000000000000->xxreg0,resubmit(,9)
+ cookie=0x21bf5deb, duration=96.881s, table=8, n_packets=0, n_bytes=0, idle_age=96, priority=50,reg14=0x4,metadata=0x2,dl_dst=fa:16:3e:ad:a2:95 actions=set_field:0xfa163eada2950000000000000000/0xffffffffffff0000000000000000->xxreg0,resubmit(,9)
+ cookie=0xde0ab419, duration=100.581s, table=9, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x2,ipv6_src=fe80::/10,ipv6_dst=ff00::/8,nw_ttl=255,icmp_type=136,icmp_code=0 actions=push:NXM_NX_XXREG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ND_TLL[],push:NXM_NX_ND_TARGET[],pop:NXM_NX_XXREG0[],pop:NXM_OF_ETH_SRC[],set_field:0/0x40->reg10,resubmit(,67),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[2],pop:NXM_OF_ETH_SRC[],pop:NXM_NX_XXREG0[],push:NXM_NX_REG15[],push:NXM_NX_XXREG0[],push:NXM_NX_ND_TARGET[],push:NXM_NX_REG14[],pop:NXM_NX_REG15[],pop:NXM_NX_XXREG0[],push:NXM_OF_ETH_DST[],set_field:0/0x40->reg10,resubmit(,66),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[3],pop:NXM_OF_ETH_DST[],pop:NXM_NX_XXREG0[],pop:NXM_NX_REG15[],resubmit(,10)
+ cookie=0x8cdf3eb4, duration=100.581s, table=9, n_packets=0, n_bytes=0, idle_age=100, priority=110,arp,reg14=0x1,metadata=0x2,arp_spa=10.1.0.0/26,arp_tpa=10.1.0.1,arp_op=1 actions=push:NXM_NX_REG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],pop:NXM_NX_REG0[],pop:NXM_OF_ETH_SRC[],set_field:0/0x40->reg10,resubmit(,67),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[2],pop:NXM_OF_ETH_SRC[],pop:NXM_NX_REG0[],set_field:0x8/0x8->xreg4,resubmit(,10)
+ cookie=0x7821955e, duration=100.581s, table=9, n_packets=0, n_bytes=0, idle_age=100, priority=110,arp,reg14=0x2,metadata=0x2,arp_spa=172.24.5.0/24,arp_tpa=172.24.5.15,arp_op=1 actions=push:NXM_NX_REG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],pop:NXM_NX_REG0[],pop:NXM_OF_ETH_SRC[],set_field:0/0x40->reg10,resubmit(,67),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[2],pop:NXM_OF_ETH_SRC[],pop:NXM_NX_REG0[],set_field:0x8/0x8->xreg4,resubmit(,10)
+ cookie=0x57a3584, duration=100.582s, table=9, n_packets=0, n_bytes=0, idle_age=100, priority=100,arp,reg14=0x2,metadata=0x2,arp_spa=172.24.5.0/24,arp_op=1 actions=push:NXM_NX_REG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],pop:NXM_NX_REG0[],pop:NXM_OF_ETH_SRC[],set_field:0/0x40->reg10,resubmit(,67),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[2],pop:NXM_OF_ETH_SRC[],pop:NXM_NX_REG0[],push:NXM_NX_REG15[],push:NXM_NX_REG0[],push:NXM_OF_ARP_SPA[],push:NXM_NX_REG14[],pop:NXM_NX_REG15[],pop:NXM_NX_REG0[],push:NXM_OF_ETH_DST[],set_field:0/0x40->reg10,resubmit(,66),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[3],pop:NXM_OF_ETH_DST[],pop:NXM_NX_REG0[],pop:NXM_NX_REG15[],resubmit(,10)
+ cookie=0xd7a0faaa, duration=100.581s, table=9, n_packets=4, n_bytes=344, idle_age=92, priority=100,icmp6,metadata=0x2,nw_ttl=255,icmp_type=135,icmp_code=0 actions=push:NXM_NX_XXREG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ND_SLL[],push:NXM_NX_IPV6_SRC[],pop:NXM_NX_XXREG0[],pop:NXM_OF_ETH_SRC[],set_field:0/0x40->reg10,resubmit(,67),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[2],pop:NXM_OF_ETH_SRC[],pop:NXM_NX_XXREG0[],push:NXM_NX_REG15[],push:NXM_NX_XXREG0[],push:NXM_NX_IPV6_SRC[],push:NXM_NX_REG14[],pop:NXM_NX_REG15[],pop:NXM_NX_XXREG0[],push:NXM_OF_ETH_DST[],set_field:0/0x40->reg10,resubmit(,66),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[3],pop:NXM_OF_ETH_DST[],pop:NXM_NX_XXREG0[],pop:NXM_NX_REG15[],resubmit(,10)
+ cookie=0x3f659134, duration=100.581s, table=9, n_packets=0, n_bytes=0, idle_age=100, priority=100,icmp6,metadata=0x2,nw_ttl=255,icmp_type=136,icmp_code=0 actions=push:NXM_NX_XXREG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ND_TLL[],push:NXM_NX_ND_TARGET[],pop:NXM_NX_XXREG0[],pop:NXM_OF_ETH_SRC[],set_field:0/0x40->reg10,resubmit(,67),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[2],pop:NXM_OF_ETH_SRC[],pop:NXM_NX_XXREG0[],set_field:0x8/0x8->xreg4,resubmit(,10)
+ cookie=0xefaef2c, duration=100.581s, table=9, n_packets=0, n_bytes=0, idle_age=100, priority=100,arp,reg14=0x1,metadata=0x2,arp_spa=10.1.0.0/26,arp_op=1 actions=push:NXM_NX_REG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],pop:NXM_NX_REG0[],pop:NXM_OF_ETH_SRC[],set_field:0/0x40->reg10,resubmit(,67),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[2],pop:NXM_OF_ETH_SRC[],pop:NXM_NX_REG0[],push:NXM_NX_REG15[],push:NXM_NX_REG0[],push:NXM_OF_ARP_SPA[],push:NXM_NX_REG14[],pop:NXM_NX_REG15[],pop:NXM_NX_REG0[],push:NXM_OF_ETH_DST[],set_field:0/0x40->reg10,resubmit(,66),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[3],pop:NXM_OF_ETH_DST[],pop:NXM_NX_REG0[],pop:NXM_NX_REG15[],resubmit(,10)
+ cookie=0xf1aa11d0, duration=100.581s, table=9, n_packets=0, n_bytes=0, idle_age=100, priority=100,arp,metadata=0x2,arp_op=2 actions=push:NXM_NX_REG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],pop:NXM_NX_REG0[],pop:NXM_OF_ETH_SRC[],set_field:0/0x40->reg10,resubmit(,67),move:NXM_NX_REG10[6]->OXM_OF_PKT_REG4[2],pop:NXM_OF_ETH_SRC[],pop:NXM_NX_REG0[],set_field:0x8/0x8->xreg4,resubmit(,10)
+ cookie=0xf5185bde, duration=100.589s, table=9, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,10)
+ cookie=0xf5185bde, duration=100.586s, table=9, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,10)
+ cookie=0xf7a58fac, duration=100.581s, table=9, n_packets=18, n_bytes=1940, idle_age=92, priority=0,metadata=0x2 actions=set_field:0x4/0x4->xreg4,resubmit(,10)
+ cookie=0x3760b1c2, duration=100.581s, table=10, n_packets=22, n_bytes=2284, idle_age=92, priority=100,reg9=0/0x8,metadata=0x2 actions=resubmit(,11)
+ cookie=0x3760b1c2, duration=100.581s, table=10, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg9=0x4/0x4,metadata=0x2 actions=resubmit(,11)
+ cookie=0x8975b004, duration=100.582s, table=10, n_packets=0, n_bytes=0, idle_age=100, priority=95,icmp6,metadata=0x2,ipv6_src=::,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,11)
+ cookie=0x8975b004, duration=100.582s, table=10, n_packets=0, n_bytes=0, idle_age=100, priority=95,icmp6,metadata=0x2,nw_ttl=255,icmp_type=135,icmp_code=0,nd_sll=00:00:00:00:00:00 actions=resubmit(,11)
+ cookie=0xedca0fca, duration=100.581s, table=10, n_packets=0, n_bytes=0, idle_age=100, priority=95,icmp6,metadata=0x2,nw_ttl=255,icmp_type=136,icmp_code=0,nd_tll=00:00:00:00:00:00 actions=push:NXM_NX_XXREG0[],push:NXM_NX_ND_TARGET[],pop:NXM_NX_XXREG0[],controller(userdata=00.00.00.04.00.00.00.00),pop:NXM_NX_XXREG0[],resubmit(,11)
+ cookie=0x345e97aa, duration=100.581s, table=10, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp6,metadata=0x2,nw_ttl=255,icmp_type=135,icmp_code=0 actions=push:NXM_NX_XXREG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ND_SLL[],push:NXM_NX_IPV6_SRC[],pop:NXM_NX_XXREG0[],pop:NXM_OF_ETH_SRC[],controller(userdata=00.00.00.04.00.00.00.00),pop:NXM_OF_ETH_SRC[],pop:NXM_NX_XXREG0[],resubmit(,11)
+ cookie=0x14715fdc, duration=100.581s, table=10, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp6,metadata=0x2,nw_ttl=255,icmp_type=136,icmp_code=0 actions=push:NXM_NX_XXREG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ND_TLL[],push:NXM_NX_ND_TARGET[],pop:NXM_NX_XXREG0[],pop:NXM_OF_ETH_SRC[],controller(userdata=00.00.00.04.00.00.00.00),pop:NXM_OF_ETH_SRC[],pop:NXM_NX_XXREG0[],resubmit(,11)
+ cookie=0x97a550d2, duration=100.581s, table=10, n_packets=0, n_bytes=0, idle_age=100, priority=90,arp,metadata=0x2 actions=push:NXM_NX_REG0[],push:NXM_OF_ETH_SRC[],push:NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],pop:NXM_NX_REG0[],pop:NXM_OF_ETH_SRC[],controller(userdata=00.00.00.01.00.00.00.00),pop:NXM_OF_ETH_SRC[],pop:NXM_NX_REG0[],resubmit(,11)
+ cookie=0x1aaceecf, duration=100.590s, table=10, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,11)
+ cookie=0x1aaceecf, duration=100.589s, table=10, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,11)
+ cookie=0x9ab2cf75, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=150,ip,reg9=0x2/0x3,reg14=0x2,metadata=0x2 actions=controller(userdata=00.00.00.0e.00.00.00.00.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.01.00.00.00.00.00.00.00.01.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.00.00.00.00.00.00.00.00.02.00.19.00.10.80.00.06.06.fa.16.3e.80.13.dc.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.80.00.16.04.80.00.18.04.00.00.00.00.00.19.00.10.80.00.16.04.ac.18.05.0f.00.00.00.00.00.19.00.10.00.01.3a.01.ff.00.00.00.00.00.00.00.00.19.00.10.80.00.26.01.03.00.00.00.00.00.00.00.00.19.00.10.80.00.28.01.04.00.00.00.00.00.00.00.ff.ff.00.28.00.00.23.20.00.25.00.00.00.00.00.00.00.03.00.0e.00.00.00.0d.00.00.00.00.05.a2.00.00.00.04.00.04.00.00.00.00.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.08.00.00.00)
+ cookie=0x48302584, duration=94.301s, table=11, n_packets=4, n_bytes=556, idle_age=92, priority=150,ipv6,reg9=0x2/0x3,reg14=0x2,metadata=0x2 actions=controller(userdata=00.00.00.14.00.00.00.00.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.01.00.00.00.00.00.00.00.01.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.00.00.00.00.00.00.00.00.02.00.19.00.10.80.00.06.06.fa.16.3e.80.13.dc.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.34.10.80.00.36.10.00.00.00.00.00.19.00.18.80.00.34.10.20.01.0d.b8.00.00.00.00.00.00.00.00.00.00.00.01.00.19.00.10.00.01.3a.01.ff.00.00.00.00.00.00.00.00.19.00.10.80.00.3a.01.02.00.00.00.00.00.00.00.00.19.00.10.80.00.3c.01.00.00.00.00.00.00.00.00.ff.ff.00.28.00.00.23.20.00.25.00.00.00.00.00.00.00.03.00.10.00.00.00.15.00.00.00.00.00.00.05.a2.00.04.00.04.00.00.00.00.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.08.00.00.00)
+ cookie=0xebbf7942, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=120,ip,reg14=0x2,metadata=0x2,nw_src=172.24.5.15 actions=resubmit(,12)
+ cookie=0xb8ad7084, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,udp6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fe80:13dc,tp_src=547,tp_dst=546 actions=set_field:0/0xffffffff000000000000000000000000->xxreg0,controller(userdata=00.00.00.13.00.00.00.00)
+ cookie=0x3ae45208, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,udp6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fe61:66aa,tp_src=547,tp_dst=546 actions=set_field:0/0xffffffff000000000000000000000000->xxreg0,controller(userdata=00.00.00.13.00.00.00.00)
+ cookie=0x36e0587a, duration=100.580s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fe61:66aa,icmp_type=128,icmp_code=0 actions=push:NXM_NX_IPV6_SRC[],push:NXM_NX_IPV6_DST[],pop:NXM_NX_IPV6_SRC[],pop:NXM_NX_IPV6_DST[],set_field:255->nw_ttl,set_field:129->icmpv6_type,set_field:0x1/0x1->reg10,resubmit(,12)
+ cookie=0x460d0a0a, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=100,udp6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fead:a295,tp_src=547,tp_dst=546 actions=set_field:0/0xffffffff000000000000000000000000->xxreg0,controller(userdata=00.00.00.13.00.00.00.00)
+ cookie=0xaf6b356a, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=90,icmp6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fead:a295,icmp_type=128,icmp_code=0 actions=push:NXM_NX_IPV6_SRC[],push:NXM_NX_IPV6_DST[],pop:NXM_NX_IPV6_SRC[],pop:NXM_NX_IPV6_DST[],set_field:255->nw_ttl,set_field:129->icmpv6_type,set_field:0x1/0x1->reg10,resubmit(,12)
+ cookie=0xaf6b356a, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=90,icmp6,metadata=0x2,ipv6_dst=fd4c:df8e:ab6::1,icmp_type=128,icmp_code=0 actions=push:NXM_NX_IPV6_SRC[],push:NXM_NX_IPV6_DST[],pop:NXM_NX_IPV6_SRC[],pop:NXM_NX_IPV6_DST[],set_field:255->nw_ttl,set_field:129->icmpv6_type,set_field:0x1/0x1->reg10,resubmit(,12)
+ cookie=0x5eebb8fa, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=100,udp6,metadata=0x2,ipv6_dst=fd4c:df8e:ab6::1,tp_src=547,tp_dst=546 actions=set_field:0/0xffffffff000000000000000000000000->xxreg0,controller(userdata=00.00.00.13.00.00.00.00)
+ cookie=0xed01356, duration=94.301s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=90,icmp6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fe80:13dc,icmp_type=128,icmp_code=0 actions=push:NXM_NX_IPV6_SRC[],push:NXM_NX_IPV6_DST[],pop:NXM_NX_IPV6_SRC[],pop:NXM_NX_IPV6_DST[],set_field:255->nw_ttl,set_field:129->icmpv6_type,set_field:0x1/0x1->reg10,resubmit(,12)
+ cookie=0xed01356, duration=94.301s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=90,icmp6,metadata=0x2,ipv6_dst=2001:db8::1,icmp_type=128,icmp_code=0 actions=push:NXM_NX_IPV6_SRC[],push:NXM_NX_IPV6_DST[],pop:NXM_NX_IPV6_SRC[],pop:NXM_NX_IPV6_DST[],set_field:255->nw_ttl,set_field:129->icmpv6_type,set_field:0x1/0x1->reg10,resubmit(,12)
+ cookie=0x1665b65c, duration=94.301s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=100,udp6,metadata=0x2,ipv6_dst=2001:db8::1,tp_src=547,tp_dst=546 actions=set_field:0/0xffffffff000000000000000000000000->xxreg0,controller(userdata=00.00.00.13.00.00.00.00)
+ cookie=0x5681b292, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg9=0/0x1,metadata=0x2,nw_src=10.1.0.63 actions=drop
+ cookie=0x5681b292, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg9=0/0x1,metadata=0x2,nw_src=10.1.0.1 actions=drop
+ cookie=0x5b7bf1d7, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg9=0/0x1,metadata=0x2,nw_src=172.24.5.15 actions=drop
+ cookie=0x5b7bf1d7, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg9=0/0x1,metadata=0x2,nw_src=172.24.5.255 actions=drop
+ cookie=0x816c34df, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,metadata=0x2,nw_dst=0.0.0.0/8 actions=drop
+ cookie=0x816c34df, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,metadata=0x2,nw_dst=127.0.0.0/8 actions=drop
+ cookie=0x816c34df, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,metadata=0x2,nw_src=255.255.255.255 actions=drop
+ cookie=0x816c34df, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,metadata=0x2,nw_src=0.0.0.0/8 actions=drop
+ cookie=0x816c34df, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,metadata=0x2,nw_src=127.0.0.0/8 actions=drop
+ cookie=0x816c34df, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,metadata=0x2,nw_src=224.0.0.0/4 actions=drop
+ cookie=0xc38e97c2, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=91,arp,reg14=0x2,metadata=0x2,arp_tpa=172.24.5.15,arp_op=1 actions=drop
+ cookie=0xac44fa5f, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=92,arp,reg14=0x2,metadata=0x2,arp_tpa=172.24.5.15,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],move:NXM_NX_XXREG0[64..111]->NXM_OF_ETH_SRC[],set_field:2->arp_op,move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],move:NXM_NX_XXREG0[64..111]->NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],push:NXM_OF_ARP_TPA[],pop:NXM_OF_ARP_SPA[],pop:NXM_OF_ARP_TPA[],move:NXM_NX_REG14[]->NXM_NX_REG15[],set_field:0x1/0x1->reg10,resubmit(,37)
+ cookie=0x92b7e308, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,arp,reg14=0x2,metadata=0x2,arp_spa=172.24.5.0/24,arp_tpa=172.24.5.15,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],move:NXM_NX_XXREG0[64..111]->NXM_OF_ETH_SRC[],set_field:2->arp_op,move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],move:NXM_NX_XXREG0[64..111]->NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],push:NXM_OF_ARP_TPA[],pop:NXM_OF_ARP_SPA[],pop:NXM_OF_ARP_TPA[],move:NXM_NX_REG14[]->NXM_NX_REG15[],set_field:0x1/0x1->reg10,resubmit(,37)
+ cookie=0x726db48a, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp6,reg14=0x2,metadata=0x2,ipv6_dst=ff02::1:ff80:13dc,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe80:13dc actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x726db48a, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp6,reg14=0x2,metadata=0x2,ipv6_dst=fe80::f816:3eff:fe80:13dc,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe80:13dc actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x1b196897, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp6,reg14=0x1,metadata=0x2,ipv6_dst=fe80::f816:3eff:fe61:66aa,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe61:66aa actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x1b196897, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp6,reg14=0x1,metadata=0x2,ipv6_dst=ff02::1:ff61:66aa,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe61:66aa actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x641adec0, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=90,icmp6,reg14=0x4,metadata=0x2,ipv6_dst=fd4c:df8e:ab6::1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6::1 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x641adec0, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=90,icmp6,reg14=0x4,metadata=0x2,ipv6_dst=ff02::1:ff00:1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6::1 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x6e28c668, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=90,icmp6,reg14=0x4,metadata=0x2,ipv6_dst=fe80::f816:3eff:fead:a295,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fead:a295 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x6e28c668, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=90,icmp6,reg14=0x4,metadata=0x2,ipv6_dst=ff02::1:ffad:a295,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fead:a295 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x4798fd80, duration=94.301s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=90,icmp6,reg14=0x2,metadata=0x2,ipv6_dst=2001:db8::1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=2001:db8::1 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x4798fd80, duration=94.301s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=90,icmp6,reg14=0x2,metadata=0x2,ipv6_dst=ff02::1:ff00:1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=2001:db8::1 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.08.06.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.3e.10.80.00.34.10.00.00.00.00.00.1c.00.18.00.30.00.40.00.00.00.00.00.01.de.10.80.00.42.06.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0xc99d388c, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp,metadata=0x2,nw_dst=172.24.5.15,icmp_type=8,icmp_code=0 actions=push:NXM_OF_IP_SRC[],push:NXM_OF_IP_DST[],pop:NXM_OF_IP_SRC[],pop:NXM_OF_IP_DST[],set_field:255->nw_ttl,set_field:0->icmp_type,set_field:0x1/0x1->reg10,resubmit(,12)
+ cookie=0x252371f6, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,icmp,metadata=0x2,nw_dst=10.1.0.1,icmp_type=8,icmp_code=0 actions=push:NXM_OF_IP_SRC[],push:NXM_OF_IP_DST[],pop:NXM_OF_IP_SRC[],pop:NXM_OF_IP_DST[],set_field:255->nw_ttl,set_field:0->icmp_type,set_field:0x1/0x1->reg10,resubmit(,12)
+ cookie=0x8292db58, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,arp,metadata=0x2,arp_tpa=172.24.5.15,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],move:NXM_NX_XXREG0[64..111]->NXM_OF_ETH_SRC[],set_field:2->arp_op,move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],move:NXM_NX_XXREG0[64..111]->NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],push:NXM_OF_ARP_TPA[],pop:NXM_OF_ARP_SPA[],pop:NXM_OF_ARP_TPA[],move:NXM_NX_REG14[]->NXM_NX_REG15[],set_field:0x1/0x1->reg10,resubmit(,37)
+ cookie=0x5a94dafe, duration=100.580s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=90,arp,reg14=0x1,metadata=0x2,arp_spa=10.1.0.0/26,arp_tpa=10.1.0.1,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],move:NXM_NX_XXREG0[64..111]->NXM_OF_ETH_SRC[],set_field:2->arp_op,move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],move:NXM_NX_XXREG0[64..111]->NXM_NX_ARP_SHA[],push:NXM_OF_ARP_SPA[],push:NXM_OF_ARP_TPA[],pop:NXM_OF_ARP_SPA[],pop:NXM_OF_ARP_TPA[],move:NXM_NX_REG14[]->NXM_NX_REG15[],set_field:0x1/0x1->reg10,resubmit(,37)
+ cookie=0xa1c3813, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=85,icmp6,metadata=0x2,nw_ttl=255,icmp_type=136,icmp_code=0 actions=drop
+ cookie=0xa1c3813, duration=100.582s, table=11, n_packets=2, n_bytes=172, idle_age=92, priority=85,icmp6,metadata=0x2,nw_ttl=255,icmp_type=135,icmp_code=0 actions=drop
+ cookie=0xccf193f7, duration=100.580s, table=11, n_packets=2, n_bytes=140, idle_age=94, priority=84,icmp6,metadata=0x2,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,12)
+ cookie=0xccf193f7, duration=100.580s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=84,icmp6,metadata=0x2,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,12)
+ cookie=0xa1c3813, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=85,arp,metadata=0x2 actions=drop
+ cookie=0x1a2a4049, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=83,ipv6,metadata=0x2,ipv6_dst=ff00::/fff0:ffff:ffff:ffff:ffff:ffff:ffff:ffff actions=drop
+ cookie=0x639b28f1, duration=100.581s, table=11, n_packets=7, n_bytes=830, idle_age=92, priority=82,ipv6,metadata=0x2,dl_dst=33:33:00:00:00:00/ff:ff:00:00:00:00,ipv6_dst=ff00::/8 actions=drop
+ cookie=0x639b28f1, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=82,ip,metadata=0x2,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00,nw_dst=224.0.0.0/4 actions=drop
+ cookie=0xb88f065d, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=60,ip,metadata=0x2,nw_dst=10.1.0.1 actions=drop
+ cookie=0x3d6fecf3, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=60,ipv6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fe61:66aa actions=drop
+ cookie=0x21e8b75c, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=60,ipv6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fead:a295 actions=drop
+ cookie=0x21e8b75c, duration=96.881s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=60,ipv6,metadata=0x2,ipv6_dst=fd4c:df8e:ab6::1 actions=drop
+ cookie=0x20ec2791, duration=94.301s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=60,ipv6,metadata=0x2,ipv6_dst=2001:db8::1 actions=drop
+ cookie=0x20ec2791, duration=94.301s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=60,ipv6,metadata=0x2,ipv6_dst=fe80::f816:3eff:fe80:13dc actions=drop
+ cookie=0xfb413339, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=50,metadata=0x2,dl_dst=ff:ff:ff:ff:ff:ff actions=drop
+ cookie=0x86d85d63, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=32,ip,metadata=0x2,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00,nw_dst=224.0.0.0/4,nw_ttl=0,nw_frag=not_later actions=drop
+ cookie=0x86d85d63, duration=100.581s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=32,ip,metadata=0x2,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00,nw_dst=224.0.0.0/4,nw_ttl=1,nw_frag=not_later actions=drop
+ cookie=0x86d85d63, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=32,ipv6,metadata=0x2,dl_dst=33:33:00:00:00:00/ff:ff:00:00:00:00,ipv6_dst=ff00::/8,nw_ttl=0,nw_frag=not_later actions=drop
+ cookie=0x86d85d63, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=32,ipv6,metadata=0x2,dl_dst=33:33:00:00:00:00/ff:ff:00:00:00:00,ipv6_dst=ff00::/8,nw_ttl=1,nw_frag=not_later actions=drop
+ cookie=0x271e6707, duration=100.583s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=31,ip,reg14=0x1,metadata=0x2,nw_ttl=0,nw_frag=not_later actions=controller(userdata=00.00.00.0a.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.02.06.00.30.00.00.00.00.00.00.00.19.00.10.80.00.26.01.0b.00.00.00.00.00.00.00.00.19.00.10.80.00.28.01.00.00.00.00.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.80.00.16.04.80.00.18.04.00.00.00.00.00.19.00.10.80.00.16.04.0a.01.00.01.00.00.00.00.00.19.00.10.00.01.3a.01.fe.00.00.00.00.00.00.00.00.19.00.10.00.01.1e.04.00.00.00.01.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x271e6707, duration=100.583s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=31,ip,reg14=0x1,metadata=0x2,nw_ttl=1,nw_frag=not_later actions=controller(userdata=00.00.00.0a.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.02.06.00.30.00.00.00.00.00.00.00.19.00.10.80.00.26.01.0b.00.00.00.00.00.00.00.00.19.00.10.80.00.28.01.00.00.00.00.00.00.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.80.00.16.04.80.00.18.04.00.00.00.00.00.19.00.10.80.00.16.04.0a.01.00.01.00.00.00.00.00.19.00.10.00.01.3a.01.fe.00.00.00.00.00.00.00.00.19.00.10.00.01.1e.04.00.00.00.01.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x99df821a, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=31,ip,reg14=0x2,metadata=0x2,nw_ttl=0,nw_frag=not_later actions=controller(userdata=00.00.00.0a.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.02.06.00.30.00.00.00.00.00.00.00.19.00.10.80.00.26.01.0b.00.00.00.00.00.00.00.00.19.00.10.80.00.28.01.00.00.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.0e.04.00.20.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.10.04.00.20.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.0e.04.00.20.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.10.04.00.20.00.00.00.00.00.00.00.19.00.10.00.01.3a.01.fe.00.00.00.00.00.00.00.00.19.00.10.00.01.1e.04.00.00.00.02.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x99df821a, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=31,ip,reg14=0x2,metadata=0x2,nw_ttl=1,nw_frag=not_later actions=controller(userdata=00.00.00.0a.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.02.06.00.30.00.00.00.00.00.00.00.19.00.10.80.00.26.01.0b.00.00.00.00.00.00.00.00.19.00.10.80.00.28.01.00.00.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.0e.04.00.20.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.10.04.00.20.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.0e.04.00.20.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.10.04.00.20.00.00.00.00.00.00.00.19.00.10.00.01.3a.01.fe.00.00.00.00.00.00.00.00.19.00.10.00.01.1e.04.00.00.00.02.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x8ba4beac, duration=96.882s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=31,ipv6,reg14=0x4,metadata=0x2,ipv6_src=fd4c:df8e:ab6::/64,nw_ttl=1,nw_frag=not_later actions=controller(userdata=00.00.00.0a.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.02.06.00.30.00.00.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.34.10.80.00.36.10.00.00.00.00.00.19.00.18.80.00.34.10.fd.4c.df.8e.0a.b6.00.00.00.00.00.00.00.00.00.01.00.19.00.10.00.01.3a.01.fe.00.00.00.00.00.00.00.00.19.00.10.80.00.3a.01.03.00.00.00.00.00.00.00.00.19.00.10.80.00.3c.01.00.00.00.00.00.00.00.00.00.19.00.10.00.01.1e.04.00.00.00.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x8ba4beac, duration=96.882s, table=11, n_packets=0, n_bytes=0, idle_age=96, priority=31,ipv6,reg14=0x4,metadata=0x2,ipv6_src=fd4c:df8e:ab6::/64,nw_ttl=0,nw_frag=not_later actions=controller(userdata=00.00.00.0a.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.02.06.00.30.00.00.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.34.10.80.00.36.10.00.00.00.00.00.19.00.18.80.00.34.10.fd.4c.df.8e.0a.b6.00.00.00.00.00.00.00.00.00.01.00.19.00.10.00.01.3a.01.fe.00.00.00.00.00.00.00.00.19.00.10.80.00.3a.01.03.00.00.00.00.00.00.00.00.19.00.10.80.00.3c.01.00.00.00.00.00.00.00.00.00.19.00.10.00.01.1e.04.00.00.00.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x5952d1f0, duration=94.302s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=31,ipv6,reg14=0x2,metadata=0x2,ipv6_src=2001:db8::/64,nw_ttl=0,nw_frag=not_later actions=controller(userdata=00.00.00.0a.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.01.26.10.00.80.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.01.28.10.00.80.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.01.26.10.00.80.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.01.28.10.00.80.00.00.00.00.00.00.00.19.00.10.00.01.3a.01.fe.00.00.00.00.00.00.00.00.19.00.10.80.00.3a.01.03.00.00.00.00.00.00.00.00.19.00.10.80.00.3c.01.00.00.00.00.00.00.00.00.00.19.00.10.00.01.1e.04.00.00.00.02.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x5952d1f0, duration=94.302s, table=11, n_packets=0, n_bytes=0, idle_age=94, priority=31,ipv6,reg14=0x2,metadata=0x2,ipv6_src=2001:db8::/64,nw_ttl=1,nw_frag=not_later actions=controller(userdata=00.00.00.0a.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.04.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.00.02.06.00.30.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.01.26.10.00.80.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1b.00.00.00.01.28.10.00.80.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.01.26.10.00.80.00.00.00.00.00.00.ff.ff.00.18.00.00.23.20.00.1c.00.00.00.01.28.10.00.80.00.00.00.00.00.00.00.19.00.10.00.01.3a.01.fe.00.00.00.00.00.00.00.00.19.00.10.80.00.3a.01.03.00.00.00.00.00.00.00.00.19.00.10.80.00.3c.01.00.00.00.00.00.00.00.00.00.19.00.10.00.01.1e.04.00.00.00.02.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x2ef7cc4a, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=30,ip,metadata=0x2,nw_ttl=0 actions=drop
+ cookie=0x2ef7cc4a, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=30,ipv6,metadata=0x2,nw_ttl=1 actions=drop
+ cookie=0x2ef7cc4a, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=30,ip,metadata=0x2,nw_ttl=1 actions=drop
+ cookie=0x2ef7cc4a, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=30,ipv6,metadata=0x2,nw_ttl=0 actions=drop
+ cookie=0x126b15bd, duration=100.591s, table=11, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,12)
+ cookie=0x126b15bd, duration=100.590s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,12)
+ cookie=0xd76b8649, duration=100.582s, table=11, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,12)
+ cookie=0xea642a85, duration=100.583s, table=12, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg10=0x801/0x801,reg14=0x2,metadata=0x2,nw_dst=172.24.5.15 actions=ct(table=13,zone=NXM_NX_REG12[0..15],nat)
+ cookie=0xc904140a, duration=100.583s, table=12, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg10=0/0x1,reg14=0x2,metadata=0x2,nw_dst=172.24.5.15 actions=ct(table=13,zone=NXM_NX_REG11[0..15],nat)
+ cookie=0xf8046ec4, duration=100.590s, table=12, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,13)
+ cookie=0xf8046ec4, duration=100.587s, table=12, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,13)
+ cookie=0x3f5d4f54, duration=100.582s, table=12, n_packets=2, n_bytes=140, idle_age=94, priority=0,metadata=0x2 actions=resubmit(,13)
+ cookie=0x155159f5, duration=100.591s, table=13, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x3,dl_dst=ca:a5:36:d8:4e:f2 actions=resubmit(,14)
+ cookie=0x155159f5, duration=100.590s, table=13, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x1,dl_dst=ca:a5:36:d8:4e:f2 actions=resubmit(,14)
+ cookie=0xebcbe26c, duration=100.590s, table=13, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,14)
+ cookie=0xebcbe26c, duration=100.587s, table=13, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,14)
+ cookie=0x3563b9c1, duration=100.582s, table=13, n_packets=2, n_bytes=140, idle_age=94, priority=0,metadata=0x2 actions=resubmit(,14)
+ cookie=0x719533c, duration=100.591s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x3,dl_dst=ca:a5:36:d8:4e:f2 actions=resubmit(,15)
+ cookie=0x719533c, duration=100.590s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x1,dl_dst=ca:a5:36:d8:4e:f2 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.591s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.591s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.591s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.590s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.590s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.589s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.591s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.591s, table=14, n_packets=2, n_bytes=172, idle_age=92, priority=110,icmp6,metadata=0x3,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.591s, table=14, n_packets=2, n_bytes=140, idle_age=94, priority=110,icmp6,metadata=0x3,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.591s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.589s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.589s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.589s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.589s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.591s, table=14, n_packets=7, n_bytes=830, idle_age=92, priority=110,icmp6,metadata=0x3,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,15)
+ cookie=0x549209ea, duration=100.589s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,15)
+ cookie=0x98705d23, duration=100.591s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,reg0=0x10000/0x10000,metadata=0x3 actions=resubmit(,15)
+ cookie=0x98705d23, duration=100.588s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,reg0=0x10000/0x10000,metadata=0x1 actions=resubmit(,15)
+ cookie=0xc6393345, duration=100.591s, table=14, n_packets=5, n_bytes=210, idle_age=84, priority=110,metadata=0x3,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=resubmit(,15)
+ cookie=0xc6393345, duration=100.588s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x1,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=resubmit(,15)
+ cookie=0xb4e69b0c, duration=100.583s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg14=0x1,metadata=0x3 actions=resubmit(,15)
+ cookie=0xb4e69b0c, duration=100.583s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg14=0x1,metadata=0x3 actions=resubmit(,15)
+ cookie=0x4228d66b, duration=100.582s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg14=0x3,metadata=0x3 actions=resubmit(,15)
+ cookie=0x4228d66b, duration=100.582s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg14=0x3,metadata=0x3 actions=resubmit(,15)
+ cookie=0x89638dfc, duration=100.581s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg14=0x2,metadata=0x1 actions=resubmit(,15)
+ cookie=0x89638dfc, duration=100.581s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg14=0x2,metadata=0x1 actions=resubmit(,15)
+ cookie=0x720220f1, duration=96.882s, table=14, n_packets=0, n_bytes=0, idle_age=96, priority=110,ip,reg14=0x3,metadata=0x1 actions=resubmit(,15)
+ cookie=0x720220f1, duration=96.882s, table=14, n_packets=0, n_bytes=0, idle_age=96, priority=110,ipv6,reg14=0x3,metadata=0x1 actions=resubmit(,15)
+ cookie=0x49579a03, duration=100.591s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x3 actions=resubmit(,15)
+ cookie=0x49579a03, duration=100.590s, table=14, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,15)
+ cookie=0xed3f743b, duration=100.582s, table=14, n_packets=2, n_bytes=140, idle_age=94, priority=0,metadata=0x2 actions=resubmit(,15)
+ cookie=0x790e4080, duration=100.591s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg0=0x4/0x4,metadata=0x3 actions=ct(table=16,zone=NXM_NX_REG13[0..15],nat)
+ cookie=0x790e4080, duration=100.591s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg0=0x4/0x4,metadata=0x3 actions=ct(table=16,zone=NXM_NX_REG13[0..15],nat)
+ cookie=0x790e4080, duration=100.588s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg0=0x4/0x4,metadata=0x1 actions=ct(table=16,zone=NXM_NX_REG13[0..15],nat)
+ cookie=0x790e4080, duration=100.588s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg0=0x4/0x4,metadata=0x1 actions=ct(table=16,zone=NXM_NX_REG13[0..15],nat)
+ cookie=0x713e3b4e, duration=100.591s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x1/0x1,metadata=0x3 actions=ct(table=16,zone=NXM_NX_REG13[0..15])
+ cookie=0x713e3b4e, duration=100.591s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x1/0x1,metadata=0x3 actions=ct(table=16,zone=NXM_NX_REG13[0..15])
+ cookie=0x713e3b4e, duration=100.588s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x1/0x1,metadata=0x1 actions=ct(table=16,zone=NXM_NX_REG13[0..15])
+ cookie=0x713e3b4e, duration=100.588s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x1/0x1,metadata=0x1 actions=ct(table=16,zone=NXM_NX_REG13[0..15])
+ cookie=0xf19381c9, duration=100.590s, table=15, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,16)
+ cookie=0xf19381c9, duration=100.587s, table=15, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,16)
+ cookie=0xfc87c180, duration=100.583s, table=15, n_packets=2, n_bytes=140, idle_age=94, priority=0,metadata=0x2 actions=resubmit(,16)
+ cookie=0x7c6e6f2d, duration=100.591s, table=16, n_packets=16, n_bytes=1352, idle_age=84, priority=65535,metadata=0x3 actions=resubmit(,17)
+ cookie=0x7c6e6f2d, duration=100.588s, table=16, n_packets=0, n_bytes=0, idle_age=100, priority=65535,metadata=0x1 actions=resubmit(,17)
+ cookie=0x546d6756, duration=100.582s, table=16, n_packets=2, n_bytes=140, idle_age=94, priority=0,metadata=0x2 actions=resubmit(,17)
+ cookie=0xeeaf0c17, duration=96.882s, table=16, n_packets=0, n_bytes=0, idle_age=96, priority=50,icmp6,reg14=0x4,metadata=0x2,ipv6_dst=ff02::2,nw_ttl=255,icmp_type=133,icmp_code=0 actions=controller(userdata=00.00.00.08.00.00.00.00.00.01.de.10.00.00.00.65.86.00.00.00.ff.00.ff.ff.00.00.00.00.00.00.00.00.01.01.fa.16.3e.ad.a2.95.05.01.00.00.00.00.05.a2.03.04.40.c0.ff.ff.ff.ff.ff.ff.ff.ff.00.00.00.00.fd.4c.df.8e.0a.b6.00.00.00.00.00.00.00.00.00.00,pause),resubmit(,17)
+ cookie=0x442a65e1, duration=100.591s, table=17, n_packets=16, n_bytes=1352, idle_age=84, priority=65535,metadata=0x3 actions=resubmit(,18)
+ cookie=0x442a65e1, duration=100.590s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65535,metadata=0x1 actions=resubmit(,18)
+ cookie=0xc189d1d, duration=100.582s, table=17, n_packets=2, n_bytes=140, idle_age=94, priority=0,metadata=0x2 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.591s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.591s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.591s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.588s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.588s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.588s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.591s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.591s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.591s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.591s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.588s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.588s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.588s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.588s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.591s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,18)
+ cookie=0xa008244e, duration=100.588s, table=17, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,18)
+ cookie=0xa25c2929, duration=96.882s, table=17, n_packets=0, n_bytes=0, idle_age=96, priority=50,icmp6,reg0=0x20/0x20,reg14=0x4,metadata=0x2,ipv6_dst=ff02::2,nw_ttl=255,icmp_type=134,icmp_code=0 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],set_field:fa:16:3e:ad:a2:95->eth_src,move:NXM_NX_IPV6_SRC[]->NXM_NX_IPV6_DST[],set_field:fe80::f816:3eff:fead:a295->ipv6_src,move:NXM_NX_REG14[]->NXM_NX_REG15[],set_field:0x1/0x1->reg10,resubmit(,37)
+ cookie=0x4511332e, duration=100.591s, table=18, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,19)
+ cookie=0x4511332e, duration=100.590s, table=18, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,19)
+ cookie=0xb2959fa8, duration=100.582s, table=18, n_packets=2, n_bytes=140, idle_age=94, priority=0,metadata=0x2 actions=set_field:0/0xffffffff->xxreg1,resubmit(,19)
+ cookie=0x2f110921, duration=100.582s, table=19, n_packets=2, n_bytes=140, idle_age=94, priority=10550,icmp6,metadata=0x2,nw_ttl=255,icmp_type=133,icmp_code=0 actions=drop
+ cookie=0x2f110921, duration=100.582s, table=19, n_packets=0, n_bytes=0, idle_age=100, priority=10550,icmp6,metadata=0x2,nw_ttl=255,icmp_type=134,icmp_code=0 actions=drop
+ cookie=0x9bd2edef, duration=100.582s, table=19, n_packets=0, n_bytes=0, idle_age=100, priority=194,ipv6,reg14=0x2,metadata=0x2,ipv6_dst=fe80::/64 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,move:NXM_NX_IPV6_DST[]->NXM_NX_XXREG0[],set_field:0xfe80000000000000f8163efffe8013dc->xxreg1,set_field:fa:16:3e:80:13:dc->eth_src,set_field:0x2->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0x4f06a172, duration=100.582s, table=19, n_packets=0, n_bytes=0, idle_age=100, priority=194,ipv6,reg14=0x1,metadata=0x2,ipv6_dst=fe80::/64 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,move:NXM_NX_IPV6_DST[]->NXM_NX_XXREG0[],set_field:0xfe80000000000000f8163efffe6166aa->xxreg1,set_field:fa:16:3e:61:66:aa->eth_src,set_field:0x1->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0x51cfafb4, duration=96.882s, table=19, n_packets=0, n_bytes=0, idle_age=96, priority=194,ipv6,reg14=0x4,metadata=0x2,ipv6_dst=fe80::/64 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,move:NXM_NX_IPV6_DST[]->NXM_NX_XXREG0[],set_field:0xfe80000000000000f8163efffeada295->xxreg1,set_field:fa:16:3e:ad:a2:95->eth_src,set_field:0x4->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0x4b2bbaf6, duration=96.882s, table=19, n_packets=0, n_bytes=0, idle_age=96, priority=194,ipv6,metadata=0x2,ipv6_dst=fd4c:df8e:ab6::/64 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,move:NXM_NX_IPV6_DST[]->NXM_NX_XXREG0[],set_field:0xfd4cdf8e0ab600000000000000000001->xxreg1,set_field:fa:16:3e:ad:a2:95->eth_src,set_field:0x4->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0xa0bc7c14, duration=94.302s, table=19, n_packets=0, n_bytes=0, idle_age=94, priority=194,ipv6,metadata=0x2,ipv6_dst=2001:db8::/64 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,move:NXM_NX_IPV6_DST[]->NXM_NX_XXREG0[],set_field:0x20010db8000000000000000000000001->xxreg1,set_field:fa:16:3e:80:13:dc->eth_src,set_field:0x2->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0xeb6fc18d, duration=100.583s, table=19, n_packets=0, n_bytes=0, idle_age=100, priority=80,ip,metadata=0x2,nw_dst=10.1.0.0/26 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,move:NXM_OF_IP_DST[]->NXM_NX_XXREG0[96..127],set_field:0xa0100010000000000000000/0xffffffff0000000000000000->xxreg0,set_field:fa:16:3e:61:66:aa->eth_src,set_field:0x1->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0x568c2fe8, duration=100.582s, table=19, n_packets=0, n_bytes=0, idle_age=100, priority=74,ip,metadata=0x2,nw_dst=172.24.5.0/24 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,move:NXM_OF_IP_DST[]->NXM_NX_XXREG0[96..127],set_field:0xac18050f0000000000000000/0xffffffff0000000000000000->xxreg0,set_field:fa:16:3e:80:13:dc->eth_src,set_field:0x2->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0x276956ee, duration=100.582s, table=19, n_packets=0, n_bytes=0, idle_age=100, priority=1,ip,reg7=0,metadata=0x2 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,set_field:0xac180501000000000000000000000000/0xffffffff000000000000000000000000->xxreg0,set_field:0xac18050f0000000000000000/0xffffffff0000000000000000->xxreg0,set_field:fa:16:3e:80:13:dc->eth_src,set_field:0x2->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0x3a6b6583, duration=94.302s, table=19, n_packets=0, n_bytes=0, idle_age=94, priority=1,ipv6,reg7=0,metadata=0x2 actions=dec_ttl(),set_field:0/0xffff00000000->xreg4,set_field:0x20010db8000000000000000000000002->xxreg0,set_field:0x20010db8000000000000000000000001->xxreg1,set_field:fa:16:3e:80:13:dc->eth_src,set_field:0x2->reg15,set_field:0x1/0x1->reg10,resubmit(,20)
+ cookie=0xcdbcfbff, duration=100.590s, table=19, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,20)
+ cookie=0xcdbcfbff, duration=100.588s, table=19, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,20)
+ cookie=0xd1caa825, duration=100.582s, table=20, n_packets=0, n_bytes=0, idle_age=100, priority=150,reg8=0/0xffff,metadata=0x2 actions=resubmit(,21)
+ cookie=0xc4d120a4, duration=100.591s, table=20, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,21)
+ cookie=0xc4d120a4, duration=100.588s, table=20, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,21)
+ cookie=0x9198605, duration=100.591s, table=21, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,22)
+ cookie=0x9198605, duration=100.590s, table=21, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,22)
+ cookie=0x521ee5dd, duration=100.582s, table=21, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=set_field:0/0xffff00000000->xreg4,resubmit(,22)
+ cookie=0x492483e6, duration=100.582s, table=22, n_packets=0, n_bytes=0, idle_age=100, priority=150,reg8=0/0xffff,metadata=0x2 actions=resubmit(,23)
+ cookie=0x689ca848, duration=100.591s, table=22, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,23)
+ cookie=0x689ca848, duration=100.588s, table=22, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,23)
+ cookie=0xfe68b9a0, duration=100.582s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=500,ipv6,metadata=0x2,dl_dst=33:33:00:00:00:00/ff:ff:00:00:00:00,ipv6_dst=ff00::/8 actions=resubmit(,24)
+ cookie=0xfe68b9a0, duration=100.582s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=500,ip,metadata=0x2,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00,nw_dst=224.0.0.0/4 actions=resubmit(,24)
+ cookie=0x71c1ad46, duration=100.582s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=150,ip,reg14=0x2,reg15=0x2,metadata=0x2,nw_dst=172.24.5.15 actions=drop
+ cookie=0xe66181a, duration=100.582s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg0=0xa010002,reg15=0x1,metadata=0x2 actions=set_field:fa:16:3e:4e:b7:8c->eth_dst,resubmit(,24)
+ cookie=0x3fb3b03a, duration=100.582s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg0=0xac18050f,reg15=0x2,metadata=0x2 actions=set_field:fa:16:3e:80:13:dc->eth_dst,resubmit(,24)
+ cookie=0x80caf3d6, duration=96.882s, table=23, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg0=0xfd4cdf8e,reg1=0xab60000,reg2=0xf8163eff,reg3=0xfe4eb78c,reg15=0x4,metadata=0x2 actions=set_field:fa:16:3e:4e:b7:8c->eth_dst,resubmit(,24)
+ cookie=0x3c6ec576, duration=100.581s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=1,ip,metadata=0x2,nw_dst=172.24.5.15 actions=drop
+ cookie=0x8b5706b9, duration=100.591s, table=23, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,24)
+ cookie=0x8b5706b9, duration=100.588s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,24)
+ cookie=0x80845a52, duration=100.582s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=0,ip,metadata=0x2 actions=push:NXM_NX_REG0[],push:NXM_NX_XXREG0[96..127],pop:NXM_NX_REG0[],set_field:00:00:00:00:00:00->eth_dst,resubmit(,66),pop:NXM_NX_REG0[],resubmit(,24)
+ cookie=0xb4a409d4, duration=100.582s, table=23, n_packets=0, n_bytes=0, idle_age=100, priority=0,ipv6,metadata=0x2 actions=set_field:00:00:00:00:00:00->eth_dst,resubmit(,66),resubmit(,24)
+ cookie=0x841646bc, duration=100.591s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.591s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.591s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.591s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.591s, table=24, n_packets=2, n_bytes=172, idle_age=92, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.591s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.591s, table=24, n_packets=2, n_bytes=140, idle_age=94, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.591s, table=24, n_packets=7, n_bytes=830, idle_age=92, priority=65532,icmp6,metadata=0x3,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,25)
+ cookie=0x841646bc, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,25)
+ cookie=0x71ef6a4b, duration=100.582s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg15=0x2,metadata=0x2 actions=check_pkt_larger(1456)->OXM_OF_PKT_REG4[1],resubmit(,25)
+ cookie=0x68fcf3e3, duration=100.591s, table=24, n_packets=5, n_bytes=210, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,25)
+ cookie=0x68fcf3e3, duration=100.588s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,25)
+ cookie=0x18aba6dd, duration=100.582s, table=24, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,25)
+ cookie=0x93ff004c, duration=100.582s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=150,ip,reg9=0x2/0x3,reg14=0x1,reg15=0x2,metadata=0x2 actions=controller(userdata=00.00.00.0e.00.00.00.00.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.01.00.00.00.00.00.00.00.01.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.00.00.00.00.00.00.00.00.02.00.19.00.10.80.00.06.06.fa.16.3e.61.66.aa.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.80.00.16.04.80.00.18.04.00.00.00.00.00.19.00.10.80.00.16.04.ac.18.05.0f.00.00.00.00.00.19.00.10.00.01.3a.01.ff.00.00.00.00.00.00.00.00.19.00.10.80.00.26.01.03.00.00.00.00.00.00.00.00.19.00.10.80.00.28.01.04.00.00.00.00.00.00.00.ff.ff.00.28.00.00.23.20.00.25.00.00.00.00.00.00.00.03.00.0e.00.00.00.0d.00.00.00.00.05.a2.00.00.00.04.00.04.00.00.00.00.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.08.00.00.00)
+ cookie=0xf17056a2, duration=96.882s, table=25, n_packets=0, n_bytes=0, idle_age=96, priority=150,ip,reg9=0x2/0x3,reg14=0x4,reg15=0x2,metadata=0x2 actions=controller(userdata=00.00.00.0e.00.00.00.00.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.01.00.00.00.00.00.00.00.01.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.00.00.00.00.00.00.00.00.02.00.19.00.10.80.00.06.06.fa.16.3e.ad.a2.95.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.80.00.16.04.80.00.18.04.00.00.00.00.00.19.00.10.80.00.16.04.ac.18.05.0f.00.00.00.00.00.19.00.10.00.01.3a.01.ff.00.00.00.00.00.00.00.00.19.00.10.80.00.26.01.03.00.00.00.00.00.00.00.00.19.00.10.80.00.28.01.04.00.00.00.00.00.00.00.ff.ff.00.28.00.00.23.20.00.25.00.00.00.00.00.00.00.03.00.0e.00.00.00.0d.00.00.00.00.05.a2.00.00.00.04.00.04.00.00.00.00.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.08.00.00.00)
+ cookie=0xb92d9c61, duration=94.302s, table=25, n_packets=0, n_bytes=0, idle_age=94, priority=150,ipv6,reg9=0x2/0x3,reg14=0x1,reg15=0x2,metadata=0x2 actions=controller(userdata=00.00.00.14.00.00.00.00.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.01.00.00.00.00.00.00.00.01.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.00.00.00.00.00.00.00.00.02.00.19.00.10.80.00.06.06.fa.16.3e.61.66.aa.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.34.10.80.00.36.10.00.00.00.00.00.19.00.18.80.00.34.10.20.01.0d.b8.00.00.00.00.00.00.00.00.00.00.00.01.00.19.00.10.00.01.3a.01.ff.00.00.00.00.00.00.00.00.19.00.10.80.00.3a.01.02.00.00.00.00.00.00.00.00.19.00.10.80.00.3c.01.00.00.00.00.00.00.00.00.ff.ff.00.28.00.00.23.20.00.25.00.00.00.00.00.00.00.03.00.10.00.00.00.15.00.00.00.00.00.00.05.a2.00.04.00.04.00.00.00.00.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.08.00.00.00)
+ cookie=0x586ec0ac, duration=94.302s, table=25, n_packets=0, n_bytes=0, idle_age=94, priority=150,ipv6,reg9=0x2/0x3,reg14=0x4,reg15=0x2,metadata=0x2 actions=controller(userdata=00.00.00.14.00.00.00.00.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.01.00.00.00.00.00.00.00.01.00.19.00.18.80.01.09.10.00.00.00.00.00.00.00.00.00.00.00.00.00.00.00.02.00.19.00.10.80.00.06.06.fa.16.3e.ad.a2.95.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.80.00.34.10.80.00.36.10.00.00.00.00.00.19.00.18.80.00.34.10.20.01.0d.b8.00.00.00.00.00.00.00.00.00.00.00.01.00.19.00.10.00.01.3a.01.ff.00.00.00.00.00.00.00.00.19.00.10.80.00.3a.01.02.00.00.00.00.00.00.00.00.19.00.10.80.00.3c.01.00.00.00.00.00.00.00.00.ff.ff.00.28.00.00.23.20.00.25.00.00.00.00.00.00.00.03.00.10.00.00.00.15.00.00.00.00.00.00.05.a2.00.04.00.04.00.00.00.00.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.08.00.00.00)
+ cookie=0x28ea0ab8, duration=100.591s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x2/0x2002,metadata=0x3 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark)),resubmit(,26)
+ cookie=0x28ea0ab8, duration=100.591s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x2/0x2002,metadata=0x3 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark)),resubmit(,26)
+ cookie=0xd0ff6413, duration=100.590s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x2002/0x2002,metadata=0x3 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark,move:NXM_NX_XXREG0[0..31]->NXM_NX_CT_LABEL[96..127])),resubmit(,26)
+ cookie=0xd0ff6413, duration=100.590s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x2002/0x2002,metadata=0x3 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark,move:NXM_NX_XXREG0[0..31]->NXM_NX_CT_LABEL[96..127])),resubmit(,26)
+ cookie=0x28ea0ab8, duration=100.590s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x2/0x2002,metadata=0x1 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark)),resubmit(,26)
+ cookie=0x28ea0ab8, duration=100.590s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x2/0x2002,metadata=0x1 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark)),resubmit(,26)
+ cookie=0xd0ff6413, duration=100.588s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x2002/0x2002,metadata=0x1 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark,move:NXM_NX_XXREG0[0..31]->NXM_NX_CT_LABEL[96..127])),resubmit(,26)
+ cookie=0xd0ff6413, duration=100.588s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x2002/0x2002,metadata=0x1 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark,move:NXM_NX_XXREG0[0..31]->NXM_NX_CT_LABEL[96..127])),resubmit(,26)
+ cookie=0x174dc21f, duration=100.591s, table=25, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,26)
+ cookie=0x174dc21f, duration=100.590s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,26)
+ cookie=0x323fbd8b, duration=100.583s, table=25, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,26)
+ cookie=0x401e9389, duration=100.583s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=100,arp,reg14=0x2,metadata=0x1,arp_tpa=10.1.0.1,arp_op=1 actions=resubmit(,27)
+ cookie=0xa5820e31, duration=100.582s, table=26, n_packets=5, n_bytes=210, idle_age=84, priority=100,arp,reg14=0x3,metadata=0x3,arp_tpa=172.24.5.15,arp_op=1 actions=resubmit(,27)
+ cookie=0xf5a71298, duration=100.583s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=100,icmp6,reg14=0x3,metadata=0x3,ipv6_dst=ff02::1:ff80:13dc,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe80:13dc actions=resubmit(,27)
+ cookie=0xf5a71298, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=100,icmp6,reg14=0x3,metadata=0x3,ipv6_dst=fe80::f816:3eff:fe80:13dc,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe80:13dc actions=resubmit(,27)
+ cookie=0x4dbade7, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=100,icmp6,reg14=0x2,metadata=0x1,ipv6_dst=ff02::1:ff61:66aa,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe61:66aa actions=resubmit(,27)
+ cookie=0x4dbade7, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=100,icmp6,reg14=0x2,metadata=0x1,ipv6_dst=fe80::f816:3eff:fe61:66aa,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe61:66aa actions=resubmit(,27)
+ cookie=0x56e1cc22, duration=96.882s, table=26, n_packets=0, n_bytes=0, idle_age=96, priority=100,icmp6,reg14=0x3,metadata=0x1,ipv6_dst=ff02::1:ff00:1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6::1 actions=resubmit(,27)
+ cookie=0x56e1cc22, duration=96.882s, table=26, n_packets=0, n_bytes=0, idle_age=96, priority=100,icmp6,reg14=0x3,metadata=0x1,ipv6_dst=fd4c:df8e:ab6::1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6::1 actions=resubmit(,27)
+ cookie=0xda89d4cc, duration=96.882s, table=26, n_packets=0, n_bytes=0, idle_age=96, priority=100,icmp6,reg14=0x3,metadata=0x1,ipv6_dst=fe80::f816:3eff:fead:a295,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fead:a295 actions=resubmit(,27)
+ cookie=0xda89d4cc, duration=96.882s, table=26, n_packets=0, n_bytes=0, idle_age=96, priority=100,icmp6,reg14=0x3,metadata=0x1,ipv6_dst=ff02::1:ffad:a295,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fead:a295 actions=resubmit(,27)
+ cookie=0xdcf36fd7, duration=94.302s, table=26, n_packets=0, n_bytes=0, idle_age=94, priority=100,icmp6,reg14=0x3,metadata=0x3,ipv6_dst=ff02::1:ff00:1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=2001:db8::1 actions=resubmit(,27)
+ cookie=0xdcf36fd7, duration=94.302s, table=26, n_packets=0, n_bytes=0, idle_age=94, priority=100,icmp6,reg14=0x3,metadata=0x3,ipv6_dst=2001:db8::1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=2001:db8::1 actions=resubmit(,27)
+ cookie=0xa9b68d31, duration=100.582s, table=26, n_packets=11, n_bytes=1142, idle_age=92, priority=100,reg14=0x1,metadata=0x3 actions=resubmit(,27)
+ cookie=0xde6d3a0d, duration=100.583s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,icmp6,metadata=0x1,ipv6_dst=fd4c:df8e:ab6:0:f816:3eff:fe4e:b78c,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6:0:f816:3eff:fe4e:b78c actions=controller(userdata=00.00.00.03.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.4e.b7.8c.00.00.00.19.00.18.80.00.34.10.fd.4c.df.8e.0a.b6.00.00.f8.16.3e.ff.fe.4e.b7.8c.00.19.00.18.80.00.3e.10.fd.4c.df.8e.0a.b6.00.00.f8.16.3e.ff.fe.4e.b7.8c.00.19.00.10.80.00.42.06.fa.16.3e.4e.b7.8c.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0xde6d3a0d, duration=100.583s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,icmp6,metadata=0x1,ipv6_dst=ff02::1:ff4e:b78c,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6:0:f816:3eff:fe4e:b78c actions=controller(userdata=00.00.00.03.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.4e.b7.8c.00.00.00.19.00.18.80.00.34.10.fd.4c.df.8e.0a.b6.00.00.f8.16.3e.ff.fe.4e.b7.8c.00.19.00.18.80.00.3e.10.fd.4c.df.8e.0a.b6.00.00.f8.16.3e.ff.fe.4e.b7.8c.00.19.00.10.80.00.42.06.fa.16.3e.4e.b7.8c.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x5f7c5a17, duration=100.583s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,icmp6,metadata=0x3,ipv6_dst=fe80::f816:3eff:fe80:13dc,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe80:13dc actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.80.13.dc.00.00.00.19.00.18.80.00.34.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.80.13.dc.00.19.00.18.80.00.3e.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.80.13.dc.00.19.00.10.80.00.42.06.fa.16.3e.80.13.dc.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x5f7c5a17, duration=100.583s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,icmp6,metadata=0x3,ipv6_dst=ff02::1:ff80:13dc,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe80:13dc actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.80.13.dc.00.00.00.19.00.18.80.00.34.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.80.13.dc.00.19.00.18.80.00.3e.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.80.13.dc.00.19.00.10.80.00.42.06.fa.16.3e.80.13.dc.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x69927166, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,icmp6,metadata=0x1,ipv6_dst=fe80::f816:3eff:fe61:66aa,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe61:66aa actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.61.66.aa.00.00.00.19.00.18.80.00.34.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.61.66.aa.00.19.00.18.80.00.3e.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.61.66.aa.00.19.00.10.80.00.42.06.fa.16.3e.61.66.aa.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x69927166, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,icmp6,metadata=0x1,ipv6_dst=ff02::1:ff61:66aa,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe61:66aa actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.61.66.aa.00.00.00.19.00.18.80.00.34.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.61.66.aa.00.19.00.18.80.00.3e.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.61.66.aa.00.19.00.10.80.00.42.06.fa.16.3e.61.66.aa.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x4aa2b18d, duration=96.882s, table=26, n_packets=0, n_bytes=0, idle_age=96, priority=50,icmp6,metadata=0x1,ipv6_dst=ff02::1:ffad:a295,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fead:a295 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.ad.a2.95.00.00.00.19.00.18.80.00.34.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.ad.a2.95.00.19.00.18.80.00.3e.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.ad.a2.95.00.19.00.10.80.00.42.06.fa.16.3e.ad.a2.95.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x4aa2b18d, duration=96.882s, table=26, n_packets=0, n_bytes=0, idle_age=96, priority=50,icmp6,metadata=0x1,ipv6_dst=fe80::f816:3eff:fead:a295,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fead:a295 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.ad.a2.95.00.00.00.19.00.18.80.00.34.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.ad.a2.95.00.19.00.18.80.00.3e.10.fe.80.00.00.00.00.00.00.f8.16.3e.ff.fe.ad.a2.95.00.19.00.10.80.00.42.06.fa.16.3e.ad.a2.95.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x75f3a52e, duration=96.882s, table=26, n_packets=0, n_bytes=0, idle_age=96, priority=50,icmp6,metadata=0x1,ipv6_dst=fd4c:df8e:ab6::1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6::1 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.ad.a2.95.00.00.00.19.00.18.80.00.34.10.fd.4c.df.8e.0a.b6.00.00.00.00.00.00.00.00.00.01.00.19.00.18.80.00.3e.10.fd.4c.df.8e.0a.b6.00.00.00.00.00.00.00.00.00.01.00.19.00.10.80.00.42.06.fa.16.3e.ad.a2.95.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x75f3a52e, duration=96.882s, table=26, n_packets=0, n_bytes=0, idle_age=96, priority=50,icmp6,metadata=0x1,ipv6_dst=ff02::1:ff00:1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6::1 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.ad.a2.95.00.00.00.19.00.18.80.00.34.10.fd.4c.df.8e.0a.b6.00.00.00.00.00.00.00.00.00.01.00.19.00.18.80.00.3e.10.fd.4c.df.8e.0a.b6.00.00.00.00.00.00.00.00.00.01.00.19.00.10.80.00.42.06.fa.16.3e.ad.a2.95.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0xe7ae7ac8, duration=94.302s, table=26, n_packets=0, n_bytes=0, idle_age=94, priority=50,icmp6,metadata=0x3,ipv6_dst=ff02::1:ff00:1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=2001:db8::1 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.80.13.dc.00.00.00.19.00.18.80.00.34.10.20.01.0d.b8.00.00.00.00.00.00.00.00.00.00.00.01.00.19.00.18.80.00.3e.10.20.01.0d.b8.00.00.00.00.00.00.00.00.00.00.00.01.00.19.00.10.80.00.42.06.fa.16.3e.80.13.dc.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0xe7ae7ac8, duration=94.302s, table=26, n_packets=0, n_bytes=0, idle_age=94, priority=50,icmp6,metadata=0x3,ipv6_dst=2001:db8::1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=2001:db8::1 actions=controller(userdata=00.00.00.0c.00.00.00.00.00.19.00.10.80.00.08.06.fa.16.3e.80.13.dc.00.00.00.19.00.18.80.00.34.10.20.01.0d.b8.00.00.00.00.00.00.00.00.00.00.00.01.00.19.00.18.80.00.3e.10.20.01.0d.b8.00.00.00.00.00.00.00.00.00.00.00.01.00.19.00.10.80.00.42.06.fa.16.3e.80.13.dc.00.00.00.1c.00.18.00.20.00.00.00.00.00.00.00.01.1c.04.00.01.1e.04.00.00.00.00.00.19.00.10.00.01.15.08.00.00.00.01.00.00.00.01.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0xe35b2c42, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,arp,metadata=0x1,arp_tpa=10.1.0.1,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],set_field:fa:16:3e:61:66:aa->eth_src,set_field:2->arp_op,move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],set_field:fa:16:3e:61:66:aa->arp_sha,move:NXM_OF_ARP_SPA[]->NXM_OF_ARP_TPA[],set_field:10.1.0.1->arp_spa,move:NXM_NX_REG14[]->NXM_NX_REG15[],set_field:0x1/0x1->reg10,resubmit(,37)
+ cookie=0xe4abf9d2, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,arp,metadata=0x1,arp_tpa=10.1.0.2,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],set_field:fa:16:3e:4e:b7:8c->eth_src,set_field:2->arp_op,move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],set_field:fa:16:3e:4e:b7:8c->arp_sha,move:NXM_OF_ARP_SPA[]->NXM_OF_ARP_TPA[],set_field:10.1.0.2->arp_spa,move:NXM_NX_REG14[]->NXM_NX_REG15[],set_field:0x1/0x1->reg10,resubmit(,37)
+ cookie=0xc58b6b6c, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,arp,metadata=0x3,arp_tpa=172.24.5.15,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],set_field:fa:16:3e:80:13:dc->eth_src,set_field:2->arp_op,move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],set_field:fa:16:3e:80:13:dc->arp_sha,move:NXM_OF_ARP_SPA[]->NXM_OF_ARP_TPA[],set_field:172.24.5.15->arp_spa,move:NXM_NX_REG14[]->NXM_NX_REG15[],set_field:0x1/0x1->reg10,resubmit(,37)
+ cookie=0xc0cac3e2, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg15=0x2,metadata=0x2 actions=set_field:0x3->reg15,resubmit(,27)
+ cookie=0x5390ee44, duration=100.591s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x3 actions=resubmit(,27)
+ cookie=0x5390ee44, duration=100.590s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,27)
+ cookie=0x169a1573, duration=100.582s, table=26, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,27)
+ cookie=0x260e68cc, duration=94.302s, table=27, n_packets=0, n_bytes=0, idle_age=94, priority=200,ipv6,reg0=0x20010db8,reg1=0,reg2=0,reg3=0x2,metadata=0x2,dl_dst=00:00:00:00:00:00 actions=controller(userdata=00.00.00.09.00.00.00.00.00.19.00.10.80.00.06.06.33.33.ff.00.00.02.00.00.00.19.00.18.80.00.36.10.ff.02.00.00.00.00.00.00.00.00.00.01.ff.00.00.02.00.19.00.18.80.00.3e.10.20.01.0d.b8.00.00.00.00.00.00.00.00.00.00.00.02.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0xf7b5f009, duration=100.583s, table=27, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,metadata=0x2,dl_dst=00:00:00:00:00:00 actions=controller(userdata=00.00.00.00.00.00.00.00.00.19.00.10.80.00.06.06.ff.ff.ff.ff.ff.ff.00.00.00.1c.00.18.00.20.00.40.00.00.00.00.00.01.de.10.80.00.2c.04.00.00.00.00.00.1c.00.18.00.20.00.60.00.00.00.00.00.01.de.10.80.00.2e.04.00.00.00.00.00.19.00.10.80.00.2a.02.00.01.00.00.00.00.00.00.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x1d14ee1c, duration=100.582s, table=27, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,metadata=0x2,dl_dst=00:00:00:00:00:00 actions=controller(userdata=00.00.00.09.00.00.00.00.00.1c.00.18.00.80.00.00.00.00.00.00.00.01.de.10.80.00.3e.10.00.00.00.00.ff.ff.00.10.00.00.23.20.00.0e.ff.f8.25.00.00.00)
+ cookie=0x39569fa4, duration=100.591s, table=27, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,28)
+ cookie=0x39569fa4, duration=100.590s, table=27, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,28)
+ cookie=0xa48e8087, duration=100.583s, table=27, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,37)
+ cookie=0xd017cb93, duration=100.590s, table=28, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,29)
+ cookie=0xd017cb93, duration=100.588s, table=28, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,29)
+ cookie=0x36e80b06, duration=100.591s, table=29, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,30)
+ cookie=0x36e80b06, duration=100.590s, table=29, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,30)
+ cookie=0x42203275, duration=100.591s, table=30, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,31)
+ cookie=0x42203275, duration=100.590s, table=30, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,31)
+ cookie=0xdd00e623, duration=100.590s, table=31, n_packets=16, n_bytes=1352, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,32)
+ cookie=0xdd00e623, duration=100.587s, table=31, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,32)
+ cookie=0x6e3cb1dd, duration=100.591s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=110,tcp,metadata=0x3,dl_dst=ca:a5:36:d8:4e:f2 actions=controller(userdata=00.00.00.12.00.00.00.00)
+ cookie=0x6e3cb1dd, duration=100.591s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,dl_dst=ca:a5:36:d8:4e:f2 actions=controller(userdata=00.00.00.12.00.00.00.00)
+ cookie=0x6e3cb1dd, duration=100.591s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp,metadata=0x3,dl_dst=ca:a5:36:d8:4e:f2 actions=controller(userdata=00.00.00.12.00.00.00.00)
+ cookie=0x6e3cb1dd, duration=100.591s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=110,tcp6,metadata=0x3,dl_dst=ca:a5:36:d8:4e:f2 actions=controller(userdata=00.00.00.12.00.00.00.00)
+ cookie=0x6e3cb1dd, duration=100.588s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=110,tcp,metadata=0x1,dl_dst=ca:a5:36:d8:4e:f2 actions=controller(userdata=00.00.00.12.00.00.00.00)
+ cookie=0x6e3cb1dd, duration=100.588s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,dl_dst=ca:a5:36:d8:4e:f2 actions=controller(userdata=00.00.00.12.00.00.00.00)
+ cookie=0x6e3cb1dd, duration=100.588s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp,metadata=0x1,dl_dst=ca:a5:36:d8:4e:f2 actions=controller(userdata=00.00.00.12.00.00.00.00)
+ cookie=0x6e3cb1dd, duration=100.588s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=110,tcp6,metadata=0x1,dl_dst=ca:a5:36:d8:4e:f2 actions=controller(userdata=00.00.00.12.00.00.00.00)
+ cookie=0x1467ba92, duration=100.583s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=80,arp,reg10=0/0x2,metadata=0x1,arp_tpa=172.24.5.15,arp_op=1 actions=clone(set_field:0x2->reg15,resubmit(,37)),set_field:0x8005->reg15,resubmit(,37)
+OFPST_FLOW reply (OF1.5) (xid=0x2):
+ cookie=0xce3319a8, duration=100.582s, table=32, n_packets=5, n_bytes=210, idle_age=84, priority=80,arp,reg10=0/0x2,metadata=0x3,arp_tpa=172.24.5.15,arp_op=1 actions=clone(set_field:0x3->reg15,resubmit(,37)),set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x7faca754, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=80,arp,reg10=0/0x2,metadata=0x1,arp_tpa=10.1.0.1,arp_op=1 actions=clone(set_field:0x2->reg15,resubmit(,37)),set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x5f41f437, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=80,icmp6,reg10=0/0x2,metadata=0x1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe61:66aa actions=clone(set_field:0x2->reg15,resubmit(,37)),set_field:0x8005->reg15,resubmit(,37)
+ cookie=0xa0d70473, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=80,icmp6,reg10=0/0x2,metadata=0x3,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fe80:13dc actions=clone(set_field:0x3->reg15,resubmit(,37)),set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x49018bc7, duration=96.882s, table=32, n_packets=0, n_bytes=0, idle_age=96, priority=80,icmp6,reg10=0/0x2,metadata=0x1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fe80::f816:3eff:fead:a295 actions=clone(set_field:0x3->reg15,resubmit(,37)),set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x83f70179, duration=96.882s, table=32, n_packets=0, n_bytes=0, idle_age=96, priority=80,icmp6,reg10=0/0x2,metadata=0x1,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=fd4c:df8e:ab6::1 actions=clone(set_field:0x3->reg15,resubmit(,37)),set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x6fdfc486, duration=94.302s, table=32, n_packets=0, n_bytes=0, idle_age=94, priority=80,icmp6,reg10=0/0x2,metadata=0x3,nw_ttl=255,icmp_type=135,icmp_code=0,nd_target=2001:db8::1 actions=clone(set_field:0x3->reg15,resubmit(,37)),set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x777fc22d, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=75,arp,metadata=0x3,dl_src=fa:16:3e:80:13:dc,arp_op=1 actions=set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x8471b8c6, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=75,arp,metadata=0x1,dl_src=fa:16:3e:61:66:aa,arp_op=1 actions=set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x23128ce2, duration=96.882s, table=32, n_packets=0, n_bytes=0, idle_age=96, priority=75,arp,metadata=0x1,dl_src=fa:16:3e:ad:a2:95,arp_op=1 actions=set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x777fc22d, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=75,icmp6,metadata=0x3,dl_src=fa:16:3e:80:13:dc,nw_ttl=255,icmp_type=135,icmp_code=0 actions=set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x8471b8c6, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=75,icmp6,metadata=0x1,dl_src=fa:16:3e:61:66:aa,nw_ttl=255,icmp_type=135,icmp_code=0 actions=set_field:0x8005->reg15,resubmit(,37)
+ cookie=0x23128ce2, duration=96.882s, table=32, n_packets=0, n_bytes=0, idle_age=96, priority=75,icmp6,metadata=0x1,dl_src=fa:16:3e:ad:a2:95,nw_ttl=255,icmp_type=135,icmp_code=0 actions=set_field:0x8005->reg15,resubmit(,37)
+ cookie=0xbb99481e, duration=100.583s, table=32, n_packets=11, n_bytes=1142, idle_age=92, priority=70,metadata=0x3,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=set_field:0x8000->reg15,resubmit(,37)
+ cookie=0xbb99481e, duration=100.583s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=70,metadata=0x1,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=set_field:0x8000->reg15,resubmit(,37)
+ cookie=0x33ba08a5, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=50,metadata=0x1,dl_dst=fa:16:3e:4e:b7:8c actions=set_field:0x1->reg15,resubmit(,37)
+ cookie=0xf36cf34b, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=50,metadata=0x3,dl_dst=fa:16:3e:80:13:dc actions=set_field:0x3->reg15,resubmit(,37)
+ cookie=0x96b48463, duration=100.582s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=50,metadata=0x3,dl_dst=fa:16:3e:ae:64:01 actions=set_field:0x2->reg15,resubmit(,37)
+ cookie=0xd64b5fe, duration=100.581s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=50,metadata=0x1,dl_dst=fa:16:3e:61:66:aa actions=set_field:0x2->reg15,resubmit(,37)
+ cookie=0xa65135ca, duration=96.882s, table=32, n_packets=0, n_bytes=0, idle_age=96, priority=50,metadata=0x1,dl_dst=fa:16:3e:ad:a2:95 actions=set_field:0x3->reg15,resubmit(,37)
+ cookie=0x4a5faca7, duration=100.591s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x3 actions=set_field:0->reg15,resubmit(,71),resubmit(,33)
+ cookie=0x4a5faca7, duration=100.590s, table=32, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=set_field:0->reg15,resubmit(,71),resubmit(,33)
+ cookie=0xf677229e, duration=96.882s, table=33, n_packets=0, n_bytes=0, idle_age=96, priority=50,reg15=0,metadata=0x3 actions=set_field:0x8001->reg15,resubmit(,37)
+ cookie=0xc816c533, duration=19.007s, table=33, n_packets=0, n_bytes=0, idle_age=19, priority=50,reg15=0,metadata=0x1 actions=drop
+ cookie=0xaa74e7a0, duration=100.591s, table=33, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x3 actions=resubmit(,37)
+ cookie=0xaa74e7a0, duration=100.588s, table=33, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,37)
+ cookie=0x0, duration=136.579s, table=37, n_packets=0, n_bytes=0, idle_age=136, priority=150,reg10=0x10/0x10 actions=resubmit(,38)
+ cookie=0x0, duration=136.579s, table=37, n_packets=0, n_bytes=0, idle_age=136, priority=150,reg10=0x2/0x2 actions=resubmit(,38)
+ cookie=0xfb4d2b72, duration=100.581s, table=37, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x8005,metadata=0x1 actions=set_field:0x1->reg15,resubmit(,39),set_field:0x8005->reg15
+ cookie=0x449bbdfd, duration=100.581s, table=37, n_packets=5, n_bytes=210, idle_age=84, priority=100,reg15=0x8005,metadata=0x3 actions=set_field:0x2->reg15,resubmit(,39),set_field:0x8005->reg15,resubmit(,38)
+ cookie=0xa06d78c9, duration=100.581s, table=37, n_packets=11, n_bytes=1142, idle_age=92, priority=100,reg15=0x8000,metadata=0x3 actions=set_field:0x3->reg15,resubmit(,39),set_field:0x2->reg15,resubmit(,39),set_field:0x8000->reg15,resubmit(,38)
+ cookie=0x6799ae22, duration=97.397s, table=37, n_packets=0, n_bytes=0, idle_age=97, priority=100,reg15=0x8000,metadata=0x1 actions=set_field:0x3->reg15,resubmit(,39),set_field:0x1->reg15,resubmit(,39),set_field:0x2->reg15,resubmit(,39),set_field:0x8000->reg15
+ cookie=0xd338b1f4, duration=93.860s, table=37, n_packets=0, n_bytes=0, idle_age=93, priority=100,reg15=0x8003,metadata=0x3 actions=set_field:0x3->reg15,resubmit(,39),set_field:0x8003->reg15,resubmit(,38)
+ cookie=0x0, duration=136.579s, table=37, n_packets=5, n_bytes=210, idle_age=84, priority=0 actions=resubmit(,38)
+ cookie=0xe8f2ca47, duration=100.587s, table=38, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x1,metadata=0x2 actions=set_field:0x5->reg11,set_field:0x1->reg12,resubmit(,39)
+ cookie=0xd1ce0fbe, duration=100.587s, table=38, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x2,metadata=0x1 actions=set_field:0x4->reg11,set_field:0x6->reg12,resubmit(,39)
+ cookie=0x1294b0f1, duration=100.587s, table=38, n_packets=5, n_bytes=210, idle_age=84, priority=100,reg15=0x3,metadata=0x3 actions=set_field:0x3->reg11,set_field:0x2->reg12,resubmit(,39)
+ cookie=0xcf95aa9a, duration=100.587s, table=38, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x2,metadata=0x2 actions=set_field:0x5->reg11,set_field:0x1->reg12,resubmit(,39)
+ cookie=0xb7642e4c, duration=100.587s, table=38, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x3,metadata=0x2 actions=set_field:0x2->reg15,set_field:0x5->reg11,set_field:0x1->reg12,resubmit(,39)
+ cookie=0xd338b1f4, duration=100.581s, table=38, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x8003,metadata=0x3 actions=set_field:0x8->reg13,set_field:0x1->reg15,resubmit(,39),set_field:0x8003->reg15
+ cookie=0x449bbdfd, duration=100.581s, table=38, n_packets=5, n_bytes=210, idle_age=84, priority=100,reg15=0x8005,metadata=0x3 actions=set_field:0x8->reg13,set_field:0x1->reg15,resubmit(,39),set_field:0x8005->reg15
+ cookie=0x8a39b3e4, duration=100.581s, table=38, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x8001,metadata=0x3 actions=set_field:0x8->reg13,set_field:0x1->reg15,resubmit(,39),set_field:0x8001->reg15
+ cookie=0xa06d78c9, duration=100.581s, table=38, n_packets=11, n_bytes=1142, idle_age=92, priority=100,reg15=0x8000,metadata=0x3 actions=set_field:0x8->reg13,set_field:0x1->reg15,resubmit(,39),set_field:0x8000->reg15
+ cookie=0x178376ff, duration=100.581s, table=38, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x1,metadata=0x3 actions=set_field:0x8->reg13,set_field:0x3->reg11,set_field:0x2->reg12,resubmit(,39)
+ cookie=0xfc72967c, duration=100.581s, table=38, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x2,metadata=0x3 actions=set_field:0x1->reg15,resubmit(,38)
+ cookie=0x98f7c48b, duration=96.882s, table=38, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg15=0x3,metadata=0x1 actions=set_field:0x4->reg11,set_field:0x6->reg12,resubmit(,39)
+ cookie=0xf1ed134c, duration=96.880s, table=38, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg15=0x4,metadata=0x2 actions=set_field:0x5->reg11,set_field:0x1->reg12,resubmit(,39)
+ cookie=0x178376ff, duration=100.581s, table=39, n_packets=0, n_bytes=0, idle_age=100, priority=160,reg10=0x10/0x10,reg15=0x1,metadata=0x3 actions=drop
+ cookie=0x178376ff, duration=100.581s, table=39, n_packets=0, n_bytes=0, idle_age=100, priority=160,reg10=0x400/0x400,reg15=0x1,metadata=0x3 actions=drop
+ cookie=0x1294b0f1, duration=100.587s, table=39, n_packets=5, n_bytes=210, idle_age=84, priority=100,reg10=0/0x1,reg14=0x3,reg15=0x3,metadata=0x3 actions=drop
+ cookie=0xd1ce0fbe, duration=100.587s, table=39, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg10=0/0x1,reg14=0x2,reg15=0x2,metadata=0x1 actions=drop
+ cookie=0xe8f2ca47, duration=100.587s, table=39, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg10=0/0x1,reg14=0x1,reg15=0x1,metadata=0x2 actions=drop
+ cookie=0xcf95aa9a, duration=100.587s, table=39, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg10=0/0x1,reg14=0x2,reg15=0x2,metadata=0x2 actions=drop
+ cookie=0x178376ff, duration=100.581s, table=39, n_packets=11, n_bytes=1142, idle_age=92, priority=100,reg10=0/0x1,reg14=0x1,reg15=0x1,metadata=0x3 actions=drop
+ cookie=0x98f7c48b, duration=96.882s, table=39, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg10=0/0x1,reg14=0x3,reg15=0x3,metadata=0x1 actions=drop
+ cookie=0xf1ed134c, duration=96.880s, table=39, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg10=0/0x1,reg14=0x4,reg15=0x4,metadata=0x2 actions=drop
+ cookie=0x0, duration=136.579s, table=39, n_packets=32, n_bytes=2704, idle_age=84, priority=0 actions=set_field:0->reg0,set_field:0->reg1,set_field:0->reg2,set_field:0->reg3,set_field:0->reg4,set_field:0->reg5,set_field:0->reg6,set_field:0->reg7,set_field:0->reg8,set_field:0->reg9,resubmit(,40)
+ cookie=0xd87e0cbf, duration=100.590s, table=40, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x3,dl_src=ca:a5:36:d8:4e:f2 actions=resubmit(,41)
+ cookie=0xd87e0cbf, duration=100.587s, table=40, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x1,dl_src=ca:a5:36:d8:4e:f2 actions=resubmit(,41)
+ cookie=0xc00eda3d, duration=100.582s, table=40, n_packets=0, n_bytes=0, idle_age=100, priority=50,ct_mark=0x2/0x2,ip,metadata=0x2 actions=set_field:0x10/0x10->xreg4,resubmit(,41)
+ cookie=0xc00eda3d, duration=100.582s, table=40, n_packets=0, n_bytes=0, idle_age=100, priority=50,ct_mark=0x2/0x2,ipv6,metadata=0x2 actions=set_field:0x10/0x10->xreg4,resubmit(,41)
+ cookie=0x1733fc70, duration=100.582s, table=40, n_packets=0, n_bytes=0, idle_age=100, priority=50,ip,metadata=0x2,nw_dst=172.24.5.15 actions=set_field:0x10/0x10->xreg4,resubmit(,41)
+ cookie=0x36cfcd6e, duration=100.591s, table=40, n_packets=32, n_bytes=2704, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,41)
+ cookie=0x36cfcd6e, duration=100.590s, table=40, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,41)
+ cookie=0xa464e234, duration=100.582s, table=40, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=set_field:0/0x10->xreg4,resubmit(,41)
+ cookie=0x27ba549c, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,reg0=0x10000/0x10000,metadata=0x3 actions=resubmit(,42)
+ cookie=0x27ba549c, duration=100.590s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,reg0=0x10000/0x10000,metadata=0x1 actions=resubmit(,42)
+ cookie=0x58595f94, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x3,dl_src=ca:a5:36:d8:4e:f2 actions=resubmit(,42)
+ cookie=0x58595f94, duration=100.589s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x1,dl_src=ca:a5:36:d8:4e:f2 actions=resubmit(,42)
+ cookie=0xd797711f, duration=100.590s, table=41, n_packets=32, n_bytes=2704, idle_age=84, priority=110,metadata=0x3,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=resubmit(,42)
+ cookie=0xd797711f, duration=100.589s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,metadata=0x1,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.588s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.588s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.588s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.588s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.588s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.588s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.588s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.591s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x3,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,42)
+ cookie=0xd9c89f0e, duration=100.588s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,icmp6,metadata=0x1,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,42)
+ cookie=0xf9958f81, duration=100.584s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg15=0x1,metadata=0x3 actions=resubmit(,42)
+ cookie=0xf9958f81, duration=100.584s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg15=0x1,metadata=0x3 actions=resubmit(,42)
+ cookie=0xd459b585, duration=100.584s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg15=0x2,metadata=0x1 actions=resubmit(,42)
+ cookie=0xd459b585, duration=100.584s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg15=0x2,metadata=0x1 actions=resubmit(,42)
+ cookie=0xce3977fe, duration=100.582s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg15=0x3,metadata=0x3 actions=resubmit(,42)
+ cookie=0xce3977fe, duration=100.582s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg15=0x3,metadata=0x3 actions=resubmit(,42)
+ cookie=0x1640bfaf, duration=96.883s, table=41, n_packets=0, n_bytes=0, idle_age=96, priority=110,ipv6,reg15=0x3,metadata=0x1 actions=resubmit(,42)
+ cookie=0x1640bfaf, duration=96.883s, table=41, n_packets=0, n_bytes=0, idle_age=96, priority=110,ip,reg15=0x3,metadata=0x1 actions=resubmit(,42)
+ cookie=0x5d0a2524, duration=100.592s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x3 actions=resubmit(,42)
+ cookie=0x5d0a2524, duration=100.590s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,42)
+ cookie=0x75cf0c1c, duration=100.583s, table=41, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,42)
+ cookie=0xbb41c6c4, duration=100.592s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg0=0x4/0x4,metadata=0x3 actions=ct(table=43,zone=NXM_NX_REG13[0..15],nat)
+ cookie=0xbb41c6c4, duration=100.592s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg0=0x4/0x4,metadata=0x3 actions=ct(table=43,zone=NXM_NX_REG13[0..15],nat)
+ cookie=0xbb41c6c4, duration=100.589s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=110,ipv6,reg0=0x4/0x4,metadata=0x1 actions=ct(table=43,zone=NXM_NX_REG13[0..15],nat)
+ cookie=0xbb41c6c4, duration=100.589s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=110,ip,reg0=0x4/0x4,metadata=0x1 actions=ct(table=43,zone=NXM_NX_REG13[0..15],nat)
+ cookie=0x2626a100, duration=100.592s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x1/0x1,metadata=0x3 actions=ct(table=43,zone=NXM_NX_REG13[0..15])
+ cookie=0x2626a100, duration=100.592s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x1/0x1,metadata=0x3 actions=ct(table=43,zone=NXM_NX_REG13[0..15])
+ cookie=0x2626a100, duration=100.591s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x1/0x1,metadata=0x1 actions=ct(table=43,zone=NXM_NX_REG13[0..15])
+ cookie=0x2626a100, duration=100.591s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x1/0x1,metadata=0x1 actions=ct(table=43,zone=NXM_NX_REG13[0..15])
+ cookie=0x61970aa6, duration=100.592s, table=42, n_packets=32, n_bytes=2704, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,43)
+ cookie=0x61970aa6, duration=100.590s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,43)
+ cookie=0x9c624194, duration=100.584s, table=42, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,43)
+ cookie=0xdbf44634, duration=100.591s, table=43, n_packets=32, n_bytes=2704, idle_age=84, priority=65535,metadata=0x3 actions=resubmit(,44)
+ cookie=0xdbf44634, duration=100.588s, table=43, n_packets=0, n_bytes=0, idle_age=100, priority=65535,metadata=0x1 actions=resubmit(,44)
+ cookie=0xe1bbbc26, duration=100.583s, table=43, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,44)
+ cookie=0xf645746, duration=100.583s, table=43, n_packets=0, n_bytes=0, idle_age=100, priority=156,ip,reg9=0x10/0x10,reg15=0x2,metadata=0x2,nw_src=10.1.0.0/26 actions=set_field:0/0x10->xreg4,ct(commit,table=44,zone=NXM_NX_REG12[0..15],nat(src=172.24.5.15))
+ cookie=0x6225c404, duration=100.584s, table=43, n_packets=0, n_bytes=0, idle_age=100, priority=155,ip,reg15=0x2,metadata=0x2,nw_src=10.1.0.0/26 actions=ct(commit,table=44,zone=NXM_NX_REG11[0..15],nat(src=172.24.5.15))
+ cookie=0x9bc20560, duration=100.583s, table=43, n_packets=0, n_bytes=0, idle_age=100, priority=120,icmp6,metadata=0x2,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,44)
+ cookie=0x124df085, duration=100.592s, table=44, n_packets=32, n_bytes=2704, idle_age=84, priority=65535,metadata=0x3 actions=resubmit(,45)
+ cookie=0x124df085, duration=100.591s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65535,metadata=0x1 actions=resubmit(,45)
+ cookie=0x657532e4, duration=100.583s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.592s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.592s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.591s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.589s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=132 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.589s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=130 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.589s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_src=fe80::/10,icmp_type=131 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.592s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.591s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.591s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.591s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.589s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=136,icmp_code=0 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.589s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=135,icmp_code=0 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.589s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=134,icmp_code=0 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.589s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,nw_ttl=255,icmp_type=133,icmp_code=0 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.591s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x3,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,45)
+ cookie=0xcbd954a5, duration=100.589s, table=44, n_packets=0, n_bytes=0, idle_age=100, priority=65532,icmp6,metadata=0x1,ipv6_dst=ff02::16,icmp_type=143 actions=resubmit(,45)
+ cookie=0x53ed5e72, duration=100.583s, table=45, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg15=0x2,metadata=0x2,nw_dst=172.24.5.15 actions=clone(ct_clear,move:NXM_NX_REG15[]->NXM_NX_REG14[],set_field:0->reg15,push:NXM_OF_ETH_SRC[],push:NXM_OF_ETH_DST[],pop:NXM_OF_ETH_SRC[],pop:NXM_OF_ETH_DST[],set_field:0->reg10,set_field:0x1/0x1->reg10,move:OXM_OF_PKT_REG4[4]->NXM_NX_REG10[11],set_field:0/0xffffffff000000000000000000000000->xxreg0,set_field:0/0xffffffff0000000000000000->xxreg0,set_field:0/0xffffffff00000000->xxreg0,set_field:0/0xffffffff->xxreg0,set_field:0/0xffffffff000000000000000000000000->xxreg1,set_field:0/0xffffffff0000000000000000->xxreg1,set_field:0/0xffffffff00000000->xxreg1,set_field:0/0xffffffff->xxreg1,set_field:0/0xffffffff00000000->xreg4,set_field:0/0xffffffff->xreg4,set_field:0x1/0x1->xreg4,resubmit(,8))
+ cookie=0x22672bdc, duration=100.592s, table=45, n_packets=32, n_bytes=2704, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,46)
+ cookie=0x22672bdc, duration=100.591s, table=45, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,46)
+ cookie=0xce06fd60, duration=100.583s, table=45, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x2 actions=resubmit(,46)
+ cookie=0xccf7ac18, duration=100.584s, table=46, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x2,metadata=0x2 actions=resubmit(,64)
+ cookie=0x85738d4f, duration=100.583s, table=46, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x1,metadata=0x2 actions=resubmit(,64)
+ cookie=0x3b87ff40, duration=96.883s, table=46, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg15=0x4,metadata=0x2 actions=resubmit(,64)
+ cookie=0x196aaf80, duration=100.592s, table=46, n_packets=32, n_bytes=2704, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,47)
+ cookie=0x196aaf80, duration=100.591s, table=46, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,47)
+ cookie=0x86a4278d, duration=100.592s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x2002/0x2002,metadata=0x3 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark,move:NXM_NX_XXREG0[0..31]->NXM_NX_CT_LABEL[96..127])),resubmit(,48)
+ cookie=0x86a4278d, duration=100.592s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x2002/0x2002,metadata=0x3 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark,move:NXM_NX_XXREG0[0..31]->NXM_NX_CT_LABEL[96..127])),resubmit(,48)
+ cookie=0xe76320ee, duration=100.591s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x2/0x2002,metadata=0x3 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark)),resubmit(,48)
+ cookie=0xe76320ee, duration=100.591s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x2/0x2002,metadata=0x3 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark)),resubmit(,48)
+ cookie=0x86a4278d, duration=100.589s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x2002/0x2002,metadata=0x1 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark,move:NXM_NX_XXREG0[0..31]->NXM_NX_CT_LABEL[96..127])),resubmit(,48)
+ cookie=0x86a4278d, duration=100.589s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x2002/0x2002,metadata=0x1 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark,move:NXM_NX_XXREG0[0..31]->NXM_NX_CT_LABEL[96..127])),resubmit(,48)
+ cookie=0xe76320ee, duration=100.588s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=100,ip,reg0=0x2/0x2002,metadata=0x1 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark)),resubmit(,48)
+ cookie=0xe76320ee, duration=100.588s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=100,ipv6,reg0=0x2/0x2002,metadata=0x1 actions=ct(commit,zone=NXM_NX_REG13[0..15],nat(src),exec(set_field:0/0x1->ct_mark)),resubmit(,48)
+ cookie=0x1b70066d, duration=100.592s, table=47, n_packets=32, n_bytes=2704, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,48)
+ cookie=0x1b70066d, duration=100.591s, table=47, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,48)
+ cookie=0xdcc9de0e, duration=100.591s, table=48, n_packets=32, n_bytes=2704, idle_age=84, priority=0,metadata=0x3 actions=resubmit(,49)
+ cookie=0xdcc9de0e, duration=100.588s, table=48, n_packets=0, n_bytes=0, idle_age=100, priority=0,metadata=0x1 actions=resubmit(,49)
+ cookie=0xe1737a95, duration=100.591s, table=49, n_packets=32, n_bytes=2704, idle_age=84, priority=100,metadata=0x3,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=resubmit(,64)
+ cookie=0xe1737a95, duration=100.588s, table=49, n_packets=0, n_bytes=0, idle_age=100, priority=100,metadata=0x1,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=resubmit(,64)
+ cookie=0xde06d4da, duration=100.583s, table=49, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg15=0x1,metadata=0x3 actions=resubmit(,64)
+ cookie=0x72e8eb5b, duration=100.583s, table=49, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg15=0x3,metadata=0x3 actions=resubmit(,64)
+ cookie=0xeabf6d75, duration=100.583s, table=49, n_packets=0, n_bytes=0, idle_age=100, priority=50,reg15=0x2,metadata=0x1 actions=resubmit(,64)
+ cookie=0x318a200d, duration=97.398s, table=49, n_packets=0, n_bytes=0, idle_age=97, priority=50,reg15=0x3,metadata=0x1 actions=resubmit(,64)
+ cookie=0xcf95aa9a, duration=100.588s, table=64, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg10=0x1/0x1,reg15=0x2,metadata=0x2 actions=push:NXM_OF_IN_PORT[],set_field:ANY->in_port,resubmit(,65),pop:NXM_OF_IN_PORT[]
+ cookie=0x1294b0f1, duration=100.588s, table=64, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg10=0x1/0x1,reg15=0x3,metadata=0x3 actions=push:NXM_OF_IN_PORT[],set_field:ANY->in_port,resubmit(,65),pop:NXM_OF_IN_PORT[]
+ cookie=0xe8f2ca47, duration=100.588s, table=64, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg10=0x1/0x1,reg15=0x1,metadata=0x2 actions=push:NXM_OF_IN_PORT[],set_field:ANY->in_port,resubmit(,65),pop:NXM_OF_IN_PORT[]
+ cookie=0xd1ce0fbe, duration=100.588s, table=64, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg10=0x1/0x1,reg15=0x2,metadata=0x1 actions=push:NXM_OF_IN_PORT[],set_field:ANY->in_port,resubmit(,65),pop:NXM_OF_IN_PORT[]
+ cookie=0x178376ff, duration=100.582s, table=64, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg10=0x1/0x1,reg15=0x1,metadata=0x3 actions=push:NXM_OF_IN_PORT[],set_field:ANY->in_port,resubmit(,65),pop:NXM_OF_IN_PORT[]
+ cookie=0x98f7c48b, duration=96.883s, table=64, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg10=0x1/0x1,reg15=0x3,metadata=0x1 actions=push:NXM_OF_IN_PORT[],set_field:ANY->in_port,resubmit(,65),pop:NXM_OF_IN_PORT[]
+ cookie=0xf1ed134c, duration=96.881s, table=64, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg10=0x1/0x1,reg15=0x4,metadata=0x2 actions=push:NXM_OF_IN_PORT[],set_field:ANY->in_port,resubmit(,65),pop:NXM_OF_IN_PORT[]
+ cookie=0x0, duration=136.580s, table=64, n_packets=32, n_bytes=2704, idle_age=84, priority=0 actions=resubmit(,65)
+ cookie=0xcf95aa9a, duration=100.588s, table=65, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x2,metadata=0x2 actions=clone(ct_clear,set_field:0->reg11,set_field:0->reg12,set_field:0->reg13,set_field:0x3->reg11,set_field:0x2->reg12,set_field:0x3->metadata,set_field:0x3->reg14,set_field:0->reg10,set_field:0->reg15,set_field:0->reg0,set_field:0->reg1,set_field:0->reg2,set_field:0->reg3,set_field:0->reg4,set_field:0->reg5,set_field:0->reg6,set_field:0->reg7,set_field:0->reg8,set_field:0->reg9,resubmit(,8))
+ cookie=0xd1ce0fbe, duration=100.588s, table=65, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x2,metadata=0x1 actions=clone(ct_clear,set_field:0->reg11,set_field:0->reg12,set_field:0->reg13,set_field:0x5->reg11,set_field:0x1->reg12,set_field:0x2->metadata,set_field:0x1->reg14,set_field:0->reg10,set_field:0->reg15,set_field:0->reg0,set_field:0->reg1,set_field:0->reg2,set_field:0->reg3,set_field:0->reg4,set_field:0->reg5,set_field:0->reg6,set_field:0->reg7,set_field:0->reg8,set_field:0->reg9,resubmit(,8))
+ cookie=0x1294b0f1, duration=100.588s, table=65, n_packets=11, n_bytes=1142, idle_age=92, priority=100,reg15=0x3,metadata=0x3 actions=clone(ct_clear,set_field:0->reg11,set_field:0->reg12,set_field:0->reg13,set_field:0x5->reg11,set_field:0x1->reg12,set_field:0x2->metadata,set_field:0x2->reg14,set_field:0->reg10,set_field:0->reg15,set_field:0->reg0,set_field:0->reg1,set_field:0->reg2,set_field:0->reg3,set_field:0->reg4,set_field:0->reg5,set_field:0->reg6,set_field:0->reg7,set_field:0->reg8,set_field:0->reg9,resubmit(,8))
+ cookie=0xe8f2ca47, duration=100.588s, table=65, n_packets=0, n_bytes=0, idle_age=100, priority=100,reg15=0x1,metadata=0x2 actions=clone(ct_clear,set_field:0->reg11,set_field:0->reg12,set_field:0->reg13,set_field:0x4->reg11,set_field:0x6->reg12,set_field:0x1->metadata,set_field:0x2->reg14,set_field:0->reg10,set_field:0->reg15,set_field:0->reg0,set_field:0->reg1,set_field:0->reg2,set_field:0->reg3,set_field:0->reg4,set_field:0->reg5,set_field:0->reg6,set_field:0->reg7,set_field:0->reg8,set_field:0->reg9,resubmit(,8))
+ cookie=0x178376ff, duration=100.582s, table=65, n_packets=5, n_bytes=210, idle_age=84, priority=100,reg15=0x1,metadata=0x3 actions=output:1
+ cookie=0x98f7c48b, duration=96.883s, table=65, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg15=0x3,metadata=0x1 actions=clone(ct_clear,set_field:0->reg11,set_field:0->reg12,set_field:0->reg13,set_field:0x5->reg11,set_field:0x1->reg12,set_field:0x2->metadata,set_field:0x4->reg14,set_field:0->reg10,set_field:0->reg15,set_field:0->reg0,set_field:0->reg1,set_field:0->reg2,set_field:0->reg3,set_field:0->reg4,set_field:0->reg5,set_field:0->reg6,set_field:0->reg7,set_field:0->reg8,set_field:0->reg9,resubmit(,8))
+ cookie=0xf1ed134c, duration=96.881s, table=65, n_packets=0, n_bytes=0, idle_age=96, priority=100,reg15=0x4,metadata=0x2 actions=clone(ct_clear,set_field:0->reg11,set_field:0->reg12,set_field:0->reg13,set_field:0x4->reg11,set_field:0x6->reg12,set_field:0x1->metadata,set_field:0x3->reg14,set_field:0->reg10,set_field:0->reg15,set_field:0->reg0,set_field:0->reg1,set_field:0->reg2,set_field:0->reg3,set_field:0->reg4,set_field:0->reg5,set_field:0->reg6,set_field:0->reg7,set_field:0->reg8,set_field:0->reg9,resubmit(,8))
+
+
+IP Tables Dump
+==============
+
+sudo iptables --line-numbers -L -nv -t filter
+---------------------------------------------
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     313K  259M LIBVIRT_INP  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+2     435K  762M openstack-INPUT  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 LIBVIRT_FWX  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+2        0     0 LIBVIRT_FWI  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+3        0     0 LIBVIRT_FWO  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain OUTPUT (policy ACCEPT 390K packets, 226M bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     310K  220M LIBVIRT_OUT  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain LIBVIRT_FWI (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     all  --  *      virbr0  0.0.0.0/0            192.168.122.0/24     ctstate RELATED,ESTABLISHED
+2        0     0 REJECT     all  --  *      virbr0  0.0.0.0/0            0.0.0.0/0            reject-with icmp-port-unreachable
+
+Chain LIBVIRT_FWO (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     all  --  virbr0 *       192.168.122.0/24     0.0.0.0/0           
+2        0     0 REJECT     all  --  virbr0 *       0.0.0.0/0            0.0.0.0/0            reject-with icmp-port-unreachable
+
+Chain LIBVIRT_FWX (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     all  --  virbr0 virbr0  0.0.0.0/0            0.0.0.0/0           
+
+Chain LIBVIRT_INP (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     udp  --  virbr0 *       0.0.0.0/0            0.0.0.0/0            udp dpt:53
+2        0     0 ACCEPT     tcp  --  virbr0 *       0.0.0.0/0            0.0.0.0/0            tcp dpt:53
+3        0     0 ACCEPT     udp  --  virbr0 *       0.0.0.0/0            0.0.0.0/0            udp dpt:67
+4        0     0 ACCEPT     tcp  --  virbr0 *       0.0.0.0/0            0.0.0.0/0            tcp dpt:67
+
+Chain LIBVIRT_OUT (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     udp  --  *      virbr0  0.0.0.0/0            0.0.0.0/0            udp dpt:53
+2        0     0 ACCEPT     tcp  --  *      virbr0  0.0.0.0/0            0.0.0.0/0            tcp dpt:53
+3        0     0 ACCEPT     udp  --  *      virbr0  0.0.0.0/0            0.0.0.0/0            udp dpt:68
+4        0     0 ACCEPT     tcp  --  *      virbr0  0.0.0.0/0            0.0.0.0/0            tcp dpt:68
+
+Chain openstack-INPUT (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     340K  220M ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0           
+2       22  1936 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0            icmptype 255
+3     2525 9367K ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:22
+4    92479  532M ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+5       29  1740 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:19885
+6        0     0 ACCEPT     udp  --  *      *       172.24.4.0/23        0.0.0.0/0            udp dpt:69
+7        0     0 ACCEPT     tcp  --  *      *       172.24.4.0/23        0.0.0.0/0            tcp dpt:6385
+8        0     0 ACCEPT     tcp  --  *      *       172.24.4.0/23        0.0.0.0/0            tcp dpt:80
+9        0     0 ACCEPT     tcp  --  *      *       172.24.4.0/23        0.0.0.0/0            tcp dpt:8000
+10       0     0 ACCEPT     tcp  --  *      *       172.24.4.0/23        0.0.0.0/0            tcp dpt:8003
+11       0     0 ACCEPT     tcp  --  *      *       172.24.4.0/23        0.0.0.0/0            tcp dpt:8004
+12       0     0 LOG        all  --  *      *       0.0.0.0/0            0.0.0.0/0            limit: avg 2/min burst 5 LOG flags 0 level 4 prefix "iptables dropped: "
+13       0     0 REJECT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-prohibited
+
+sudo iptables --line-numbers -L -nv -t nat
+------------------------------------------
+
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     2974  180K LIBVIRT_PRT  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+2        0     0 MASQUERADE  all  --  *      ens4    172.24.5.0/24        0.0.0.0/0           
+
+Chain LIBVIRT_PRT (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 RETURN     all  --  *      *       192.168.122.0/24     224.0.0.0/24        
+2        0     0 RETURN     all  --  *      *       192.168.122.0/24     255.255.255.255     
+3        0     0 MASQUERADE  tcp  --  *      *       192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+4        0     0 MASQUERADE  udp  --  *      *       192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+5        0     0 MASQUERADE  all  --  *      *       192.168.122.0/24    !192.168.122.0/24    
+
+sudo iptables --line-numbers -L -nv -t mangle
+---------------------------------------------
+
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     310K  220M LIBVIRT_PRT  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain LIBVIRT_PRT (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 CHECKSUM   udp  --  *      virbr0  0.0.0.0/0            0.0.0.0/0            udp dpt:68 CHECKSUM fill
+
+
+EB Tables Dump
+==============
+
+sudo ebtables -t filter -L
+--------------------------
+
+Bridge table: filter
+
+Bridge chain: INPUT, entries: 0, policy: ACCEPT
+
+Bridge chain: FORWARD, entries: 0, policy: ACCEPT
+
+Bridge chain: OUTPUT, entries: 0, policy: ACCEPT
+
+sudo ebtables -t nat -L
+-----------------------
+
+Bridge table: nat
+
+Bridge chain: PREROUTING, entries: 0, policy: ACCEPT
+
+Bridge chain: OUTPUT, entries: 0, policy: ACCEPT
+
+Bridge chain: POSTROUTING, entries: 0, policy: ACCEPT
+
+
+Compute consoles
+================
+
+
+nova-compute Guru Meditation Report
+===================================
+
+85937
+killall -e -USR2 nova-compute
+-----------------------------
+
+
+guru meditation report in nova-compute log
+
+neutron-dhcp-agent Guru Meditation Report
+=========================================
+
+Skipping as neutron-dhcp-agent does not appear to be running
+
+neutron-l3-agent Guru Meditation Report
+=======================================
+
+Skipping as neutron-l3-agent does not appear to be running
+
+neutron-metadata-agent Guru Meditation Report
+=============================================
+
+Skipping as neutron-metadata-agent does not appear to be running
+
+neutron-openvswitch-agent Guru Meditation Report
+================================================
+
+Skipping as neutron-openvswitch-agent does not appear to be running
+
+cinder-volume Guru Meditation Report
+====================================
+
+88290
+88417
+88418
+killall -e -USR2 cinder-volume
+------------------------------
+
+
+guru meditation report in cinder-volume log
+
+/var/core dumps
+===============
+
+ls -ltrah /var/core
+-------------------
+
+total 8.0K
+drwxr-xr-x 13 root root 4.0K Nov  6 13:06 ..
+drwxrwxrwx  2 root root 4.0K Nov  6 13:06 .
+

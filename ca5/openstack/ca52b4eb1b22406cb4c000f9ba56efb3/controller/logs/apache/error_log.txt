@@ -1,0 +1,2 @@
+[Thu Nov 06 12:37:30.219733 2025] [mpm_event:notice] [pid 11710:tid 140126658566016] AH00489: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Thu Nov 06 12:37:30.219916 2025] [core:notice] [pid 11710:tid 140126658566016] AH00094: Command line: '/usr/sbin/apache2'
