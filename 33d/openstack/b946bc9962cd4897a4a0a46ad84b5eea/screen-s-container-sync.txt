@@ -1,3 +1,0 @@
-Nov 06 09:28:33.698552 np0000021451 systemd[1]: Started Devstack devstack@s-container-sync.service.
-Nov 06 09:28:34.160425 np0000021451 container-sync[82008]: Starting 82008
-Nov 06 09:28:34.161540 np0000021451 container-sync[82008]: Configuration option internal_client_conf_path not defined. Using default configuration, See internal-client.conf-sample for options
